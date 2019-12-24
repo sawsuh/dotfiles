@@ -1,0 +1,4 @@
+#!/bin/zsh
+urxvt -name float -e zsh -c "sudo systemctl start bluetooth.service; \
+sudo rfkill unblock bluetooth; \
+bluetoothctl"

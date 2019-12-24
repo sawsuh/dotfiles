@@ -1,0 +1,17 @@
+pid=$(pgrep -a polybar | grep barski | awk '{print $1}')
+if [[ "$pid" != "" ]]
+then
+	wid=$(xdotool search --pid $pid --onlyvisible)
+	if [[ "$wid" != "" ]]
+	then
+		xdotool windowunmap $wid
+		bspc config top_padding 20
+	else
+		bspc config top_padding 70
+		wid=$(xdotool search --pid $pid)
+		xdotool windowmap $wid
+	fi
+else
+	bspc config top_padding 70
+	polybar barski& > /dev/null
+fi

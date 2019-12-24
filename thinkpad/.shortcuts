@@ -1,0 +1,16 @@
+--Commands
+dots: cd ~/.dots
+y: yay
+yu: yay -Syu --devel
+home: cd ~
+btooth: sudo systemctl start bluetooth.service
+fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
+music: python3 ~/.pyscripts/music.py
+dfu: bash ~/.scripts/dfu.sh
+--FilestoVim
+xr: ~/.Xresources
+sxrc: ~/.config/sxhkd/sxhkdrc
+bsprc: ~/.config/bspwm/bspwmrc
+pbar: ~/.config/polybar/config
+rng: ~/.config/ranger/rc.conf
+vrc: ~/.vimrc

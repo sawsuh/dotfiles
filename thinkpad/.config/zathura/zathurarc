@@ -1,0 +1,31 @@
+set statusbar-home-tilde true
+map = zoom in
+map k scroll up
+map j scroll down
+map h scroll left
+map l scroll right
+map K scroll half-up
+map J scroll half-down
+map f toggle_fullscreen
+map [fullscreen] = zoom in
+map [fullscreen] k scroll up
+map [fullscreen] j scroll down
+map [fullscreen] h scroll left
+map [fullscreen] l scroll right
+map [fullscreen] K scroll half-up
+map [fullscreen] J scroll half-down
+map [fullscreen] f toggle_fullscreen
+
+set statusbar-h-padding 60
+set statusbar-v-padding 50
+
+set inputbar-bg "#202020"
+set inputbar-fg "#eee4e5"
+set statusbar-bg "#202020"
+set statusbar-fg "#eee4e5"
+set default-bg "#202020"
+set default-fg "#eee4e5"
+set notification-bg "#202020"
+set notification-fg "#eee4e5"
+
+set font "Fira Code 8"

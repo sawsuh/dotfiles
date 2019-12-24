@@ -1,0 +1,43 @@
+#! /bin/sh
+nitrogen --restore&
+compton --config /home/prash/.compton.conf&
+xrdb ~/.Xresources&
+dunst&
+
+bspc monitor -d one two three four five six seven eight nine ten
+bspc config top_padding        20
+bspc config bottom_padding     20
+bspc config left_padding       20
+bspc config right_padding      20
+bspc config border_width         3
+bspc config window_gap          25
+bspc config normal_border_color "#42423d"
+bspc config focused_border_color "#eee4e5"
+bspc config presel_feedback_color "#42423d"
+bspc config split_ratio          0.52
+bspc config click_to_focus 	button1
+bspc config swallow_first_click	true
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus	true
+bspc config borderless_monocle	true
+bspc config gapless_monocle	true
+bspc config top_monocle_padding -20
+bspc config bottom_monocle_padding -20
+bspc config right_monocle_padding -20
+bspc config left_monocle_padding -20
+
+bspc rule -a mpv state=floating
+bspc rule -a "*:sxiv" state=floating
+bspc rule -a URxvt:stick state=floating sticky=on center
+bspc rule -a URxvt:stick1 state=floating sticky=on
+bspc rule -a URxvt:stick2 state=floating sticky=on
+bspc rule -a URxvt:float state=floating
+bspc rule -a URxvt:cal state=floating sticky=on
+bspc rule -a Steam:"Friends List" state=floating
+bspc rule -a polybar layer=above
+bspc rule -a "dotnet" state=floating
+bspc rule -a "Nm-connection-editor" state=floating
+
+redshift -l -35.3:149&
+xsetroot -cursor_name left_ptr&
+libinput-gestures-setup start&
