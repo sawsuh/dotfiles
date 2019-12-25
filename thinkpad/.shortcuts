@@ -7,7 +7,7 @@ btooth: sudo systemctl start bluetooth.service
 fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
 music: python3 ~/.pyscripts/music.py
 dfu: bash ~/.scripts/dfu.sh
-restow: stow -R --no-folding -t ~ -d ~/dots thinkpad
+restow: stow -R --no-folding -t ~ -d ~/.dots thinkpad
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
