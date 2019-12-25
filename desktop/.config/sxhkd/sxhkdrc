@@ -136,7 +136,7 @@ super + a: shift + {h,j,k,l}
 
 # take a screenshot
 super + alt + c
-	bash ~/.scr.sh
+	bash ~/.scripts/scr.sh
 
 # take a screenshot with selection
 super + shift + c
