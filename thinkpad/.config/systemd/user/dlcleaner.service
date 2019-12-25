@@ -3,4 +3,4 @@ Description=Cleans downloads
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/bin/python3 /home/prash/.pyscripts/files.py >> /home/prash/.pyscripts/fileslog/downloadslog'
+ExecStart=/bin/bash /home/prash/.scripts/dlcleaner.sh
