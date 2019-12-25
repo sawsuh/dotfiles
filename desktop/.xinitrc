@@ -1,2 +1,2 @@
-sxhkd -a space -c ~/.config/sxhkd/sxhkdrc1&
+sxhkd -a space& 
 exec bspwm
