@@ -18,6 +18,7 @@ super + r; x
 # program launcher
 super + r; Return
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+
 super + Return
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
@@ -46,6 +47,10 @@ super + alt + shift + Escape
 
 # close and kill
 super + s:{_, shift + } q
+	bspc node -{c,k}
+
+# close and kill
+super + {_, shift + } q
 	bspc node -{c,k}
 
 #

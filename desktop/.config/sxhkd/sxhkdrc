@@ -49,6 +49,9 @@ super + alt + shift + Escape
 super + s: {_, shift + } q
 	bspc node -{c,k}
 
+super + {_, shift + } q
+	bspc node -{c,k}
+
 #
 # state/flags
 #
