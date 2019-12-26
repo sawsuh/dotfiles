@@ -18,8 +18,11 @@ super + r; x
 # program launcher
 super + r; r
 	export PATH=/home/prashant/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+super + Return
+	export PATH=/home/prashant/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+
 # password manager
-super + r; p
+super + p
 	rofi-pass
 
 # start file browser

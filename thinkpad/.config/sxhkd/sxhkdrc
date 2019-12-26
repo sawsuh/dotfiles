@@ -18,8 +18,10 @@ super + r; x
 # program launcher
 super + r; r
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+super + Return
+	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
-super + r; p
+super + p
 	rofi-pass
 
 # start file browser
