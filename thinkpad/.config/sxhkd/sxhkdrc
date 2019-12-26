@@ -16,7 +16,7 @@ super + r; x
 	python3 /home/prash/.pyscripts/pt.py
 
 # program launcher
-super + r; r
+super + r; Return
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 super + Return
 	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
