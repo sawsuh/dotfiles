@@ -77,6 +77,6 @@
     expand:     false;
     str:        ">";
     margin:     0px 0.8em 0em 0em ;
-    text-color: #8cc2aa;
+    text-color: #c8e5d5;
     font: "Fira Code Bold 16";
 }
