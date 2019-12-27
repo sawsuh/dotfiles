@@ -331,9 +331,9 @@
 #    summary = "*"
 #    script = dunst_espeak.sh
 
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
+[play-sound]
+    appname = "script"
+    script = /home/prash/.scripts/dunstsound.sh
 
 #[ignore]
 #    # This notification will not be displayed
