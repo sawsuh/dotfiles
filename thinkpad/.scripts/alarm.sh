@@ -1,2 +1,3 @@
 #!/bin/bash
-at $1 < <(echo "dunstify -a script $2")
+alarm_text="$*"
+at $1 < <(echo "dunstify -a script $alarm_text")
