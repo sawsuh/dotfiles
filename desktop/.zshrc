@@ -119,4 +119,4 @@ task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 } 
-
+bindkey -v

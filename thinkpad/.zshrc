@@ -19,4 +19,5 @@ export PATH=/home/prash/.local/bin:$PATH
 task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
-} 
+}
+bindkey -v
