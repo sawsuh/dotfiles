@@ -2,6 +2,7 @@ from barclass import bar
 import subprocess as sp
 import pyautogui
 
+
 def files(x, y):
     sp.run(
         [
@@ -22,6 +23,7 @@ def files(x, y):
             "urxvt",
         ]
     )
+
 
 xcord = int(pyautogui.position()[0])
 
