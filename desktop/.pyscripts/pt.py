@@ -33,7 +33,7 @@ disp.sync()
 
 middlex = topx + width / 2
 middley = topy + height / 2
+pyautogui.moveTo(middlex, middley)
 win.set_input_focus(Xlib.X.RevertToParent, Xlib.X.CurrentTime)
 disp.sync()
-pyautogui.moveTo(middlex, middley)
 

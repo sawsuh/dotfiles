@@ -1,7 +1,6 @@
 from barclass import bar
 import subprocess as sp
-import re
-
+import pyautogui
 
 def files(x, y):
     sp.run(
@@ -24,13 +23,7 @@ def files(x, y):
         ]
     )
 
-
-xcordin = sp.run(
-    ["xdotool", "getmouselocation", "--shell"], stdout=sp.PIPE
-)  # get xdotool output
-xcord = int(
-    re.search("[0-9]+", str(xcordin.stdout.decode("utf-8"))).group(0)
-)  # parse for mouse xcord
+xcord = int(pyautogui.position()[0])
 
 left = bar("pop1", "DVI-D-1")
 right = bar("pop2", "HDMI-A-0")
