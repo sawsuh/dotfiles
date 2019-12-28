@@ -3,6 +3,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'junegunn/goyo.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 filetype plugin on
 filetype indent on
@@ -15,6 +16,8 @@ let g:livepreview_previewer = 'zathura'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:goyo_width = 100
 let g:ale_fixers = { 'python' : ['black', 'autopep8']}
+let g:indentLine_color_term = 7
+let g:indentLine_char = '>'
 augroup MyIMAPs
     au!
     au VimEnter * call IMAP('``i','\indent <++>','tex')
@@ -29,5 +32,8 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 augroup END 
 nnoremap <C-w> :Goyo <bar> :Goyo <CR>
-autocmd VimEnter * Goyo
 autocmd VimEnter * ALEDisable
+set list lcs=tab:>\ 
+au VimEnter * Goyo
+au VimEnter * :hi NonText ctermfg=7
+au VimEnter * :hi EndOfBuffer ctermfg=0
