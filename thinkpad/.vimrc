@@ -31,7 +31,9 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``I','\int_{<+bot+>}^{<+top+>} \! <+func+> \, \mathrm{d}<+var+> <++>','tex')
     au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 augroup END 
+nnoremap <C-R> :sp <CR> :term python % <CR>
 nnoremap <C-w> :Goyo <CR>
+nnoremap <C-W> :bd!<CR>
 autocmd VimEnter * ALEDisable
 au VimEnter * hi NonText ctermfg=7
 au VimEnter * hi EndOfBuffer ctermfg=0
