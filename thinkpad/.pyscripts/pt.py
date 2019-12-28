@@ -1,5 +1,7 @@
 import subprocess as sp
 import time
+import pyautogui
+import Xlib.display
 
 recordcmd = [
     "slop",
@@ -16,18 +18,23 @@ recordcmd = [
 ]
 recording = sp.run(recordcmd, stdout=sp.PIPE, stderr=sp.DEVNULL)
 width, height, topx, topy = recording.stdout.decode("utf-8").split(" ")
-width = int(width) - 6
-height = int(height) - 6
+width = int(width) - 8
+height = int(height) - 8
+topx = int(topx)
+topy = int(topy)
 
 sp.Popen(["urxvt", "-name", "float"])
 time.sleep(0.250)
 
-widcommand = sp.run(["xdotool", "getwindowfocus"],
-                    stdout=sp.PIPE, stderr=sp.DEVNULL)
-wid = hex(int(widcommand.stdout.decode("utf-8")))
-geomstring = f"0,{topx},{topy},{width},{height}"
-sp.run(["wmctrl", "-i", "-r", wid, "-e", geomstring])
-middlex = int(topx) + width / 2
-middley = int(topy) + height / 2
-sp.run(["xdotool", "mousemove", str(middlex), str(middley)])
-sp.run(["xdotool", "windowactivate", wid])
+disp = Xlib.display.Display()
+win = disp.get_input_focus().focus
+win.configure(width=width, height=height, x=topx, y=topy)
+win.set_input_focus(Xlib.X.RevertToParent, Xlib.X.CurrentTime)
+disp.sync()
+
+middlex = topx + width / 2
+middley = topy + height / 2
+win.set_input_focus(Xlib.X.RevertToParent, Xlib.X.CurrentTime)
+disp.sync()
+pyautogui.moveTo(middlex, middley)
+
