@@ -29,7 +29,6 @@ time.sleep(0.250)
 disp = Xlib.display.Display()
 win = disp.get_input_focus().focus
 win.configure(width=width, height=height, x=topx, y=topy)
-win.set_input_focus(Xlib.X.RevertToParent, Xlib.X.CurrentTime)
 disp.sync()
 
 middlex = topx + width / 2
