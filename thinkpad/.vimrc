@@ -31,9 +31,10 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``I','\int_{<+bot+>}^{<+top+>} \! <+func+> \, \mathrm{d}<+var+> <++>','tex')
     au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 augroup END 
-nnoremap <C-w> :Goyo <bar> :Goyo <CR>
+nnoremap <C-w> :Goyo <CR>
 autocmd VimEnter * ALEDisable
 set list lcs=tab:>\ 
-au VimEnter * Goyo
+"au VimEnter * Goyo
+set laststatus=0 ruler
 au VimEnter * :hi NonText ctermfg=7
 au VimEnter * :hi EndOfBuffer ctermfg=0
