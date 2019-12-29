@@ -48,7 +48,10 @@ def bigp4k():
     except requests.exceptions.RequestException:
         print(f"{bigauth} - {bigalbum} failed")
         return False
-    if reviewsoup := BeautifulSoup(reviewpage.text, "lxml").select(".article-meta .pub-date"):
+    if reviewsoup:
+        = BeautifulSoup(reviewpage.text, "lxml").select(
+            ".article-meta .pub-date"
+        ):
         bigtime = reviewsoup[0].getText()
     else:
         print(f"no data for {bigauth} - {bigalbum}")
@@ -70,10 +73,13 @@ def downloadp4ksoup(index):
     except requests.exceptions.RequestException:
         print("{author} - {album} failed")
         return False
-    if reviewsoup := BeautifulSoup(reviewpage.text, "lxml").select(".article-meta .pub-date"):
+    if reviewsoup:
+        = BeautifulSoup(reviewpage.text, "lxml").select(
+            ".article-meta .pub-date"
+        ):
         time = reviewsoup[0].getText()
     else:
-        print(f'no data for {author} - {album}')
+        print(f"no data for {author} - {album}")
         return False
     date = dateparser.parse(time)
     entry = f"{author} - {album}"
@@ -91,7 +97,10 @@ def dlnd(index):
     except requests.exceptions.RequestException:
         print("{albumline} failed")
         return False
-    if reviewsoup := BeautifulSoup(reviewpage.text, "lxml").select(".entry-header-date-link"):
+    if reviewsoup:
+        = BeautifulSoup(reviewpage.text, "lxml").select(
+            ".entry-header-date-link"
+        ):
         time = reviewsoup[0].getText()
     else:
         print(f"no data for {albumline}")
