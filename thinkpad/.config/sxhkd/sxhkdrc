@@ -32,6 +32,8 @@ super + r; f
 # start browser
 super + r; b
 	firefox
+super + r; shift + b
+	chromium
 
 # make sxhkd reload its configuration files:
 super + Escape
