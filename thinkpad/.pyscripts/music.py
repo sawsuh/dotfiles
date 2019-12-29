@@ -48,8 +48,7 @@ def bigp4k():
     except requests.exceptions.RequestException:
         print(f"{bigauth} - {bigalbum} failed")
         return False
-    if reviewsoup:
-        = BeautifulSoup(reviewpage.text, "lxml").select(
+    if reviewsoup:= BeautifulSoup(reviewpage.text, "lxml").select(
             ".article-meta .pub-date"
         ):
         bigtime = reviewsoup[0].getText()
@@ -73,8 +72,7 @@ def downloadp4ksoup(index):
     except requests.exceptions.RequestException:
         print("{author} - {album} failed")
         return False
-    if reviewsoup:
-        = BeautifulSoup(reviewpage.text, "lxml").select(
+    if reviewsoup:= BeautifulSoup(reviewpage.text, "lxml").select(
             ".article-meta .pub-date"
         ):
         time = reviewsoup[0].getText()
@@ -97,8 +95,7 @@ def dlnd(index):
     except requests.exceptions.RequestException:
         print("{albumline} failed")
         return False
-    if reviewsoup:
-        = BeautifulSoup(reviewpage.text, "lxml").select(
+    if reviewsoup:= BeautifulSoup(reviewpage.text, "lxml").select(
             ".entry-header-date-link"
         ):
         time = reviewsoup[0].getText()
