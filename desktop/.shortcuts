@@ -10,7 +10,7 @@ restow: stow -R --no-folding -t ~ -d ~/.dots desktop
 alarm: bash ~/.scripts/alarm.sh
 --FilestoVim
 xr: ~/.Xresources
-sxrc: ~/.config/sxhkd/sxhkdrc1
+sxrc: ~/.config/sxhkd/sxhkdrc
 bsprc: ~/.config/bspwm/bspwmrc
 pbar: ~/.config/polybar/config
 rng: ~/.config/ranger/rc.conf
