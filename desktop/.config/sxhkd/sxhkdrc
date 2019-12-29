@@ -29,6 +29,10 @@ super + p
 super + r; f
 	python3 ~/.pyscripts/pfiles.py
 
+# start web browser
+super + r; b
+	firefox
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd

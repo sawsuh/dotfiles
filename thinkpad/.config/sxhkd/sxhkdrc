@@ -29,6 +29,10 @@ super + p
 super + r; f
 	bash ~/.scripts/files.sh
 
+# start browser
+super + r; b
+	firefox
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
