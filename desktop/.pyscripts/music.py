@@ -51,8 +51,9 @@ def bigp4k():
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     bigtime = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(bigtime)
-    entry = f'{bigauth} - {bigalbum} ({date.strftime("%d %b %Y")})'
-    outputlist.append((entry, date))
+    entry = f"{bigauth} - {bigalbum}"
+    entrydate = f'{date.strftime("%d %b %Y")}'
+    outputlist.append((entry, entrydate, date))
 
 
 def downloadp4ksoup(index):
@@ -69,8 +70,9 @@ def downloadp4ksoup(index):
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     time = reviewsoup.select(".article-meta .pub-date")[0].getText()
     date = dateparser.parse(time)
-    entry = f"{author} - {album} ({date.strftime('%d %b %Y')})"
-    outputlist.append((entry, date))
+    entry = f"{author} - {album}"
+    entrydate = f'{date.strftime("%d %b %Y")}'
+    outputlist.append((entry, entrydate, date))
 
 
 def dlnd(index):
@@ -86,8 +88,9 @@ def dlnd(index):
     reviewsoup = BeautifulSoup(reviewpage.text, "lxml")
     time = reviewsoup.select(".entry-header-date-link")[0].getText()
     date = dateparser.parse(time)
-    entry = f"{albumline} ({date.strftime('%d %b %Y')})"
-    outputlist.append((entry, date))
+    entry = f"{albumline}"
+    entrydate = f'{date.strftime("%d %b %Y")}'
+    outputlist.append((entry, entrydate, date))
 
 
 threads = []
@@ -104,5 +107,7 @@ for i in range(0, 7):
     downloadthread.start()
 [item.join() for item in threads]
 print("")
-[print(item) for (item, date) in sorted(
-    outputlist, key=lambda x: x[1], reverse=1)]
+[
+    print(f"{item:<65} {entrydate:>10}")
+    for (item, entrydate, date) in sorted(outputlist, key=lambda x: x[2], reverse=1)
+]
