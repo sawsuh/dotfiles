@@ -160,7 +160,7 @@ super + shift + {m,n}
 	pactl -- set-sink-volume 1 {+3%,-3%}
 
 # mute
-super + shift + n
+super + alt + m
 	pactl set-sink-mute 1 toggle
 
 # bar notification toggle
