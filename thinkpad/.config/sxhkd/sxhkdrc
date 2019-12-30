@@ -25,6 +25,10 @@ super + Return
 super + p
 	rofi-pass
 
+# start music player
+super + r; s
+	spotify
+
 # start file browser
 super + r; f
 	bash ~/.scripts/files.sh
