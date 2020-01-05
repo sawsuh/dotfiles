@@ -13,7 +13,10 @@ fileremover directory days = do
 	files <- listDirectory "." -- list of files
 	times <- mapM getModificationTime files -- list of file modification times
 	ctime <- getCurrentTime -- current time
-	mapM_ removePathForcibly $ filestoremove files times ctime days -- removes files using helper function
+	mapM_ ( \x -> do
+		putStrLn $ "removed " ++ x -- output the name 
+		removePathForcibly x -- remove 
+		) $ filestoremove files times ctime days -- removes files using helper function
 
 -- works out what files to remove by getting the ones that were modified more than a given number of seconds/days ago (86400 seconds in a day) 
 filestoremove :: [FilePath] -> [UTCTime] -> UTCTime -> Integer -> [FilePath]
