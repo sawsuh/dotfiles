@@ -3,8 +3,7 @@ import Data.Time.Clock
 import System.Environment
 
 main = do 
-	[directory, ndays] <- getArgs
-	fileremover directory (read ndays :: Integer)
+	fileremover "/home/prash/Downloads" 1
 
 -- removes files from a directory given a number of days using helper function filestoremove to filter list of files to which files to remove
 fileremover :: String -> Integer -> IO ()

@@ -3,4 +3,4 @@ Description=Backup of my apache website
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /home/prashant/.scripts/dlcleaner.sh
+ExecStart=/home/prashant/.hscripts/cleaner
