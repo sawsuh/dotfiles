@@ -1,6 +1,6 @@
 import subprocess as sp
 import re
-
+import psutil
 
 class bar:
     def __init__(self, name, monitor):
@@ -8,15 +8,13 @@ class bar:
         self.monitor = monitor
 
     def barpid(self):
-        pgrep = sp.run(["pgrep", "-a", "polybar"],
-                       stdout=sp.PIPE)  # grep polybar pids
-        processes = pgrep.stdout.decode("utf-8")  # get output
-        matchstring = re.compile(f"([0-9]+).+{str(self.name)}")
-        if matchstring.search(processes):
-            barline = matchstring.search(processes).group(
-                1
-            )  # find line corresponding to our bar
-            return barline  # get pid
+        for pid in psutil.pids():
+            try:
+                if psutil.Process(pid).cmdline()[1] == self.name:
+                    return pid
+            except IndexError:
+                continue
+        return False
 
     def barvisible(self):
         if not self.barpid():
@@ -29,14 +27,14 @@ class bar:
     def barunmap(self):
         if not self.barpid():
             return False
-        sp.run(["polybar-msg", "-p", self.barpid(), "cmd", "hide"])
+        sp.run(["polybar-msg", "-p", str(self.barpid()), "cmd", "hide"])
         sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "10"])
 
     def barmap(self):
         if not self.barpid():
             return False
         sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "80"])
-        sp.run(["polybar-msg", "-p", self.barpid(), "cmd", "show"])
+        sp.run(["polybar-msg", "-p", str(self.barpid()), "cmd", "show"])
 
     def barspawn(self):
         sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "80"])
