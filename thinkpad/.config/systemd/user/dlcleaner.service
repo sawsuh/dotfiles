@@ -3,4 +3,4 @@ Description=Cleans downloads
 
 [Service]
 Type=oneshot
-ExecStart=/home/prash/.hscripts/cleaner
+ExecStart=/bin/bash /home/prash/.scripts/dlcleaner.sh
