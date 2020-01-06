@@ -1,4 +1,2 @@
 #!/bin/bash
-cd /home/prash/Downloads
-find -maxdepth 1 -mtime +7 | xargs rm -rf
-
+runhaskell /home/prash/.hscripts/cleaner.hs /home/prash/Downloads 7
