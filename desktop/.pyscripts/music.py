@@ -90,10 +90,12 @@ def dlnd(index):
         ".sqs-block .sqs-block-content a")[index].getText()
     reviewlink = ndsoup.select(
         ".sqs-block .sqs-block-content a")[index].get("href")
+    if len(albumline.replace(" ","").replace("\n","")) < 5:
+        return False
     try:
         reviewpage = requests.get(reviewlink)
     except requests.exceptions.RequestException:
-        print("{albumline} failed")
+        print(f"{albumline} failed")
         return False
     if reviewsoup:= BeautifulSoup(reviewpage.text, "lxml").select(
             ".entry-header-date-link"
