@@ -38,6 +38,8 @@ super + r; b
 	firefox
 super + r; shift + b
 	chromium
+super + r; ctrl + b
+	chromium --incognito # ;)
 
 # make sxhkd reload its configuration files:
 super + Escape
