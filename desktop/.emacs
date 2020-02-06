@@ -22,7 +22,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auctex-latexmk haskell-mode org latex-extra yasnippet-snippets yasnippet))))
+    (haskell-modeell- auctex-latexmk haskell-mode org latex-extra yasnippet-snippets yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
