@@ -14,12 +14,15 @@
 (setq TeX-PDF-mode t)
 (setq TeX-parse-self t)
 (setq TeX-auto-save t)
+(setq org-enforce-todo-dependencies 1)
+(global-set-key "\C-ca" 'org-agenda)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files nil)
  '(package-selected-packages
    (quote
     (haskell-modeell- auctex-latexmk haskell-mode org latex-extra yasnippet-snippets yasnippet))))
