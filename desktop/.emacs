@@ -14,6 +14,7 @@
 (setq TeX-PDF-mode t)
 (setq TeX-parse-self t)
 (setq TeX-auto-save t)
+(setq-default left-margin-width 8 right-margin-width 8)
 (setq org-enforce-todo-dependencies 1)
 (global-set-key "\C-ca" 'org-agenda)
 
@@ -22,6 +23,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(line-spacing 10)
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
