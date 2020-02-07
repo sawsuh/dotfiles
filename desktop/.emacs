@@ -17,6 +17,7 @@
 (setq-default left-margin-width 8 right-margin-width 8)
 (setq org-enforce-todo-dependencies 1)
 (global-set-key "\C-ca" 'org-agenda)
+(tool-bar-mode -1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
