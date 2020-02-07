@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: [
+# key: sqb
+# --
+\left[ $1 \right] $0

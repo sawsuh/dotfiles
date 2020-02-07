@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: {
+# key: cub
+# --
+\left\{ $1 \right\} $0
