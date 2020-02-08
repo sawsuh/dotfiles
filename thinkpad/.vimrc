@@ -31,10 +31,13 @@ augroup MyIMAPs
     au VimEnter * call IMAP('``I','\int_{<+bot+>}^{<+top+>} \! <+func+> \, \mathrm{d}<+var+> <++>','tex')
     au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 augroup END 
-nnoremap <C-B> :sp <bar> :term python % <CR>
-nnoremap <C-w> :Goyo <CR>
 nnoremap <C-W> :bd!<CR>
+nnoremap <C-s> :Goyo <CR>
 autocmd VimEnter * ALEDisable
+
+autocmd FileType python nnoremap ,t :!python % 
+autocmd FileType haskell nnoremap ,t :!runhaskell % 
+
 au VimEnter * hi NonText ctermfg=7
 au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
