@@ -36,6 +36,7 @@ nnoremap <C-w> :Goyo <CR>
 nnoremap <C-W> :bd!<CR>
 autocmd VimEnter * ALEDisable
 au VimEnter * hi NonText ctermfg=7
+au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 set laststatus=0 ruler
 set list lcs=tab:>\ 
