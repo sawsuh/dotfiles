@@ -37,7 +37,6 @@ bspc rule -a Steam:"Friends List" state=floating
 bspc rule -a polybar layer=above
 bspc rule -a "dotnet" state=floating
 bspc rule -a "Nm-connection-editor" state=floating
-bspc rule -a Emacs:emacs state=tiled
 
 redshift -l -35.3:149&
 xsetroot -cursor_name left_ptr&
