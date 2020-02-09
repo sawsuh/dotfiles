@@ -125,4 +125,4 @@ for i in range(0, 7):
 [item.join() for item in threads]
 print("")
 for (item, entrydate, date) in sorted(outputlist, key=lambda x: x[2], reverse=1):
-    print(f"{item:<65} {entrydate:>10}")
+    print(f"{item:<75} {entrydate:>10}")
