@@ -24,6 +24,8 @@ super + Return
 # password manager
 super + p
 	rofi-pass
+super + r; p
+	rofi-pass
 
 # start music player
 super + r; s
