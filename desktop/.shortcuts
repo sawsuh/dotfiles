@@ -8,7 +8,7 @@ music: python3 ~/.pyscripts/music.py
 dfu: bash ~/.scripts/dfu.sh 
 restow: stow -R --no-folding -t ~ -d ~/.dots desktop 
 alarm: bash ~/.scripts/alarm.sh
-yi: pacman -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
+yi: yay -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
