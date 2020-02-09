@@ -42,6 +42,9 @@ let g:indentLine_char = '>'
 "augroup END 
 nnoremap <C-W> :bd!<CR>
 nnoremap <C-s> :Goyo <CR>
+
+inoremap jj <Esc>
+
 autocmd VimEnter * ALEDisable
 
 autocmd FileType python nnoremap ,t :!python % 
