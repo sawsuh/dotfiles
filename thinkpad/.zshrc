@@ -7,6 +7,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
+export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
 ZSH_DISABLE_COMPFIX=true
 awk '/--Commands/, /--Files/' .shortcuts | sed '1d;$d' | awk -F": " '{print "alias "$1"=\x27"$2"\x27"}' > ~/.shorttemp
 awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nvim "$2"\""}' >> ~/.shorttemp
@@ -23,3 +24,5 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
