@@ -14,7 +14,7 @@ awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nv
 source ~/.shorttemp
 rm ~/.shorttemp
 export PATH=/home/prashant/.local/bin:$PATH
-task
+#task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 } 
