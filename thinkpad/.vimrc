@@ -40,7 +40,7 @@ let g:indentLine_char = '>'
 "    au VimEnter * call IMAP('``I','\int_{<+bot+>}^{<+top+>} \! <+func+> \, \mathrm{d}<+var+> <++>','tex')
 "    au VimEnter * call IMAP('``l','\lim_{<+var+> \to <+lim+>} <+f+>','tex')
 "augroup END 
-nnoremap <C-W> :bd!<CR>
+nnoremap <C-W> :pc<CR>
 nnoremap <C-s> :Goyo <CR>
 
 inoremap jj <Esc>
