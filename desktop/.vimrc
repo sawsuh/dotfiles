@@ -13,6 +13,7 @@ syntax on
 set breakindent
 set breakindentopt=shift:2
 set encoding=utf-8
+set incsearch
 let maplocalleader=","
 "let g:tex_flavor='latex'
 "let g:livepreview_previewer = 'zathura'
