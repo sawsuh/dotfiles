@@ -6,6 +6,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
+Plug 'bfredl/nvim-miniyank'
 call plug#end()
 filetype plugin on
 filetype indent on
@@ -39,3 +40,9 @@ au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 set laststatus=0 ruler
 set list lcs=tab:>\ 
+
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+map n <Plug>(miniyank-cycle)
+map N <Plug>(miniyank-cycleback)
+
