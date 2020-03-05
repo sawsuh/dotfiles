@@ -3,6 +3,7 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
@@ -26,7 +27,8 @@ let g:goyo_width = 100
 let g:ale_fixers = { 'python' : ['black', 'autopep8']}
 let g:indentLine_color_term = 7
 let g:indentLine_char = '>'
-nnoremap <C-s> :Goyo <CR>
+let g:limelight_conceal_ctermfg = 7
+nnoremap <C-s> :Goyo <bar> :Limelight!! <CR>
 
 inoremap jj <Esc>
 
