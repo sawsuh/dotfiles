@@ -16,6 +16,9 @@ set breakindent
 set breakindentopt=shift:2
 set encoding=utf-8
 set incsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
 let maplocalleader=","
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_general_options = ''
@@ -28,14 +31,15 @@ let g:ale_fixers = { 'python' : ['black', 'autopep8']}
 let g:indentLine_color_term = 7
 let g:indentLine_char = '>'
 let g:limelight_conceal_ctermfg = 7
-nnoremap <C-s> :Goyo <CR>
+
+nnoremap <C-s> :Goyo <bar> hi NonText ctermfg=7 <bar> hi search ctermbg=8 ctermfg=15 <bar> hi EndOfBuffer ctermfg=0 <CR>
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-inoremap jj <Esc>
-
 autocmd VimEnter * ALEDisable
+
+inoremap jj <Esc>
 
 autocmd FileType python nnoremap ,t :!python % 
 autocmd FileType haskell nnoremap ,t :!runhaskell % 
@@ -50,4 +54,3 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map n <Plug>(miniyank-cycle)
 map N <Plug>(miniyank-cycleback)
-
