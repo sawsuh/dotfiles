@@ -28,7 +28,10 @@ let g:ale_fixers = { 'python' : ['black', 'autopep8']}
 let g:indentLine_color_term = 7
 let g:indentLine_char = '>'
 let g:limelight_conceal_ctermfg = 7
-nnoremap <C-s> :Goyo <bar> :Limelight!! <CR>
+nnoremap <C-s> :Goyo <CR>
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 inoremap jj <Esc>
 
