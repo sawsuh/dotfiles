@@ -54,3 +54,5 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map <C-n> <Plug>(miniyank-cycle)
 map <C-N> <Plug>(miniyank-cycleback)
+
+autocmd VimEnter * execute "normal \<C-s>"
