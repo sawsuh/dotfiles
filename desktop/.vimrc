@@ -52,5 +52,5 @@ set list lcs=tab:>\
 
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
-map <C-n> <Plug>(miniyank-cycle)
-map <C-N> <Plug>(miniyank-cycleback)
+map ,n <Plug>(miniyank-cycle)
+map ,N <Plug>(miniyank-cycleback)
