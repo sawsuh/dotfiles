@@ -1,4 +1,8 @@
 _rofi () {
     rofi -theme rofi-theme "$@"
 }
-default_do='typePass'
+URL_field='url'
+USERNAME_field='user'
+AUTOTYPE_field='autotype'
+default_autotype='user :tab pass'
+default_do='autotype'
