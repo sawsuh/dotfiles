@@ -2,7 +2,7 @@ _rofi () {
     rofi -theme rofi-theme "$@"
 }
 URL_field='url'
-USERNAME_field='user'
+USERNAME_field='username'
 AUTOTYPE_field='autotype'
-default_autotype='user :tab pass'
+default_autotype='username :tab pass'
 default_do='autotype'
