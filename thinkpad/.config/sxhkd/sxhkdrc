@@ -150,17 +150,17 @@ super + w: c
 #
 
 # move window
-super + a: {h,l,k,j}:
+super + shift + a: {h,l,k,j}:
     xdo move {-x -50,-x +50,-y -50,-y +50}
-super + a: shift + {h,l,k,j}:
+super + shift + a: shift + {h,l,k,j}:
     xdo move {-x -10,-x +10,-y -10,-y +10}
 
 # expand a window by moving one of its side outward
-super + shift + a: {h,j,k,l}
+super + a: {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + shift + a: shift + {h,j,k,l}
+super + a: shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # take a screenshot
