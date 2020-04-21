@@ -133,6 +133,10 @@ super + {1-9,0}
 super + s; super + {h,j,k,l}
 	bspc node --to-node {west,south,north,east}
 
+# rotate current node
+super + s; {m,n}
+	bspc node @/ -R {90,-90}
+
 #
 # preselect
 #

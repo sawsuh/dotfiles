@@ -97,6 +97,10 @@ super + s: {_, shift + } {h,j,k,l}
 super + s: super + {h,j,k,l}
 	bspc node --to-node {west,south,north,east}
 
+# rotate the current node
+super + s: {m, n}
+	bspc node @/ -R {90, -90}
+
 # cycle the focused desktop mode
 super + m 
 	bspc desktop focused --layout next
