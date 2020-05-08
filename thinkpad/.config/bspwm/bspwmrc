@@ -1,6 +1,6 @@
 #! /bin/sh
 nitrogen --restore&
-compton --config /home/prash/.compton.conf&
+picom --config /home/prash/.compton.conf&
 xrdb ~/.Xresources&
 dunst&
 
