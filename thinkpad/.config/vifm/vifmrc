@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=vim
+set vicmd=nvim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -275,6 +275,11 @@ filetype *.sha512
 filetype *.asc
        \ {Check signature}
        \ !!gpg --verify %c,
+
+" LaTeX file
+filetype *.tex
+       \ {Open with nvim}
+       \ urxvt -name tile -e nvim %f,
 
 " Torrent
 filetype *.torrent ktorrent %f &
