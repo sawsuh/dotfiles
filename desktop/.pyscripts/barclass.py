@@ -28,14 +28,14 @@ class bar:
         if not self.barpid():
             return False
         sp.run(["polybar-msg", "-p", str(self.barpid()), "cmd", "hide"])
-        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "10"])
+        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "0"])
 
     def barmap(self):
         if not self.barpid():
             return False
-        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "80"])
+        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "70"])
         sp.run(["polybar-msg", "-p", str(self.barpid()), "cmd", "show"])
 
     def barspawn(self):
-        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "80"])
+        sp.run(["bspc", "config", "-m", str(self.monitor), "bottom_padding", "70"])
         sp.Popen(["polybar", str(self.name)])
