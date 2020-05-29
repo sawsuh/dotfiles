@@ -281,6 +281,11 @@ filetype *.tex
        \ {Open with nvim}
        \ urxvt -name tile -e nvim %f,
 
+" R file
+filetype *.R
+       \ {Open with RStudio}
+       \ rstudio-bin %f,
+
 " Torrent
 filetype *.torrent ktorrent %f &
 fileviewer *.torrent dumptorrent -v %c
