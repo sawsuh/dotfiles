@@ -166,6 +166,11 @@ super + a: {h,j,k,l}
 super + a: shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# resize a window based on a rectangle
+super + a: w
+	wmctrl -r :ACTIVE: -e "$(slop -f 0,%x,%y,%w,%h)"
+
+
 # take a screenshot
 super + alt + c
 	bash ~/.scripts/scr.sh
