@@ -24,7 +24,7 @@ for line in data:
     album = f'{artist} - {title}'
     clean.append((f"{album:<80} {entrydate}", date))
 
-for item, date in sorted(clean, key=lambda x: x[1], reverse=True):
+for item, date in sorted(clean, key=lambda x: x[1], reverse=False):
     print(item)
 
 os.remove("~/.music.json")
