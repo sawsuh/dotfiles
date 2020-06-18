@@ -10,7 +10,7 @@
 
 # terminal emulator
 super + r; z
-	kitty -name term
+	kitty --name term
 
 super + r; x
 	python3 /home/prash/.pyscripts/pt.py

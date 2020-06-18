@@ -23,8 +23,8 @@ height = int(height) - 8
 topx = int(topx)
 topy = int(topy)
 
-sp.Popen(["urxvt", "-name", "float"])
-time.sleep(0.250)
+sp.Popen(["kitty", "--name", "float"])
+time.sleep(0.450)
 
 disp = Xlib.display.Display()
 win = disp.get_input_focus().focus
