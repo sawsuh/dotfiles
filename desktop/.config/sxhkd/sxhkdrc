@@ -10,7 +10,7 @@
 
 # terminal emulator
 super + r; z
-	urxvt -name term
+	kitty --name term
 
 super + r; x
 	python3 /home/prashant/.pyscripts/pt.py

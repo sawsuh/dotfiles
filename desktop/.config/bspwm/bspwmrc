@@ -27,11 +27,11 @@ bspc config gapless_monocle	true
 
 bspc rule -a mpv state=floating
 bspc rule -a "*:sxiv" state=floating
-bspc rule -a URxvt:stick state=floating sticky=on center
-bspc rule -a URxvt:stick1 state=floating sticky=on
-bspc rule -a URxvt:stick2 state=floating sticky=on
-bspc rule -a URxvt:float state=floating
-bspc rule -a URxvt:cal state=floating sticky=on
+bspc rule -a "*:stick" state=floating sticky=on center
+bspc rule -a "*:stick1" state=floating sticky=on
+bspc rule -a "*:stick2" state=floating sticky=on
+bspc rule -a "*:float" state=floating
+bspc rule -a "*:cal" state=floating sticky=on
 bspc rule -a Steam:"Friends List" state=floating
 bspc rule -a polybar layer=above
 bspc rule -a "dotnet" state=floating

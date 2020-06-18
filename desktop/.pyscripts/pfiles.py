@@ -11,7 +11,7 @@ def files(x, y):
             "-h",
             "600",
             "-w",
-            "900",
+            "1100",
             "-x",
             str(x),
             "-y",
@@ -19,8 +19,8 @@ def files(x, y):
             "-n",
             "1",
             "-f",
-            "-name stick1 -e vifm",
-            "urxvt",
+            "--name stick1 -e ranger",
+            "kitty",
         ]
     )
 
@@ -32,11 +32,11 @@ right = bar("pop2", "HDMI-A-0")
 
 if xcord > 2560:
     if right.barvisible():
-        files(4202, 752)
+        files(3992, 742)
     else:
-        files(4202, 822)
+        files(3992, 812)
 else:
     if left.barvisible():
-        files(1642, 752)
+        files(1432, 742)
     else:
-        files(1642, 822)
+        files(1432, 812)
