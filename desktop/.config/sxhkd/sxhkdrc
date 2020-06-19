@@ -187,7 +187,7 @@ super + shift + {m,n}
 super + alt + m
 	pactl set-sink-mute 1 toggle
 
-# bar notification toggle
-super + {b,g}
-	python3 ~/.pyscripts/pbarnotif.py {1,2}
+## bar notification toggle
+#super + {b,g}
+#	python3 ~/.pyscripts/pbarnotif.py {1,2}
 

@@ -3,12 +3,14 @@ xrandr --output HDMI-A-0 --right-of DVI-D-1 --mode 2560x1440 --pos 2560x0 --rota
 nitrogen --restore&
 picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
+polybar bar1&
+polybar bar2&
 dunst&
 
 bspc monitor DVI-D-1 -d one two three four five
 bspc monitor HDMI-A-0 -d six seven eight nine ten
 bspc config top_padding        0
-bspc config bottom_padding     0
+bspc config bottom_padding     70
 bspc config left_padding       0
 bspc config right_padding      0
 bspc config border_width         4
@@ -33,7 +35,7 @@ bspc rule -a "*:stick2" state=floating sticky=on
 bspc rule -a "*:float" state=floating
 bspc rule -a "*:cal" state=floating sticky=on
 bspc rule -a Steam:"Friends List" state=floating
-bspc rule -a polybar layer=above
+#bspc rule -a polybar layer=above
 bspc rule -a "dotnet" state=floating
 
 redshift -l -35.3:149&
