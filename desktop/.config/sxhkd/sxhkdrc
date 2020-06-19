@@ -33,7 +33,7 @@ super + r; s
 
 # start file browser
 super + r; f
-	python3 ~/.pyscripts/pfiles.py
+	bash ~/.scripts/tfiles.sh
 
 # start web browser
 super + r; b

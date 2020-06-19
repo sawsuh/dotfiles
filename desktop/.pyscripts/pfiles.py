@@ -3,7 +3,7 @@ import subprocess as sp
 import pyautogui
 
 
-def files(x, y):
+def files(x):
     sp.run(
         [
             "tdrop",
@@ -15,7 +15,7 @@ def files(x, y):
             "-x",
             str(x),
             "-y",
-            str(y),
+            "742",
             "-n",
             "1",
             "-f",
@@ -27,16 +27,7 @@ def files(x, y):
 
 xcord = int(pyautogui.position()[0])
 
-left = bar("pop1", "DVI-D-1")
-right = bar("pop2", "HDMI-A-0")
-
 if xcord > 2560:
-    if right.barvisible():
-        files(3992, 742)
-    else:
-        files(3992, 812)
+    files(3992)
 else:
-    if left.barvisible():
-        files(1432, 742)
-    else:
-        files(1432, 812)
+    files(1432)
