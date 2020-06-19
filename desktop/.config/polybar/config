@@ -19,10 +19,10 @@ width = 2560
 offset-y = 0
 background = ${colors.my_background}
 foreground =  ${colors.my_foreground}
-font-0 = Fira Code:size=15
-font-1 = font-logos:size=18
+font-0 = Fira Code:size=16
+font-1 = Icons:size=18
+font-2 = font-logos:size=18
 modules-left = bspwm
-modules-right = audio
 border-top-size = 4
 border-top-color = ${colors.my_overline}
 enable-ipc = true
@@ -31,21 +31,25 @@ enable-ipc = true
 inherit = section/bars
 monitor = DVI-D-1
 modules-center = date2
+modules-right = audio
 
 [bar/pop2]
 monitor = HDMI-A-0
 inherit = section/bars
 modules-center = date2
+modules-right = audio
 
 [bar/bar1]
 monitor = DVI-D-1
 inherit = section/bars
 modules-center = date2
+modules-right = packages
 
 [bar/bar2]
 monitor = HDMI-A-0
 inherit = section/bars
 modules-center = window
+modules-right = audio
 
 [module/date2]
 type = custom/script
@@ -76,3 +80,11 @@ label-volume-padding = 2
 type = internal/xwindow
 format = <label>
 label = %title%
+
+[module/packages]
+type = custom/script
+exec = "yay -Qu | wc -l"
+interval 900
+format-padding = 2
+format = <label>
+label = %output% 
