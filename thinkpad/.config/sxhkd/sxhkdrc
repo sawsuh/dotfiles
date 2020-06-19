@@ -13,7 +13,7 @@ super + r; z
 	kitty -name term
 
 super + r; x
-	python3 /home/prash/.pyscripts/pt.py
+	bash /home/prash/.scripts/term.sh
 
 # program launcher
 super + r; Return
