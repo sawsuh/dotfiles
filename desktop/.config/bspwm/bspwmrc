@@ -6,6 +6,7 @@ xrdb ~/.Xresources&
 polybar bar1&
 polybar bar2&
 dunst&
+wal -R -n
 
 bspc monitor DVI-D-1 -d one two three four five
 bspc monitor HDMI-A-0 -d six seven eight nine ten

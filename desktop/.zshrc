@@ -27,3 +27,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh 
+
+(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences
+source ~/.cache/wal/colors-tty.sh
