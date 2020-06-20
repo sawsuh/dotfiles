@@ -7,10 +7,10 @@
 
 
 [colors]
-my_background 	= #202020
-my_foreground 	= #eee4e5
-my_color0	= #202020
-my_overline 	= #42423d
+my_background 	= ${xrdb:color0:#222}
+my_foreground 	= ${xrdb:color7:#222}
+my_color0	= ${xrdb:color0:#222}
+my_overline 	= ${xrdb:color2:#222}
 
 [section/bars]
 bottom = true
