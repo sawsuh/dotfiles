@@ -18,7 +18,6 @@ export PATH=/home/prashant/.local/bin:$PATH
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 } 
-bindkey -v 
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
