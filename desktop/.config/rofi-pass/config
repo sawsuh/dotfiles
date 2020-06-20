@@ -1,5 +1,5 @@
 _rofi () {
-    rofi -theme rofi-theme "$@"
+    rofi -theme "~/.cache/wal/colors-rofi-dark" "$@"
 }
 URL_field='url'
 USERNAME_field='username'
