@@ -8,6 +8,7 @@
     red:                         #f15d22;
     orange:                      #faa41a; 
     blue:                        #48b9c7; 
+    inactive-color:              #787376;
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -30,40 +31,23 @@
     text-color: @foreground;
     background-color: @background;
     padding:    60px;
-    border-color:                #42423d;
+    border-color:                @border-color;
     font: "Fira Code 12";
-    fullscreen: "True";
 }
-#mainbox {
-    border:  0;
-    padding: 0px;
-}
-/*#message {
-    border:     1px dash 0px 0px ;
-    text-color: @separatorcolor;
-    padding:    0px 0px 0px ;
-}*/
-
 #listview {
-    border:       0px 0px 0px ;
-    padding:      0px 0px 0px ;
     font: "Fira Code 12";
-    text-color: @foreground;
-    dynamic: "True";
-    lines: 1;
+    lines: 5;
 }
 #element {
-    border: 0;
     padding:	30px 30px 30px;
-    highlight:  none;
+    highlight:  bold;
     font: "Fira Code 12";
+    text-color: @inactive-color;
 }
 
 #element.selected {
-    text-color: @normal-foreground;
+    text-color: @text-color;
     background-color: @normal-background;
-    font: "Fira Code Bold 12";
-    highlight: bold;
 }
 
 #inputbar {

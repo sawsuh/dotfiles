@@ -19,12 +19,16 @@ export PATH=/home/prash/.local/bin:$PATH
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
-#bindkey -v
-autoload -U history-search-end
+
+bindkey -v
+autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+
+bindkey -M vicmd '^[OA' history-beginning-search-backward-end \
+                 '^[OB' history-beginning-search-forward-end
+bindkey -M viins '^[OA' history-beginning-search-backward-end \
+                 '^[OB' history-beginning-search-forward-end
 bindkey -M viins 'jj' vi-cmd-mode
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
