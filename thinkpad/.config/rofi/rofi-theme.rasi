@@ -61,6 +61,6 @@
     expand:     false;
     str:        ">";
     margin:     0px 0.8em 0em 0em ;
-    text-color: #c8e5d5;
+    text-color: #89d0ba;
     font: "Fira Code Bold 12";
 }
