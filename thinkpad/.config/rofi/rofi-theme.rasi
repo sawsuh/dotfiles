@@ -2,13 +2,13 @@
  * Author: Primetoxinz
  */
 * {
-    text-color:                  #eee4e5;
-    background-color:            #202020;
+    text-color:                  #d8dee8;
+    background-color:            #2f343f;
     lightbg:                     #534c48;
     red:                         #f15d22;
     orange:                      #faa41a; 
     blue:                        #48b9c7; 
-    inactive-color:              #787376;
+    inactive-color:              #7191b1;
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -16,7 +16,7 @@
     urgent-foreground:           @foreground;
     active-foreground:           @foreground;
     selected-active-foreground:  @foreground;
-    border-color:                #42423d;
+    border-color:                #4b5262;
     normal-background:           @background;
     selected-normal-background:  @background;
     separatorcolor:              @orange;
@@ -61,6 +61,6 @@
     expand:     false;
     str:        ">";
     margin:     0px 0.8em 0em 0em ;
-    text-color: #c8e5d5;
+    text-color: #89d0ba;
     font: "Fira Code Bold 12";
 }

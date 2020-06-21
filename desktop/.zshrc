@@ -27,6 +27,7 @@ bindkey -M vicmd '^[OA' history-beginning-search-backward-end \
                  '^[OB' history-beginning-search-forward-end
 bindkey -M viins '^[OA' history-beginning-search-backward-end \
                  '^[OB' history-beginning-search-forward-end
+bindkey -M viins 'jj' vi-cmd-mode
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh 

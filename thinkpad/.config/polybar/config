@@ -7,10 +7,10 @@
 
 
 [colors]
-my_background 	= #202020
-my_foreground 	= #eee4e5
-my_color0	= #202020
-my_underline 	= #42423d
+my_background 	= #2f343f
+my_foreground 	= #d8dee8
+my_color0	= #2f343f
+my_underline 	= #4b5262
 
 [bar/barski]
 bottom = false
