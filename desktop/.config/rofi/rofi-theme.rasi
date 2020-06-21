@@ -8,7 +8,8 @@
     red:                         #f15d22;
     orange:                      #faa41a; 
     blue:                        #48b9c7; 
-    inactive-color:               #7191b1;
+    inactive-color:              #7191b1;
+
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -33,17 +34,14 @@
     padding:    70px;
     border-color:                @border-color;
     font: "Fira Code 16";
-    fullscreen: "True";
 }
-
 #listview {
     font: "Fira Code 16";
     lines: 5;
 }
 #element {
-    border: 0;
     padding:	40px 40px 40px;
-    highlight:  none;
+    highlight:  bold;
     font: "Fira Code 16";
     text-color: @inactive-color;
 }
