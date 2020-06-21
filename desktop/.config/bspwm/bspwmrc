@@ -25,7 +25,7 @@ bspc config click_to_focus 	button1
 bspc config focus_follows_pointer	true
 bspc config pointer_follows_focus	true
 bspc config pointer_follows_monitor	true
-bspc config borderless_monocle	true
+bspc config borderless_monocle	false
 bspc config gapless_monocle	true
 
 bspc rule -a mpv state=floating
