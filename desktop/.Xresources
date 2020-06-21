@@ -1,6 +1,6 @@
 ! special
-URxvt.foreground:   #eee4e5
-URxvt.background:   #202020
+*.foreground:   #d8dee8
+*.background:   #2f343f
 URxvt.cursorColor:  #eee4e5
 
 ! black
@@ -51,6 +51,6 @@ URxvt.cursorUnderline: 1
 twobwm.enable_compton: true
 Xft.dpi: 120
 
-Sxiv.background: #202020
-Sxiv.foreground: #eee4e5
+Sxiv.background: #d8dee8
+Sxiv.foreground: #2f343f
 Sxiv.font: Fira Code:size=12
