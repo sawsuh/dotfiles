@@ -19,13 +19,13 @@ map [fullscreen] f toggle_fullscreen
 set statusbar-h-padding 60
 set statusbar-v-padding 50
 
-set inputbar-bg "#202020"
-set inputbar-fg "#eee4e5"
-set statusbar-bg "#202020"
-set statusbar-fg "#eee4e5"
-set default-bg "#202020"
-set default-fg "#eee4e5"
-set notification-bg "#202020"
-set notification-fg "#eee4e5"
+set inputbar-bg "#2f343f"
+set inputbar-fg "#d8dee8"
+set statusbar-bg "#2f343f"
+set statusbar-fg "#d8dee8"
+set default-bg "#2f343f"
+set default-fg "#d8dee8"
+set notification-bg "#2f343f"
+set notification-fg "#d8dee8"
 
 set font "Fira Code 12"
