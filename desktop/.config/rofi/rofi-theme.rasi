@@ -3,7 +3,7 @@
  */
 * {
     text-color:                  #ebdbb2;
-    background-color:            #32302f;
+    background-color:            #282828;
     lightbg:                     #534c48;
     red:                         #f15d22;
     orange:                      #faa41a; 
@@ -17,7 +17,7 @@
     urgent-foreground:           @foreground;
     active-foreground:           @foreground;
     selected-active-foreground:  @foreground;
-    border-color:                #ebdbb2;
+    border-color:                #a89984;
     normal-background:           @background;
     selected-normal-background:  @background;
     separatorcolor:              @orange;

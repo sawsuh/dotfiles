@@ -52,5 +52,5 @@ twobwm.enable_compton: true
 Xft.dpi: 120
 
 Sxiv.foreground: #ebdbb2
-Sxiv.background: #32302f
+Sxiv.background: #282828
 Sxiv.font: Fira Code:size=12

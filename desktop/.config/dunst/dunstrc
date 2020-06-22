@@ -72,7 +72,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = #32302f
+    separator_color = #282828
 
     # Sort messages by urgency.
     sort = yes
@@ -274,21 +274,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#32302f"
+    background = "#282828"
     foreground = "#ebdbb2"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#32302f"
+    background = "#282828"
     foreground = "#ebdbb2"
     timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#32302f"
+    background = "#282828"
     foreground = "#ebdbb2"
     frame_color = "#ebdbb2"
     timeout = 0
