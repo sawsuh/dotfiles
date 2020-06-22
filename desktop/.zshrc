@@ -8,7 +8,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
-export FZF_DEFAULT_OPTS='--color=16,bg+:8,bg:8,pointer:14,fg+:1,pointer:10'
+export FZF_DEFAULT_OPTS='--color=16,bg+:0,bg:0,fg+:15,pointer:6'
 ZSH_DISABLE_COMPFIX=true
 awk '/--Commands/, /--Files/' .shortcuts | sed '1d;$d' | awk -F": " '{print "alias "$1"=\x27"$2"\x27"}' > ~/.shorttemp
 awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nvim "$2"\""}' >> ~/.shorttemp
