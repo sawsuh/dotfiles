@@ -57,9 +57,7 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = ♪%percentage%
 label-muted = ♪-
-label-muted-background = ${colors.my_color0}
 label-muted-padding = 2
-label-volume-background = ${colors.my_color0}
 label-volume-padding = 2
 
 [module/window]
