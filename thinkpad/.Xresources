@@ -51,6 +51,6 @@ URxvt.cursorUnderline: 1
 twobwm.enable_compton: true
 Xft.dpi: 150
 
-Sxiv.background: #2f343f
-Sxiv.foreground: #d8dee8
+Sxiv.foreground: #ebdbb2
+Sxiv.background: #282828
 Sxiv.font: Fira Code:size=8
