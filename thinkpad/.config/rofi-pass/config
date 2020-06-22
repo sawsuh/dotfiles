@@ -1,5 +1,5 @@
 _rofi () {
-    rofi -theme rofi-theme "$@"
+    rofi -theme rofi-theme -p "" "$@"
 }
 URL_field='url'
 USERNAME_field='username'
