@@ -45,7 +45,7 @@ autocmd FileType python nnoremap ,t :!python %
 autocmd FileType haskell nnoremap ,t :!runhaskell % 
 autocmd FileType sh nnoremap ,t :!bash % 
 
-"au VimEnter * hi NonText ctermfg=7
+au VimEnter * hi NonText ctermfg=8
 au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 set laststatus=0 ruler

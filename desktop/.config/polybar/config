@@ -7,10 +7,9 @@
 
 
 [colors]
-my_background 	= #2f343f
-my_foreground 	= #d8dee8
-my_color0	= #2f343f
-my_overline 	= #4b5262
+my_background 	= #282828
+my_foreground 	= #ebdbb2
+my_overline 	= #928374
 
 [section/bars]
 bottom = true
@@ -47,7 +46,6 @@ format-background = ${colors.my_background}
 
 [module/bspwm]
 type = internal/bspwm
-format-background = ${colors.my_color0} 
 format-padding = 2
 label-focused = >%name%
 label-unfocused = 
@@ -59,9 +57,7 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = ♪%percentage%
 label-muted = ♪-
-label-muted-background = ${colors.my_color0}
 label-muted-padding = 2
-label-volume-background = ${colors.my_color0}
 label-volume-padding = 2
 
 [module/window]

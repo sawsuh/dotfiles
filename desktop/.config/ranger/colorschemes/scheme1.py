@@ -77,7 +77,7 @@ class Default(ColorScheme):
 				fg = green
 
 		elif context.in_statusbar:
-			fg = black
+			fg = 0
 		if context.text:
 			if context.highlight:
 				attr |= bold

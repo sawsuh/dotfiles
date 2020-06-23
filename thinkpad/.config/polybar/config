@@ -7,10 +7,9 @@
 
 
 [colors]
-my_background 	= #2f343f
-my_foreground 	= #d8dee8
-my_color0	= #2f343f
-my_underline 	= #4b5262
+my_background 	= #282828
+my_foreground 	= #ebdbb2
+my_underline 	= #928374
 
 [bar/barski]
 bottom = false
@@ -37,7 +36,6 @@ format-padding = 2
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
-format-background = ${colors.my_color0} 
 format-padding = 2
 label-focused = >%name%
 label-unfocused = 
@@ -49,9 +47,9 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = ♪%percentage%
 label-muted = ♪-
-label-muted-background = ${colors.my_color0}
+label-muted-background = ${colors.my_background}
 label-muted-padding = 2
-label-volume-background = ${colors.my_color0}
+label-volume-background = ${colors.my_background}
 label-volume-padding = 2
 
 [module/xbacklight]
@@ -59,7 +57,7 @@ type = internal/backlight
 card = intel_backlight
 label =  %percentage%
 format = <label>
-label-background = ${colors.my_color0}
+label-background = ${colors.my_background}
 label-padding = 2
 
 [module/battery]
@@ -71,9 +69,9 @@ time-format = %-Ih %Mm
 label-full = 
 label-charging =  %percentage%
 label-discharging =  %percentage% %time%
-label-full-background = ${colors.my_color0}
+label-full-background = ${colors.my_background}
 label-full-padding = 2
-label-charging-background = ${colors.my_color0}
+label-charging-background = ${colors.my_background}
 label-charging-padding = 2
-label-discharging-background = ${colors.my_color0}
+label-discharging-background = ${colors.my_background}
 label-discharging-padding = 2
