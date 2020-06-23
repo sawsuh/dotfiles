@@ -123,7 +123,7 @@ workspace $ws10 output HDMI-A-1
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Control+r reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -157,6 +157,8 @@ workspace $ws10 output HDMI-A-1
     # Switch to workspace
     bindsym $mod+v workspace next
     bindsym $mod+c workspace prev
+    bindsym $mod+Shift+v move container to workspace next
+    bindsym $mod+Shift+c move container to workspace prev
     bindsym $mod+1 workspace $ws1
     bindsym $mod+2 workspace $ws2
     bindsym $mod+3 workspace $ws3
@@ -187,7 +189,7 @@ workspace $ws10 output HDMI-A-1
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+b splith
-    bindsym $mod+Shift+v splitv
+    bindsym $mod+Control+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
