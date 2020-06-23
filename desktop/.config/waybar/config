@@ -1,0 +1,62 @@
+[ 
+{
+    "output": "HDMI-A-1",
+    "height": 70,
+    "width": 1440,
+    "position": "bottom",
+    "modules-left": ["custom/updates"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["sway/workspaces"],
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "format": ">{name}",
+         "current-only": true
+     },
+     "custom/updates": {
+        "format": " {} packages",
+        "interval": 900,
+        "exec": "yay -Qu | wc -l"
+    }
+}
+, 
+{
+    "output": "DVI-D-1",
+    "height": 70,
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio"],
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "format": ">{name}",
+         "current-only": true
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%Y-%m-%d} ",
+        "format": " {:%a %Od/%Om %OI %M %p} "
+    },
+    "pulseaudio": {
+        "format": " {volume}% {icon} {format_source} ",
+        "format-bluetooth": " {volume}% {icon} {format_source} ",
+        "format-bluetooth-muted": " {icon} {format_source} ",
+        "format-muted": " {format_source} ",
+        "format-source": " {volume}%  ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }} 
+]
