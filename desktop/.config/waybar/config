@@ -13,6 +13,11 @@
          "format": ">{name}",
          "current-only": true
      },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%Y-%m-%d} ",
+        "format": " {:%a %Od/%Om %OI %M %p} "
+    },
     "sway/mode": {
         "format": "- {} " 
     },
@@ -38,11 +43,6 @@
      },
     "sway/mode": {
         "format": "- {} " 
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%Y-%m-%d} ",
-        "format": " {:%a %Od/%Om %OI %M %p} "
     },
     "pulseaudio": {
         "format": " {volume}% {icon} {format_source} ",
