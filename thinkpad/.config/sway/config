@@ -21,6 +21,8 @@ set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=1
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13 --class stick1 -e ranger
 set $pass wofipassmenu
+set $fullshot exec grim
+set $partshot exec grim -g "$(slurp -b 28282888 -s ebdbb288)"
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -243,6 +245,8 @@ mode "launch" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "launch"
+bindsym $mod+c $fullshot
+bindsym $mod+Alt+c $partshot
 #
 # Status Bar:
 #
