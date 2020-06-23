@@ -20,6 +20,7 @@ set $right l
 set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13 --class stick1 -e ranger
+set $pass wofipassmenu
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -105,6 +106,7 @@ for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500;
 
     # Start your launcher
     bindsym $mod+Return exec $menu
+    bindsym $mod+p exec $pass
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -235,6 +237,7 @@ mode "launch" {
     bindsym b exec $browser
     bindsym d exec $menu
     bindsym f exec $files
+    bindsym p exec $pass
     bindsym q kill
     bindsym Return mode "default"
     bindsym Escape mode "default"
