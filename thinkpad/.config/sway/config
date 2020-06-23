@@ -17,9 +17,9 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term KITTY_WAYLAND_ENABLE=1 kitty -o font_size=13
+set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
-set $files KITTY_WAYLAND_ENABLE=1 kitty -o font_size=13 --class stick1 -e ranger
+set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13 --class stick1 -e ranger
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -235,6 +235,7 @@ mode "launch" {
     bindsym b exec $browser
     bindsym d exec $menu
     bindsym f exec $files
+    bindsym q kill
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
