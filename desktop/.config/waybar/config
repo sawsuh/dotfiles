@@ -4,9 +4,9 @@
     "height": 70,
     "width": 1440,
     "position": "bottom",
-    "modules-left": ["custom/updates"],
+    "modules-right": ["custom/updates"],
     "modules-center": ["sway/window"],
-    "modules-right": ["sway/workspaces"],
+    "modules-left": ["sway/workspaces"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
@@ -24,9 +24,9 @@
     "output": "DVI-D-1",
     "height": 70,
     "position": "bottom",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio"],
+    "modules-left": ["pulseaudio"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,

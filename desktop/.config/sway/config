@@ -21,8 +21,8 @@ set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=1
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=16 --class stick1 -e ranger
 set $pass wofipassmenu
-set $fullshot exec grim
-set $partshot exec grim -g "$(slurp -b 28282888 -s ebdbb288)"
+set $fullshot exec bash /home/prashant/.scripts/swayscr.sh
+set $partshot exec bash /home/prashant/.scripts/swayscrrect.sh
 
 set $ws1 "1:one"
 set $ws2 "2:two"

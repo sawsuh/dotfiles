@@ -1,4 +1,4 @@
-filename=$(date +'%y-%-m-%-d_%-R')
+filename=$(date +'%y-%-m-%-d_%-H')
 maim -sul -b 0 -c 0.25882352941176473,0.25882352941176473,0.23921568627450981,0.5 $filename.png
 sleep 1;
 dunstify "screenshot taken"
