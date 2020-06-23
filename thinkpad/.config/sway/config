@@ -250,4 +250,5 @@ bar {
 
 include /etc/sway/config.d/*
 exec xrdb /home/prash/.Xresources 
+exec mako
 
