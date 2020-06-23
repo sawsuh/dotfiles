@@ -19,7 +19,7 @@ set $right l
 # Your preferred terminal emulator
 set $term KITTY_WAYLAND_ENABLE=1 kitty -o font_size=13
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
-set $files bash /home/prash/.scripts/files.sh 
+set $files KITTY_WAYLAND_ENABLE=1 kitty -o font_size=13 --class stick1 -e ranger
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -34,7 +34,7 @@ set $ws10 "10:ten"
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -W 500 -L 5 --show run
+set $menu wofi -L 5
 gaps inner 20
 gaps outer 10
 smart_gaps on
@@ -57,8 +57,7 @@ output * bg /home/prash/.walls/wallhaven-39q8k6.jpg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 resolution 1920x1080 position 0,0
 output eDP-1 scale 1
-for_window [class=".*"] floating enable
-for_window [class=".*"] sticky enable
+for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500; move down 255; move right 525
 
 ### Idle configuration
 #
@@ -84,7 +83,13 @@ for_window [class=".*"] sticky enable
 #       natural_scroll enabled
 #       middle_emulation enabled
 #   }
-#
+#   
+    input type:touchpad {
+        natural_scroll enabled
+        tap enabled
+        middle_emulation disabled
+    }
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 

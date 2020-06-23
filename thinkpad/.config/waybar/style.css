@@ -1,0 +1,37 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Fira Code, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    min-height: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+window#waybar {
+    background: rgba(40,40,40,1);
+    border-bottom: 3px solid rgba(146,131,116,1);
+    color: #ebdbb2;
+}
+
+#workspaces button {
+}
+
+#workspaces button.focused {
+    color: #ebdbb2;
+}
+
+#mode, #clock, #battery {
+}
+
+#mode {
+}
+
+#clock {
+}
+
+#battery {
+}
+
+#battery.charging {
+}

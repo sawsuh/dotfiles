@@ -1,0 +1,27 @@
+#window {
+    background-color: #282828;
+    color: #ebdbb2;
+    padding: 30px;
+    font: Fira Code 18;
+}
+#input{
+    background-color: #282828;
+    color: #ebdbb2;
+    padding: 30px;
+    border: 0px solid #282828;
+}
+#outer-box{
+    border: 3px solid #a89984;
+    padding: 70px;
+    background-color: #282828;
+}
+#entry{
+    color: #928374;
+    padding: 20px;
+    border: 0px solid #282828;
+}
+#entry:selected{
+    color: #ebdbb2;
+    background-color: #282828;
+    border: 0px solid #282828;
+}
