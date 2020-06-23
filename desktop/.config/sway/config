@@ -21,8 +21,8 @@ set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=1
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=16 --class stick1 -e ranger
 set $pass wofipassmenu
-set $fullshot exec bash /home/prashant/.scripts/swayscr.sh
-set $partshot exec bash /home/prashant/.scripts/swayscrrect.sh
+set $fullshot bash /home/prashant/.scripts/swayscr.sh
+set $partshot bash /home/prashant/.scripts/swayscrrect.sh
 set $lock swaylock
 set $suspend systemctl suspend
 
@@ -259,8 +259,8 @@ mode "launch" {
     bindsym Space mode "default"
 }
 bindsym $mod+r mode "launch"
-bindsym $mod+Control+c $fullshot
-bindsym $mod+Alt+c $partshot
+bindsym $mod+Control+c exec $fullshot
+bindsym $mod+Alt+c exec $partshot
 #
 # Status Bar:
 #
