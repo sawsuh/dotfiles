@@ -237,6 +237,7 @@ mode "resize" {
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym Space mode "default"
 }
 bindsym $mod+a mode "resize"
 mode "launch" {
@@ -248,6 +249,7 @@ mode "launch" {
     bindsym q kill
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym Space mode "default"
 }
 bindsym $mod+r mode "launch"
 bindsym $mod+c $fullshot
