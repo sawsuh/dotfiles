@@ -155,6 +155,8 @@ workspace $ws10 output HDMI-A-1
 # Workspaces:
 #
     # Switch to workspace
+    bindsym $mod+v workspace next
+    bindsym $mod+c workspace prev
     bindsym $mod+1 workspace $ws1
     bindsym $mod+2 workspace $ws2
     bindsym $mod+3 workspace $ws3
@@ -185,7 +187,7 @@ workspace $ws10 output HDMI-A-1
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+Shift+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -252,7 +254,7 @@ mode "launch" {
     bindsym Space mode "default"
 }
 bindsym $mod+r mode "launch"
-bindsym $mod+c $fullshot
+bindsym $mod+Control+c $fullshot
 bindsym $mod+Alt+c $partshot
 #
 # Status Bar:
