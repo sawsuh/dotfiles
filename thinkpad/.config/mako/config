@@ -1,0 +1,9 @@
+max-visible = 1
+anchor = top-right
+font = Fira Code 13
+background-color = #282828ff
+text-color = #ebdbb2ff
+padding = 40
+border-size = 3
+border-color = #a89984ff
+icons = 0
