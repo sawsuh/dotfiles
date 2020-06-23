@@ -25,6 +25,7 @@ set $fullshot bash /home/prash/.scripts/swayscr.sh
 set $partshot bash /home/prash/.scripts/swayscrrect.sh
 set $lock swaylock
 set $suspend systemctl suspend
+set $music spotify
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -248,6 +249,7 @@ mode "launch" {
     bindsym d exec $menu
     bindsym f exec $files
     bindsym p exec $pass
+    bindsym s exec $music
     bindsym q kill
     bindsym Return mode "default"
     bindsym Escape mode "default"
