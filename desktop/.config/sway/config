@@ -65,6 +65,8 @@ output DVI-D-1 bg /home/prashant/.walls/1587340256892.jpg fill
 output DVI-D-1 resolution 2560x1440 position 0,0
 output HDMI-A-1 resolution 2560x1440 position 2560,0
 for_window [app_id="stick1"] floating enable; sticky enable; resize set 1100 700; move down 325; move right 720
+for_window [app_id="mpv"] floating enable
+for_window [app_id="sxiv"] floating enable
 
 ### Idle configuration
 #

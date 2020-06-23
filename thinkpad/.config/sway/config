@@ -64,6 +64,8 @@ output * bg /home/prash/.walls/wallhaven-39q8k6.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
 output eDP-1 scale 1
 for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500; move down 255; move right 525
+for_window [app_id="mpv"] floating enable
+for_window [app_id="sxiv"] floating enable
 
 ### Idle configuration
 #
