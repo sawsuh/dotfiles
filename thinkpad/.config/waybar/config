@@ -15,7 +15,7 @@
          "current-only": true
      },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "- {}"
     },
     "clock": {
         // "timezone": "America/New_York",
