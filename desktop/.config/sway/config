@@ -23,6 +23,8 @@ set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=
 set $pass wofipassmenu
 set $fullshot exec bash /home/prashant/.scripts/swayscr.sh
 set $partshot exec bash /home/prashant/.scripts/swayscrrect.sh
+set $lock swaylock
+set $suspend systemctl suspend
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -67,8 +69,8 @@ for_window [app_id="stick1"] floating enable; sticky enable; resize set 1100 700
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
+exec swayidle -w \
+    timeout 300 'swaylock' 
 #          timeout 600 'swaymsg "output * dpms off"' \
 #               resume 'swaymsg "output * dpms on"' \
 #          before-sleep 'swaylock -f -c 000000'
@@ -105,6 +107,7 @@ workspace $ws10 output HDMI-A-1
 #
 # Basics:
 #
+    bindsym $mod+Alt+Escape exec $suspend
     # Start a terminal
     bindsym $mod+z exec $term
 

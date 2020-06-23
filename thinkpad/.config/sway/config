@@ -21,8 +21,10 @@ set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=1
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13 --class stick1 -e ranger
 set $pass wofipassmenu
-set $fullshot exec grim
-set $partshot exec grim -g "$(slurp -b 28282888 -s ebdbb288)"
+set $fullshot exec bash /home/prash/.scripts/scr.sh
+set $partshot exec bash /home/prash/.scripts/scrrect.sh
+set $lock swaylock
+set $suspend systemctl suspend
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -66,8 +68,8 @@ for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500;
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
+exec swayidle -w \
+         timeout 600 'swaylock' 
 #          timeout 600 'swaymsg "output * dpms off"' \
 #               resume 'swaymsg "output * dpms on"' \
 #          before-sleep 'swaylock -f -c 000000'
@@ -100,6 +102,7 @@ for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500;
 #
 # Basics:
 #
+    bindsym $mod+Alt+Escape exec $suspend
     # Start a terminal
     bindsym $mod+z exec $term
 
