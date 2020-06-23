@@ -8,26 +8,47 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+set $cl_high #ebdbb2
+set $cl_back #928374
+set $cl_urge #d3869b
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
-set $browser firefox
+set $term KITTY_WAYLAND_ENABLE=1 kitty -o font_size=13
+set $browser MOZ_ENABLE_WAYLAND=1 firefox
+set $files bash /home/prash/.scripts/files.sh 
+
+set $ws1 "1:one"
+set $ws2 "2:two"
+set $ws3 "3:three"
+set $ws4 "4:four"
+set $ws5 "5:five"
+set $ws6 "6:six"
+set $ws7 "7:seven"
+set $ws8 "8:eight"
+set $ws9 "9:nine"
+set $ws10 "10:ten"
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi -W 500 -L 5 --show run
 gaps inner 20
 gaps outer 10
 smart_gaps on
+default_border pixel 3
+# Colors                border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_high $cl_high $cl_high
+client.focused_inactive $cl_back $cl_back $cl_back $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_back $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_urge $cl_urge $cl_urge
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/prash/.walls/wallhaven-39q8k6.jpg fill
 #
 # Example configuration:
 #
@@ -35,7 +56,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 resolution 1920x1080 position 0,0
-output eDP-1 scale 2
+output eDP-1 scale 1
+for_window [class=".*"] floating enable
+for_window [class=".*"] sticky enable
 
 ### Idle configuration
 #
@@ -73,10 +96,10 @@ output eDP-1 scale 2
     bindsym $mod+z exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+Return exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -118,27 +141,27 @@ output eDP-1 scale 2
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -165,7 +188,7 @@ output eDP-1 scale 2
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+Shift+r focus parent
 #
 # Scratchpad:
 #
@@ -201,31 +224,24 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+a mode "resize"
 mode "launch" {
     bindsym z exec $term
     bindsym b exec $browser
     bindsym d exec $menu
+    bindsym f exec $files
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Return mode "launch"
+bindsym $mod+r mode "launch"
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
+exec xrdb /home/prash/.Xresources 
+
