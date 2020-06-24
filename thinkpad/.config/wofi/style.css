@@ -2,27 +2,27 @@
     background-color: #282828;
     color: #ebdbb2;
     padding: 30px;
-    font: Fira Code 18;
+    font: 16px Fira Code;
 }
 #input{
     background-color: #282828;
     color: #ebdbb2;
     padding: 30px;
-    border: 0px solid #282828;
+    border: 2px solid #928374;
 }
 #outer-box{
     color: #ebdbb2;
-    border: 3px solid #a89984;
+    border: 3px solid #ebdbb2;
     padding: 70px;
     background-color: #282828;
 }
 #entry{
     color: #928374;
     padding: 20px;
-    border: 0px solid #282828;
+    border: none;
 }
 #entry:selected{
     color: #ebdbb2;
     background-color: #282828;
-    border: 0px solid #282828;
+    border: 3px solid #928374;
 }
