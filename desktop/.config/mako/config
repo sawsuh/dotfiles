@@ -1,9 +1,11 @@
 max-visible=4
-font=Fira Code 16
+anchor=top-right
+font=Fira Code 14
 background-color=#282828ff
 text-color=#ebdbb2ff
-padding=40
+height=320
+padding=50
 border-size=8
 border-color=#a89984ff
 icons=0
-width=500
+width=400

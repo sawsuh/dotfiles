@@ -1,8 +1,9 @@
 max-visible=3
 anchor=top-right
-font=FiraCode13
+font=Fira Code 12
 background-color=#282828ff
 text-color=#ebdbb2ff
+height=200
 padding=40
 border-size=6
 border-color=#a89984ff
