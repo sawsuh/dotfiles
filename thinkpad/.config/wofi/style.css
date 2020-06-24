@@ -3,18 +3,25 @@
     color: #ebdbb2;
     padding: 30px;
     font: 16px Fira Code;
+    transition: 1s ease-in-out;
 }
 #input{
     background-color: #282828;
     color: #ebdbb2;
     padding: 30px;
-    border: 2px solid #928374;
+    border: none;
+    transition: 0.5s ease-in-out;
+    border-radius: 0px;
+}
+#input:focus{
+    transition: 0.5s ease-in-out;
 }
 #outer-box{
     color: #ebdbb2;
     border: 3px solid #ebdbb2;
     padding: 70px;
     background-color: #282828;
+    transition: 0.5s ease-in-out;
 }
 #entry{
     color: #928374;
