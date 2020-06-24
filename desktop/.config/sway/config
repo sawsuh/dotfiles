@@ -40,9 +40,10 @@ set $ws10 "10:ten"
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -L 5
-gaps inner 30
+#set $menu wofi -L 5
+set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=80 -o font_size=15 --class launch -e env TERMINAL_COMMAND="kitty -e" /usr/bin/sway-launcher-desktop
 gaps outer 20
+gaps inner 30
 smart_gaps on
 default_border pixel 4
 # Colors                border   bg       text     indi     childborder
@@ -65,6 +66,7 @@ output DVI-D-1 bg /home/prashant/.walls/1587340256892.jpg fill
 output DVI-D-1 resolution 2560x1440 position 0,0
 output HDMI-A-1 resolution 2560x1440 position 2560,0
 for_window [app_id="stick1"] floating enable; sticky enable; resize set 1100 700; move down 325; move right 720
+for_window [app_id="launch"] floating enable; sticky enable; resize set 1000 1100;
 for_window [app_id="mpv"] floating enable
 for_window [app_id="sxiv"] floating enable
 
