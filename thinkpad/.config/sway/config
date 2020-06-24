@@ -41,7 +41,7 @@ set $ws10 "10:ten"
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu wofi -L 5
-set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=60 -o font_size=13 --class launch -e env TERMINAL_COMMAND="kitty -e" /usr/bin/sway-launcher-desktop
+set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=60 -o font_size=13 --class launch -e env TERMINAL_COMMAND="kitty -e" /home/prash/.local/bin/swaylock
 gaps inner 20
 gaps outer 10
 smart_gaps on
