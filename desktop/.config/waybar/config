@@ -2,7 +2,6 @@
 {
     "output": "HDMI-A-1",
     "height": 70,
-    "width": 1440,
     "position": "bottom",
     "modules-right": ["custom/updates"],
     "modules-center": ["clock"],
