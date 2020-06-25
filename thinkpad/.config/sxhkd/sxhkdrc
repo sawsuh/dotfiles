@@ -11,6 +11,8 @@
 # terminal emulator
 super + r; z
 	kitty --name term
+super + z
+	kitty --name term
 
 super + r; x
 	bash /home/prash/.scripts/term.sh
