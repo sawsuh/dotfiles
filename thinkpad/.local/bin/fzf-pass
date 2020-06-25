@@ -17,7 +17,6 @@ Autotype
 Username
 Password
 OTP
-#URL
 EOF
 );
 
@@ -38,7 +37,7 @@ case "$RESP" in
 		;;
 #	URL)
 #		ydotool type "$URL"
-		;;
+#		;;
 	*)
 		exit 1
 esac
