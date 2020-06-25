@@ -20,7 +20,8 @@ set $right l
 set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=60 -o font_size=13 --class stick1 -e ranger
-set $pass wofipassmenu -p
+set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=60 -o font_size=13 --class launch -e env TERMINAL_COMMAND="kitty -e" /home/prash/.local/bin/swaylaunch
+set $pass KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=60 -o font_size=13 --class pass bash /home/prash/.local/bin/fzf-pass
 set $fullshot bash /home/prash/.scripts/swayscr.sh
 set $partshot bash /home/prash/.scripts/swayscrrect.sh
 set $lock swaylock
@@ -41,7 +42,6 @@ set $ws10 "10:ten"
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu wofi -L 5
-set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=60 -o font_size=13 --class launch -e env TERMINAL_COMMAND="kitty -e" /home/prash/.local/bin/swaylaunch
 gaps inner 20
 gaps outer 10
 smart_gaps on
@@ -66,6 +66,7 @@ output eDP-1 resolution 1920x1080 position 0,0
 output eDP-1 scale 1
 for_window [app_id="stick1"] floating enable; sticky enable; resize set 850 500; move down 255; move right 525
 for_window [app_id="launch"] floating enable; sticky enable; resize set 700 800;
+for_window [app_id="pass"] floating enable; resize set 700 800;
 for_window [app_id="mpv"] floating enable
 for_window [app_id="sxiv"] floating enable
 
@@ -273,3 +274,4 @@ bar {
 include /etc/sway/config.d/*
 exec xrdb /home/prash/.Xresources 
 exec mako
+exec ydotoold
