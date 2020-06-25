@@ -44,7 +44,7 @@ set $ws10 "10:ten"
 #set $menu wofi -L 5
 gaps inner 20
 gaps outer 10
-smart_gaps on
+smart_gaps off
 default_border pixel 3
 # Colors                border   bg       text     indi     childborder
 client.focused          $cl_high $cl_high $cl_high $cl_high $cl_high
@@ -202,6 +202,7 @@ exec swayidle -w \
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    bindsym $mod+Shift+f smart_gaps toggle
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
