@@ -9,7 +9,7 @@
 [colors]
 my_background   = #e1282828
 my_foreground   = #ebdbb2
-my_overline     = #8ec07c
+my_underline     = #8ec07c
 my_iconcolor    = #83a598
 
 [bar/barski]
@@ -18,13 +18,13 @@ height = 47
 background = ${colors.my_background}
 foreground =  ${colors.my_foreground}
 font-0 = Fira Code:size=12
-font-1 = font-logos:size=12
-font-2 = Icons:size=12
-font-3 = Fira Code:size=8
-overline-size = 3
-overline-color = ${colors.my_background}
+font-1 = Icons:size=12
+font-2 = Fira Code:size=8
+font-3 = Icons:size=11
+underline-size = 3
+underline-color = ${colors.my_background}
 modules-left = bspwm 
-separator = %{T4}%{F#928374}|%{F#ebdbb2}%{T-}
+separator = %{T3}%{F#928374}|%{F#ebdbb2}%{T-}
 modules-center = date2
 modules-right = audio xbacklight battery
 module-margin = 1
@@ -38,7 +38,7 @@ interval = 5
 format-background = ${colors.my_background}
 format-padding = 1 
 label = %{F#83a598}%{F#ebdbb2} %output%
-format-overline = ${colors.my_overline}
+format-underline = ${colors.my_underline}
 
 [module/bspwm]
 type = internal/bspwm
@@ -48,7 +48,7 @@ label-focused = "%{F#83a598}%{F#ebdbb2} %name%"
 label-unfocused = 
 label-occupied =
 label-empty = 
-format-overline = ${colors.my_overline}
+format-underline = ${colors.my_underline}
 
 [module/audio]
 type = internal/pulseaudio
@@ -57,16 +57,16 @@ label-volume = %{F#83a598}♪ %{F#ebdbb2}%percentage%
 label-muted = %{F#83a598}♪ %{F#ebdbb2}-
 label-muted-padding = 1
 label-volume-padding = 1
-format-volume-overline = ${colors.my_overline}
-format-muted-overline = ${colors.my_overline}
+format-volume-underline = ${colors.my_underline}
+format-muted-underline = ${colors.my_underline}
 
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
-label = %{F#83a598} %{F#ebdbb2}%percentage%
+label = %{F#83a598}%{T4} %{T-}%{F#ebdbb2} %percentage%
 format = <label>
 label-padding = 1
-format-overline = ${colors.my_overline}
+format-underline = ${colors.my_underline}
 
 [module/battery]
 type = internal/battery
@@ -80,11 +80,11 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 label-full = %{F#83a598}%{F#ebdbb2}
-label-charging = %{F#83a598}%{F#ebdbb2} %percentage%
-label-discharging = %percentage% %time%
+label-charging = %{F#83a598}%{F#ebdbb2} %percentage%%
+label-discharging = %percentage%% %time%
 label-full-padding = 1
 label-charging-padding = 1
-label-discharging-padding = 1
-format-discharging-overline = ${colors.my_overline}
-format-charging-overline = ${colors.my_overline}
-format-full-overline = ${colors.my_overline}
+format-discharging-padding = 1
+format-discharging-underline = ${colors.my_underline}
+format-charging-underline = ${colors.my_underline}
+format-full-underline = ${colors.my_underline}
