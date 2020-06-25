@@ -7,9 +7,10 @@
 
 
 [colors]
-my_background 	= #282828
-my_foreground 	= #ebdbb2
-my_underline 	= #928374
+my_background   = #e1282828
+my_foreground   = #ebdbb2
+my_overline     = #8ec07c
+my_iconcolor    = #83a598
 
 [bar/barski]
 bottom = false
@@ -19,11 +20,15 @@ foreground =  ${colors.my_foreground}
 font-0 = Fira Code:size=12
 font-1 = font-logos:size=12
 font-2 = Icons:size=12
+font-3 = Fira Code:size=8
+overline-size = 3
+overline-color = ${colors.my_background}
 modules-left = bspwm 
+separator = %{T4}%{F#928374}|%{F#ebdbb2}%{T-}
 modules-center = date2
 modules-right = audio xbacklight battery
-border-bottom-size = 3
-border-bottom-color = ${colors.my_underline}
+module-margin = 1
+padding = 2
 enable-ipc = true
 
 [module/date2]
@@ -31,34 +36,37 @@ type = custom/script
 exec = date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'
 interval = 5
 format-background = ${colors.my_background}
-format-padding = 2 
+format-padding = 1 
+label = %{F#83a598}%{F#ebdbb2} %output%
+format-overline = ${colors.my_overline}
 
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
-format-padding = 2
-label-focused = >%name%
+format-padding = 1
+label-focused = "%{F#83a598}%{F#ebdbb2} %name%"
 label-unfocused = 
 label-occupied =
 label-empty = 
+format-overline = ${colors.my_overline}
 
 [module/audio]
 type = internal/pulseaudio
 format-volume = <label-volume>
-label-volume = ♪%percentage%
-label-muted = ♪-
-label-muted-background = ${colors.my_background}
-label-muted-padding = 2
-label-volume-background = ${colors.my_background}
-label-volume-padding = 2
+label-volume = %{F#83a598}♪ %{F#ebdbb2}%percentage% 
+label-muted = %{F#83a598}♪ %{F#ebdbb2}-
+label-muted-padding = 1
+label-volume-padding = 1
+format-volume-overline = ${colors.my_overline}
+format-muted-overline = ${colors.my_overline}
 
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
-label =  %percentage%
+label = %{F#83a598} %{F#ebdbb2}%percentage%
 format = <label>
-label-background = ${colors.my_background}
-label-padding = 2
+label-padding = 1
+format-overline = ${colors.my_overline}
 
 [module/battery]
 type = internal/battery
@@ -66,12 +74,12 @@ full-at = 99
 battery = BAT0
 adapter = ADP1
 time-format = %-Ih %Mm
-label-full = 
-label-charging =  %percentage%
-label-discharging =  %percentage% %time%
-label-full-background = ${colors.my_background}
-label-full-padding = 2
-label-charging-background = ${colors.my_background}
-label-charging-padding = 2
-label-discharging-background = ${colors.my_background}
-label-discharging-padding = 2
+label-full = %{F#83a598}%{F#ebdbb2}
+label-charging = %{F#83a598}%{F#ebdbb2} %percentage%
+label-discharging = %{F#83a598}%{F#ebdbb2} %percentage% %time%
+label-full-padding = 1
+label-charging-padding = 1
+label-discharging-padding = 1
+format-discharging-overline = ${colors.my_overline}
+format-charging-overline = ${colors.my_overline}
+format-full-overline = ${colors.my_overline}
