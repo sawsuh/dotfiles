@@ -35,16 +35,16 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
-            "warning": 30,
+            "mid": 40,
             "critical": 15
         },
-        "format": " {capacity}% ",
-        "format-charging": " {capacity}% ",
-        "format-plugged": " {capacity}% ",
-        "format-alt": " {time} "
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": ""
+        "format": "<span color='#83a598'></span> {capacity}% ",
+        "format-mid": "<span color='#83a598'></span> {capacity}% ",
+        "format-critical": "<span color='#83a598'></span> {capacity}% ",
+        "format-charging": "<span color='#83a598'></span> {capacity}% ",
+        "format-plugged": "<span color='#83a598'></span> {capacity}% ",
+        "format-alt": " {time} ",
+        "format-full": "<span color='#83a598'></span> "
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -59,7 +59,7 @@
        "format-bluetooth": " {volume}% {icon} {format_source} ",
        "format-bluetooth-muted": " {icon} {format_source} ",
        "format-muted": " {format_source} ",
-       "format-source": " {volume}% <span color=\"#83a598\"></span> ",
+       "format-source": " {volume}% <span color=\"#83a598\"></span>",
        "format-source-muted": "",
        "format-icons": {
           "headphone": "",
