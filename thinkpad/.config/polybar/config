@@ -43,7 +43,7 @@ format-overline = ${colors.my_overline}
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
-format-padding = 1
+label-focused-padding = 1
 label-focused = "%{F#83a598}%{F#ebdbb2} %name%"
 label-unfocused = 
 label-occupied =
