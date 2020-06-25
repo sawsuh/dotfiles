@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Fira Code, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Fira Code, Icons, font-logos Roboto, Helvetica, Arial, sans-serif;
     font-size: 18px;
     min-height: 0;
     padding-left: 7px;
@@ -9,8 +9,7 @@
 }
 
 window#waybar {
-    background: rgba(40,40,40,1);
-    border-top: 4px solid rgba(146,131,116,1);
+    background: rgba(40,40,40,0.9);
     color: #ebdbb2;
 }
 
@@ -19,9 +18,11 @@ window#waybar {
 
 #workspaces button.focused {
     color: #ebdbb2;
+    border-top: 4px solid rgba(149,192,124,1);
 }
 
-#mode, #clock, #battery {
+#updates, #pulseaudio, #updates, #window, #mode, #clock, #battery {
+    border-top: 4px solid rgba(149,192,124,1);
 }
 
 #mode {
