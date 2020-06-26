@@ -1,7 +1,7 @@
 {
     "height": 50, // Waybar height (to be removed for auto height)
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
+    "modules-center": ["custom/clock"],
     "modules-right": ["backlight", "custom/separator", "pulseaudio", "custom/separator", "battery"],
     "backlight": {
         "format": "{percent}% <span color=\"#83a598\"></span>"
@@ -10,6 +10,10 @@
         "format": "<span font='8' color='#928374'> | </span>",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/clock": {
+        "format": " <span color=\"#83a598\"></span> {} ",
+        "exec": "date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'"
     },
      "sway/workspaces": {
          "disable-scroll": true,

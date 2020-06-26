@@ -21,7 +21,7 @@ window#waybar {
     border-bottom: 3px solid rgba(149,192,124,1);
 }
 
-#backlight, #pulseaudio, #custom-updates, #window, #clock, #battery {
+#backlight, #pulseaudio, #custom-updates, #window, #custom-clock, #battery {
     border-bottom: 3px solid rgba(149,192,124,1);
 }
 
