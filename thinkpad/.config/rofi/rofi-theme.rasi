@@ -32,16 +32,16 @@
     background-color: @background;
     padding:    60px;
     border-color:                @border-color;
-    font: "Fira Code 12";
+    font: "Iosevka 12";
 }
 #listview {
-    font: "Fira Code 12";
+    font: "Iosevka 12";
     lines: 5;
 }
 #element {
     padding:	30px 30px 30px;
     highlight:  bold;
-    font: "Fira Code 12";
+    font: "Iosevka 12";
     text-color: @inactive-color;
 }
 
@@ -62,5 +62,5 @@
     str:        ">";
     margin:     0px 0.8em 0em 0em ;
     text-color: #689d6a;
-    font: "Fira Code Bold 12";
+    font: "Iosevka Bold 12";
 }
