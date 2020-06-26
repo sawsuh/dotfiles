@@ -21,7 +21,7 @@ window#waybar {
     border-top: 4px solid rgba(149,192,124,1);
 }
 
-#pulseaudio, #custom-updates, #window, #mode, #clock, #battery {
+#pulseaudio, #custom-updates, #window, #clock, #battery {
     border-top: 4px solid rgba(149,192,124,1);
 }
 

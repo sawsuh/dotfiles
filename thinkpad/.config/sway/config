@@ -27,6 +27,8 @@ set $partshot bash /home/prash/.scripts/swayscrrect.sh
 set $lock swaylock
 set $suspend systemctl suspend
 set $music spotify
+set $bup light -A 3
+set $bdown light -U 3
 
 set $ws1 "1:one"
 set $ws2 "2:two"
@@ -264,6 +266,8 @@ mode "launch" {
 bindsym $mod+r mode "launch"
 bindsym $mod+Control+c exec $fullshot
 bindsym $mod+Alt+c exec $partshot
+bindsym XF86MonBrightnessDown exec $bdown
+bindsym XF86MonBrightnessUp exec $bup
 #
 # Status Bar:
 #

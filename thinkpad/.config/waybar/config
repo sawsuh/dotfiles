@@ -1,13 +1,11 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 50, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "custom/separator", "battery"],
-    // Modules configuration
+    "modules-right": ["backlight", "custom/separator", "pulseaudio", "custom/separator", "battery"],
+    "backlight": {
+        "format": "{percent}% <span color=\"#83a598\"></span>"
+    },
     "custom/separator": {
         "format": "<span font='8' color='#928374'> | </span>",
         "interval": "once",
@@ -20,7 +18,7 @@
          "current-only": true
      },
     "sway/mode": {
-        "format": "- {}"
+        "format": " {}"
     },
     "clock": {
         // "timezone": "America/New_York",
