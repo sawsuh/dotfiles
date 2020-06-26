@@ -48,6 +48,8 @@ autocmd FileType sh nnoremap ,t :!bash %
 au VimEnter * hi NonText ctermfg=8
 au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
+au VimEnter * hi CursorLineNr ctermfg=8
+au VimEnter * hi LineNr ctermfg=8
 set laststatus=0 ruler
 set list lcs=tab:>\ 
 set number
