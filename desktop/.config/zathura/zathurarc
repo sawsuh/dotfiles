@@ -28,4 +28,4 @@ set default-fg "#ebdbb2"
 set notification-bg "#282828"
 set notification-fg "#ebdbb2"
 
-set font "Fira Code 12"
+set font "Iosevka 12"
