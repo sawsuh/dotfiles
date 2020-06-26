@@ -50,6 +50,8 @@ au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 set laststatus=0 ruler
 set list lcs=tab:>\ 
+set number
+set relativenumber
 
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
