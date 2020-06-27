@@ -55,8 +55,8 @@ client.urgent           $cl_urge $cl_urge $cl_urge $cl_urge $cl_urge
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output HDMI-A-1 bg /home/prashant/.walls/1587340184762.jpg fill
-output DVI-D-1 bg /home/prashant/.walls/1587340256892.jpg fill
+output HDMI-A-1 bg /home/prashant/.walls/1574989942579.jpg fill
+output DVI-D-1 bg /home/prashant/.walls/1587139713869.jpg fill
 #
 # Example configuration:
 #
