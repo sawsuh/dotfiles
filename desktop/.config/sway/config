@@ -17,11 +17,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 
+set $term KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 -o font_size=16
 set $browser MOZ_ENABLE_WAYLAND=1 firefox
-set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 --class stick1 -e ranger
-set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=80 --class launch -e env TERMINAL_COMMAND="kitty -e" /home/prashant/.local/bin/swaylaunch
-set $pass KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=80 --class pass bash /home/prashant/.local/bin/fzf-pass
+set $files KITTY_WAYLAND_ENABLE=1 kitty -o window_padding_width=80 --class stick1 -o font_size=16 -e ranger
+set $menu KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=80 --class launch -o font_size=16 -e env TERMINAL_COMMAND="kitty -e" /home/prashant/.local/bin/swaylaunch
+set $pass KITTY_ENABLE_WAYLAND=1 kitty -o window_padding_width=80 -o font_size=16 --class pass bash /home/prashant/.local/bin/fzf-pass
 set $fullshot bash /home/prashant/.scripts/swayscr.sh
 set $partshot bash /home/prashant/.scripts/swayscrrect.sh
 set $lock swaylock
@@ -55,8 +55,8 @@ client.urgent           $cl_urge $cl_urge $cl_urge $cl_urge $cl_urge
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output HDMI-A-1 bg /home/prashant/.walls/1587340184762.jpg fill
-output DVI-D-1 bg /home/prashant/.walls/1587340256892.jpg fill
+output HDMI-A-1 bg /home/prashant/.walls/1574989942579.jpg fill
+output DVI-D-1 bg /home/prashant/.walls/1587139713869.jpg fill
 #
 # Example configuration:
 #
