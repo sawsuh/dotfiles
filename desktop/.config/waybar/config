@@ -4,7 +4,7 @@
     "height": 70,
     "position": "bottom",
     "modules-right": ["custom/updates"],
-    "modules-center": ["clock"],
+    "modules-center": ["custom/clock"],
     "modules-left": ["sway/workspaces", "sway/mode"],
      "sway/workspaces": {
          "disable-scroll": true,
