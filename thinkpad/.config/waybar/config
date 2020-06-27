@@ -13,7 +13,8 @@
     },
     "custom/clock": {
         "format": " <span color=\"#83a598\"></span> {} ",
-        "exec": "date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'"
+        "exec": "date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'",
+        "interval": "30"
     },
      "sway/workspaces": {
          "disable-scroll": true,
