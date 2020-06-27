@@ -18,7 +18,7 @@ Password
 EOF
 );
 
-swaymsg move container to workspace 9
+swaymsg move container to workspace next
 sleep 1
 case "$RESP" in
 	Autotype)
