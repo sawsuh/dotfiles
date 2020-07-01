@@ -49,7 +49,7 @@ Xft.rgba: rgb
 URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
 twobwm.enable_compton: true
-Xft.dpi: 120
+!Xft.dpi: 120
 
 Sxiv.foreground: #ebdbb2
 Sxiv.background: #282828
