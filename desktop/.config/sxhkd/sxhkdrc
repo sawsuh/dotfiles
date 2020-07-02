@@ -176,6 +176,8 @@ super + a: w
 # take a screenshot
 super + alt + c
 	bash ~/.scripts/scr.sh
+Print
+	bash ~/.scripts/scr.sh
 
 # take a screenshot with selection
 super + shift + c

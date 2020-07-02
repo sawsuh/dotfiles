@@ -266,6 +266,7 @@ mode "launch" {
 }
 bindsym $mod+r mode "launch"
 bindsym $mod+Control+c exec $fullshot
+bindsym Print exec $fullshot
 bindsym $mod+Alt+c exec $partshot
 bindsym XF86MonBrightnessDown exec $bdown
 bindsym XF86MonBrightnessUp exec $bup

@@ -269,6 +269,7 @@ mode "launch" {
 }
 bindsym $mod+r mode "launch"
 bindsym $mod+Control+c exec $fullshot
+bindsym Print exec $fullshot
 bindsym $mod+Alt+c exec $partshot
 #
 # Status Bar:
