@@ -78,6 +78,7 @@ format-muted-overline = ${colors.my_overline}
 type = internal/xwindow
 format = <label>
 label = %{F#83a598}%{F#ebdbb2} %title%
+label-maxlen = 100
 format-overline = ${colors.my_overline}
 format-padding = 1
 
