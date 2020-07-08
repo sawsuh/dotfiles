@@ -56,4 +56,4 @@
 #define VIA_EEPROM_LAYOUT_OPTIONS_SIZE 2
 
 /* User config for tapping */
-#define TAPPING_TERM 175
+#define TAPPING_TERM 200
