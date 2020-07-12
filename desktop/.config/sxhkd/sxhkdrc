@@ -54,7 +54,7 @@ super + Escape
 #
 
 # suspend
-super + alt + Escape
+super + alt + q
 	systemctl suspend
 
 # quit bspwm 
