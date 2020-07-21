@@ -1,6 +1,6 @@
 [ 
 {
-    "output": "HDMI-A-1",
+    "output": "DVI-D-1",
     "height": 70,
     "position": "bottom",
     "modules-right": ["custom/updates"],
@@ -28,7 +28,7 @@
 }
 , 
 {
-    "output": "DVI-D-1",
+    "output": "HDMI-A-1",
     "height": 70,
     "position": "bottom",
     "modules-right": [ "sway/mode","sway/workspaces"],

@@ -54,7 +54,7 @@ border-top-color = ${colors.my_overline}
 enable-ipc = true
 
 [bar/bar1]
-monitor = DVI-D-1
+monitor = HDMI-A-0
 inherit = section/bars
 modules-center = date
 modules-left = packages
@@ -62,7 +62,7 @@ modules-right = bspwm
 width = 2560
 
 [bar/bar2]
-monitor = HDMI-A-0
+monitor = DVI-D-1
 inherit = section/bars
 modules-center = window
 modules-right = audio
