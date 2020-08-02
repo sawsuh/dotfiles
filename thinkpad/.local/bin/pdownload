@@ -1,2 +1,2 @@
 #!/bin/zsh
-urxvt -name float -e zsh -c 'pass git pull'
+kitty --class=float -e zsh -c 'pass git pull'
