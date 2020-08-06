@@ -1,0 +1,19 @@
+--Commands
+dots: cd ~/.dots
+y: yay
+yu: yay -Syu --devel
+home: cd ~
+fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
+music: bash ~/.pyscripts/musicscrape/run.sh
+dfu: bash ~/.scripts/dfu.sh 
+restow: stow -R --no-folding -t ~ -d ~/.dots desktop 
+alarm: bash ~/.scripts/alarm.sh
+yi: yay -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
+gaming: bash ~/.scripts/gaming.sh
+--FilestoVim
+xr: ~/.Xresources
+sxrc: ~/.config/sxhkd/sxhkdrc
+bsprc: ~/.config/bspwm/bspwmrc
+pbar: ~/.config/polybar/config
+rng: ~/.config/ranger/rc.conf
+vrc: ~/.vimrc

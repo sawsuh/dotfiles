@@ -1,0 +1,1 @@
+kill -SIGHUP $(pgrep atd)

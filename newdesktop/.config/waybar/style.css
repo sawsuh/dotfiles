@@ -1,0 +1,38 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Iosevka, Icons, font-logos Roboto, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    min-height: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+window#waybar {
+    background: rgba(40,40,40,0.9);
+    color: #ebdbb2;
+}
+
+#workspaces button {
+}
+
+#workspaces button.focused {
+    color: #ebdbb2;
+    border-top: 4px solid rgba(149,192,124,1);
+}
+
+#pulseaudio, #custom-updates, #window, #custom-clock, #battery {
+    border-top: 4px solid rgba(149,192,124,1);
+}
+
+#mode {
+}
+
+#clock {
+}
+
+#battery {
+}
+
+#battery.charging {
+}

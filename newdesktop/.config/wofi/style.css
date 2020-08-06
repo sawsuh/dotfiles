@@ -1,0 +1,35 @@
+#window {
+    background-color: #282828;
+    color: #ebdbb2;
+    padding: 50px;
+    font: Iosevka 18;
+    transition: 1s ease-in-out;
+}
+#input{
+    background-color: #282828;
+    color: #ebdbb2;
+    padding: 50px;
+    border: none;
+    transition: 0.5s ease-in-out;
+    border-radius: 0px;
+}
+#input:focus{
+    transition: 0.5s ease-in-out;
+}
+#outer-box{
+    color: #ebdbb2;
+    border: 4px solid #ebdbb2;
+    padding: 70px;
+    background-color: #282828;
+    transition: 0.5s ease-in-out;
+}
+#entry{
+    color: #928374;
+    padding: 30px;
+    border: none;
+}
+#entry:selected{
+    color: #ebdbb2;
+    background-color: #282828;
+    border: 3px solid #928374;
+}

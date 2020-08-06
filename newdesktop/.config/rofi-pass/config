@@ -1,0 +1,9 @@
+_rofi () {
+    rofi -theme rofi-theme -p '' "$@"
+}
+URL_field='url'
+USERNAME_field='username'
+AUTOTYPE_field='autotype'
+default_autotype='username :tab pass'
+default_do='typePass'
+autotype="Alt+Return"
