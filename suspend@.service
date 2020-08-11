@@ -1,0 +1,14 @@
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=prash
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/sleep 1
+ExecStartPost=/home/prash/.lock.sh
+
+[Install]
+WantedBy=sleep.target
+
