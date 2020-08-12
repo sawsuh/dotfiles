@@ -1,5 +1,5 @@
 #! /bin/sh
-xrandr --output DVI-D-1 --right-of HDMI-A-0 --mode 1920x1080 --pos 2560x0 --rotate normal --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
+xrandr --output DVI-D-0 --right-of HDMI-0 --mode 1920x1080 --rate 144 --pos 2560x0 --rotate normal --output HDMI-A-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
 nitrogen --restore&
 picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
@@ -7,8 +7,8 @@ polybar bar1&
 polybar bar2&
 dunst&
 
-bspc monitor HDMI-A-0 -d one two three four five
-bspc monitor DVI-D-1 -d six seven eight nine ten
+bspc monitor HDMI-0 -d one two three four five
+bspc monitor DVI-D-0 -d six seven eight nine ten
 bspc config top_padding        10
 bspc config bottom_padding     80
 bspc config left_padding       10
