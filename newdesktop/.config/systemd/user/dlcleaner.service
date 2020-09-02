@@ -1,5 +1,5 @@
 [Unit]
-Description=Backup of my apache website
+Description=Cleans downloads folder
 
 [Service]
 Type=oneshot
