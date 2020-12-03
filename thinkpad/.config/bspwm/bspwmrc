@@ -5,6 +5,7 @@ xrdb ~/.Xresources&
 dunst&
 
 bspc monitor -d one two three four five six seven eight nine ten
+bspc config merge_overlapping_monitors true
 bspc config top_padding        20
 bspc config bottom_padding     20
 bspc config left_padding       20
