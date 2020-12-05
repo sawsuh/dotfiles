@@ -49,6 +49,7 @@
 #element.selected {
     text-color: @text-color;
     background-color: @normal-background;
+    highlight:  bold;
 }
 
 #inputbar {

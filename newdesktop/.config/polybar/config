@@ -62,12 +62,12 @@ modules-right = bspwm
 width = 2560
 
 [bar/bar2]
-monitor = DVI-D-0
+monitor = DP-0
 inherit = section/bars
 modules-center = window
 modules-right = audio
 modules-left = bspwm
-width = 1920
+width = 2560
 
 [module/date]
 type = custom/script
