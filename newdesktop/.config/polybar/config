@@ -31,27 +31,7 @@ padding = 2
 border-top-size = 0
 border-top-color = ${colors.my_overline}
 enable-ipc = true
-
-[section/barsold]
-bottom = true
-height = 66
 width = 2560
-offset-y = 0
-background = ${colors.my_background}
-foreground =  ${colors.my_foreground}
-overline-size = 4
-overline-color = ${colors.my_background}
-font-0 = Iosevka:size=16
-font-1 = Icons:size=12
-font-2 = font-logos:size=16
-font-3 = Fira Code:size=12
-;border-top-size = 4
-separator = %{T4}%{F#928374}|%{F#ebdbb2}%{T-}  
-module-margin = 1
-padding = 2
-border-top-size = 0
-border-top-color = ${colors.my_overline}
-enable-ipc = true
 
 [bar/bar1]
 monitor = HDMI-0
@@ -59,7 +39,6 @@ inherit = section/bars
 modules-center = date
 modules-left = packages
 modules-right = bspwm 
-width = 2560
 
 [bar/bar2]
 monitor = DP-0
@@ -67,7 +46,6 @@ inherit = section/bars
 modules-center = window
 modules-right = audio
 modules-left = bspwm
-width = 2560
 
 [module/date]
 type = custom/script
