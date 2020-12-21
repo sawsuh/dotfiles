@@ -85,7 +85,7 @@ format-padding = 1
 [module/packages]
 type = custom/script
 exec = "yay -Qu | wc -l"
-interval 900
+interval = 900
 format-padding = 1
 format = <label>
 label = %{F#83a598}%{F#ebdbb2} %output%
