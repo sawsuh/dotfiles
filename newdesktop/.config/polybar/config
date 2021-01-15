@@ -34,7 +34,7 @@ enable-ipc = true
 width = 2560
 
 [bar/bar1]
-monitor = HDMI-0
+monitor = DP-2
 inherit = section/bars
 modules-center = date
 modules-left = packages
