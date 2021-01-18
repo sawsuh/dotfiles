@@ -1,1 +1,0 @@
-.dots/newdesktop/.lock.sh
