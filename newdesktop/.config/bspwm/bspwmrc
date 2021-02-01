@@ -41,4 +41,5 @@ bspc rule -a "dotnet" state=floating
 
 redshift -l -35.3:149&
 xsetroot -cursor_name left_ptr&
+xset -dpms
 export PATH=/home/prashant/.local/bin:$PATH
