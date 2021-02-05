@@ -10,6 +10,8 @@ restow: stow -R --no-folding -t ~ -d ~/.dots desktop
 alarm: bash ~/.scripts/alarm.sh
 yi: yay -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
 gaming: bash ~/.scripts/gaming.sh
+onemon: bash ~/.scripts/onemon.sh
+twomon: bash ~/.scripts/twomon.sh
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
