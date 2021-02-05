@@ -6,6 +6,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
+Plug 'mcchrish/nnn.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'bfredl/nvim-miniyank'
 call plug#end()
@@ -21,6 +22,7 @@ set shiftwidth=4
 set expandtab
 let maplocalleader=","
 let g:vimtex_view_general_viewer = 'zathura'
+let g:tex_flavor = 'latex'
 let g:vimtex_view_general_options = ''
 let g:tex_conceal=""
 let g:UltiSnipsExpandTrigger="<c-j>"

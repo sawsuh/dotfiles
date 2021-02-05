@@ -8,6 +8,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'bfredl/nvim-miniyank'
+Plug 'mcchrish/nnn.vim'
 call plug#end()
 filetype plugin on
 filetype indent on

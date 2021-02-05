@@ -1,6 +1,0 @@
-[Unit]
-Description=Cleans downloads folder
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /home/prashant/.scripts/dlcleaner.sh

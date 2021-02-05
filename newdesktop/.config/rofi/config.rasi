@@ -1,3 +1,0 @@
-configuration {
-	terminal: "Termite --name=float";	
-}
