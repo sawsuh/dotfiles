@@ -3,6 +3,7 @@ nitrogen --restore&
 picom --config /home/prash/.compton.conf&
 xrdb ~/.Xresources&
 dunst&
+greenclip daemon&
 
 bspc monitor -d one two three four five six seven eight nine ten
 bspc config merge_overlapping_monitors true

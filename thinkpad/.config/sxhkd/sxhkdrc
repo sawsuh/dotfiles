@@ -201,3 +201,7 @@ XF86AudioMute
 # toggle bar
 super + b
 	python3 ~/.pyscripts/pbartoggle.py
+
+# clipboard list
+super + ctrl + v
+    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
