@@ -6,6 +6,7 @@ xrdb ~/.Xresources&
 polybar bar1&
 polybar bar2&
 dunst&
+greenclip daemon&
 
 bspc monitor DP-2 -d one two three four five
 bspc monitor DP-0 -d six seven eight nine ten
