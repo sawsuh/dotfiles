@@ -6,7 +6,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
-Plug 'Yggdroot/indentLine'
 Plug 'bfredl/nvim-miniyank'
 Plug 'mcchrish/nnn.vim'
 call plug#end()
