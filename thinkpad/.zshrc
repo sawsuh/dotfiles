@@ -1,4 +1,4 @@
-export ZSH="/home/prash/.oh-my-zsh"
+export ZSH="/home/prashant/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
@@ -14,7 +14,7 @@ awk '/--Commands/, /--Files/' .shortcuts | sed '1d;$d' | awk -F": " '{print "ali
 awk '/--Files/,EOF' .shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nvim "$2"\""}' >> ~/.shorttemp
 source ~/.shorttemp
 rm ~/.shorttemp
-export PATH=/home/prash/.local/bin:$PATH
+export PATH=/home/prashant/.local/bin:$PATH
 #task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
@@ -34,5 +34,6 @@ bindkey -M viins '^[OA' history-beginning-search-backward-end \
                  '^[OB' history-beginning-search-forward-end \
                  '^[[B' history-beginning-search-forward-end
 bindkey -M viins 'jj' vi-cmd-mode
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+eval "$(ssh-agent -s > /dev/null)"
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh

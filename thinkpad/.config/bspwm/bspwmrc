@@ -1,9 +1,10 @@
 #! /bin/sh
 nitrogen --restore&
-picom --config /home/prash/.compton.conf&
+picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
 dunst&
 greenclip daemon&
+pulseaudio --start&
 
 bspc monitor -d one two three four five six seven eight nine ten
 bspc config merge_overlapping_monitors true

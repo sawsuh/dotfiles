@@ -53,14 +53,14 @@ super + Escape
 # bspwm hotkeys
 #
 
-# suspend
-super + alt + Escape
-	systemctl suspend
-
-# quit bspwm 
-super + alt + shift + Escape
-	pkill bspwm
-
+## suspend
+#super + alt + Escape
+#	systemctl suspend
+#
+## quit bspwm 
+#super + alt + shift + Escape
+#	pkill bspwm
+#
 # close and kill
 super + s:{_, shift + } q
 	bspc node -{c,k}
