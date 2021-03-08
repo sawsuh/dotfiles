@@ -1,0 +1,2 @@
+#!/bin/bash
+iwctl station wlp3s0 connect "modem1"
