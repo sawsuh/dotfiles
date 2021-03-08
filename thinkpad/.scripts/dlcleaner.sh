@@ -1,2 +1,2 @@
 #!/bin/bash
-find /home/prash/Downloads -mtime +7 -delete
+find /home/prashant/Downloads -mtime +7 -delete

@@ -192,7 +192,7 @@ XF86AudioMute
 
 # brightness controls
 {XF86MonBrightnessDown,XF86MonBrightnessUp}
-	light {-U 10, -A 10}
+	brillo {-U 10, -A 10}
 
 # keyboard backlight
 {_, shift +} XF86Display

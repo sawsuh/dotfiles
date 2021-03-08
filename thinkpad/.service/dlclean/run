@@ -1,0 +1,2 @@
+#!/bin/bash
+snooze -s 86400 bash /home/prashant/.scripts/dlcleaner.sh
