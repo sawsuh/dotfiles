@@ -1,0 +1,23 @@
+pkgname=greenclip
+version=1
+revision=1
+#wrksrc=
+#build_style=gnu-configure
+hostmakedepends="wget"
+makedepends=""
+depends=""
+short_desc="Easy to use clipboard manager"
+license="GPL-3.0-or-later"
+homepage="https://github.com/erebe/greenclip"
+nodebug=yes
+nostrip=yes
+checksum=1d43f893f254e7d2e042066bb3ec592859393d4bc183905469dfbbcfac42cfd9
+do_fetch() {
+    mkdir ${wrksrc}
+    cd ${wrksrc}
+    wget https://github.com/erebe/greenclip/releases/download/3.3/greenclip
+}
+do_install() {
+    cd ${wrksrc}
+    vbin greenclip
+}
