@@ -1,0 +1,5 @@
+--Commands
+restow: stow -R --no-folding -t ~ -d ~/dots mba
+--FilestoVim
+vrc: ~/.vimrc
+zrc: ~/.zshrc
