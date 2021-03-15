@@ -15,14 +15,14 @@ super + z
 	kitty --name term
 
 super + r; x
-	bash /home/prash/.scripts/term.sh
+	bash ~/.scripts/term.sh
 
 # program launcher
 super + r; Return
-	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 super + Return
-	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 super + p
 	rofi-pass
