@@ -1,7 +1,8 @@
 #!/bin/bash
+cmd="polybar barski"
 spawnbar () {
     bspc config top_padding 70
-    polybar barski&>/dev/null &
+    eval "$cmd"&>/dev/null &
 }
 mapbar () {
     bspc config top_padding 70
@@ -11,7 +12,7 @@ unmapbar() {
     polybar-msg cmd hide
     bspc config top_padding 20
 } 
-pid=$(pgrep -f "polybar barski")
+pid=$(pgrep -f "$cmd")
 wid=$(xdotool search --pid $pid --onlyvisible)
 unmapbar
 [[ -z $pid ]] && spawnbar
