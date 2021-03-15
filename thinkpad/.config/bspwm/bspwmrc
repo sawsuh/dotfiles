@@ -6,6 +6,7 @@ dunst&
 greenclip daemon&
 pulseaudio --start&
 xss-lock -- bash ~/.lock.sh &
+greenclip daemon&
 
 bspc monitor -d one two three four five six seven eight nine ten
 bspc config merge_overlapping_monitors true

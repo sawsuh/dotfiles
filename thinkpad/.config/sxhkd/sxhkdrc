@@ -15,14 +15,14 @@ super + z
 	kitty --name term
 
 super + r; x
-	bash /home/prash/.scripts/term.sh
+	bash ~/.scripts/term.sh
 
 # program launcher
 super + r; Return
-	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 super + Return
-	export PATH=/home/prash/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 super + p
 	rofi-pass
@@ -42,8 +42,6 @@ super + r; b
 	firefox
 super + r; shift + b
 	chromium
-super + r; ctrl + b
-	chromium --incognito # ;)
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -200,8 +198,8 @@ XF86AudioMute
 
 # toggle bar
 super + b
-	python3 ~/.pyscripts/pbartoggle.py
+	bash ~/.scripts/bartoggle.sh
 
-## clipboard list
-#super + ctrl + v
-#    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
+# clipboard list
+super + ctrl + v
+    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
