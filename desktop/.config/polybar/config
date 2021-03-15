@@ -32,18 +32,20 @@ border-top-size = 0
 border-top-color = ${colors.my_overline}
 enable-ipc = true
 width = 2560
+modules-center = date
 
 [bar/bar1]
 monitor = DP-2
 inherit = section/bars
-modules-center = date
-modules-left = packages
+;modules-center = date
+;modules-left = packages
+modules-left = audio
 modules-right = bspwm 
 
 [bar/bar2]
 monitor = DP-0
 inherit = section/bars
-modules-center = window
+;modules-center = window
 modules-right = audio
 modules-left = bspwm
 
