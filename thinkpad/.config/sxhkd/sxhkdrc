@@ -198,7 +198,7 @@ XF86AudioMute
 
 # toggle bar
 super + b
-	python3 ~/.pyscripts/pbartoggle.py
+	bash ~/.scripts/bartoggle.sh
 
 # clipboard list
 super + ctrl + v
