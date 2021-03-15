@@ -25,7 +25,7 @@ barmap () { # $1 = monitor, $2 = pid, map bar on current monitor
     polybar-msg -p $2 cmd show
 }
 pid=$(pgrep -f "$cmd")
-[[ -z $pid ]] && { barunmap; barspawn $mon "$cmd"; exit 0;} # if bar not running on current monitor
-[[ -z $(xdotool search --pid $pid --onlyvisible) ]] && { barunmap; barmap $mon $pid; exit 0;}
-    # if bar running on current monitor but not mapped
-barunmap; exit 0 # if bar mapped on current monitor
+wid=$(xdotool search --pid $pid --onlyvisible)
+barunmap
+[[ -z $pid ]] && barspawn $mon "$cmd" # if bar not running on current monitor
+[[ -z $wid ]] && barmap $mon $pid

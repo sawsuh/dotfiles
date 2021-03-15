@@ -16,5 +16,5 @@ unmapbar() {
 pid=$(pgrep -a polybar | grep barski | awk '{print $1}')
 [[ -z $pid ]] && spawnbar
 wid=$(xdotool search --pid $pid --onlyvisible)
-[[ -z $wid ]] && { mapbar "$(xdotool search --pid $pid)"; }
+[[ -z $wid ]] && mapbar "$(xdotool search --pid $pid)"
 unmapbar $wid
