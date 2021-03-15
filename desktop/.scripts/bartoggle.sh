@@ -11,10 +11,7 @@ barspawn () { # $1 = monitor, $2 = command, spawn bar on current monitor
     eval $2&>/dev/null &
 }
 barunmap () { # unmap bar from all monitors and lower all monitors gaps
-    for process in $(pgrep -a polybar | awk '{print $1}')
-    do
-        polybar-msg -p $process cmd hide
-    done
+    polybar-msg -p $process cmd hide
     for monitor in $(xrandr -q | grep ' connected' | awk '{print $1}')
     do 
         bspc config -m $monitor bottom_padding 10
