@@ -197,7 +197,6 @@ super + alt + m
 super + ctrl + v
     rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
 
-## bar notification toggle
-#super + {b,g}
-#	python3 ~/.pyscripts/pbarnotif.py {1,2}
-
+# bar notification toggle
+super + b
+    bash ~/.scripts/bartoggle.sh

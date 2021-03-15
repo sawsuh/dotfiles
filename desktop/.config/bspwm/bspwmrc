@@ -3,8 +3,8 @@ xrandr --output DP-0 --primary --right-of DP-2 --mode 2560x1440 --rate 144 --pos
 nitrogen --restore&
 picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
-polybar bar1&
-polybar bar2&
+#polybar bar1&
+#polybar bar2&
 dunst&
 greenclip daemon&
 eval "$(ssh-agent -s)"&
