@@ -11,7 +11,7 @@ unmapbar() {
     polybar-msg cmd hide
     bspc config top_padding 20
 } 
-pid=$(pgrep -a polybar | grep barski | awk '{print $1}')
+pid=$(pgrep -f "polybar barski")
 wid=$(xdotool search --pid $pid --onlyvisible)
 unmapbar
 [[ -z $pid ]] && spawnbar

@@ -12,7 +12,7 @@ barspawn () {
 }
 barunmap () {
     polybar-msg cmd hide
-    xrandr -q | sed -n "s/^\(.*\) connected.*/\1/p" | xargs -I % bspc config -m % bottom_padding 10
+    xrandr -q | awk '/ connected/{print $1}' | xargs -I % bspc config -m % bottom_padding 10
 }
 barmap () { 
     bspc config -m $1 bottom_padding 80
