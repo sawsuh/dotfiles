@@ -11,6 +11,7 @@ yi: yay -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
 gaming: bash ~/.scripts/gaming.sh
 onemon: bash ~/.scripts/onemon.sh
 twomon: bash ~/.scripts/twomon.sh
+assignments: cd ~/school/assignments
 --FilestoVim
 xr: ~/.Xresources
 sxrc: ~/.config/sxhkd/sxhkdrc
