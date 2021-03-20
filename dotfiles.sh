@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ $1 == "s" ]]; then
     cd $2
-    find . -path "./.*" | while IFS='' read -r path
+    find . -path "./*" | while IFS='' read -r path
     do
         [[ -d $path ]] && mkdir -pv $HOME${path#.}
         [[ -f $path ]] && ln -sv $(pwd)${path#.} $HOME${path#.}
