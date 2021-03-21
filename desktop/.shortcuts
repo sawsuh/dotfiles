@@ -5,7 +5,7 @@ home: cd ~
 fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
 music: bash ~/.pyscripts/musicscrape/run.sh
 dfu: bash ~/.scripts/dfu.sh 
-restow: stow -R --no-folding -t ~ -d ~/.dots desktop 
+restow: bash ~/.dots/dotfiles.sh .dots/desktop r; bash ~/.dots/dotfiles.sh .dots/desktop s
 alarm: bash ~/.scripts/alarm.sh
 yi: yay -Slq | fzf -m --preview "yay -Si {1}" | xargs -ro yay -S
 gaming: bash ~/.scripts/gaming.sh
