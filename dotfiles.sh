@@ -9,6 +9,6 @@ if [[ $2 == "s" ]]; then
 elif [[ $2 == "r" ]]; then
     find -P $HOME -type l | while IFS='' read -r path
     do 
-        [[ $(readlink -f $path) == "$(realpath $1)${path#$HOME}" ]] && rm -v $path
+        [[ $(readlink -f $path) == "$(realpath $1)"* ]] && rm -v $path
     done
 fi
