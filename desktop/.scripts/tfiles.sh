@@ -2,9 +2,6 @@
 barwid () {
     xdotool search --pid $(pgrep -f "polybar $1") --onlyvisible
 }
-makewin () {
-    tdrop -a -h 600 -w 1100 -x $1 -y $2 -n 1 -f "--name stick1 -e ranger" kitty
-}
 eval $(xdotool getmouselocation --shell)
 y=752
 x=1442
@@ -18,4 +15,4 @@ if (( $X > 2560 )); then
 elif [[ -z "$(barwid 'bar1')" ]]; then
     y=822
 fi
-makewin $x $y
+tdrop -a -h 600 -w 1100 -x $x -y $y -n 1 -f "--name stick1 -e ranger" kitty
