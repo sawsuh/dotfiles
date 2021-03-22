@@ -3,11 +3,12 @@ IFS=' ' read w h x y < <(slop -t 0 -b 0 -c "0.25882352941176473,0.25882352941176
 (( w -= 6 ))
 (( h -= 6 ))
 kitty -o initial_window_width=$w -o initial_window_height=$h -o remember_window_size=false --name float& 
-while [ : ]; do
+while [ -z "$wid" ]; do
     for win in $(xdotool search --desktop=$(xdotool get_desktop) --class .); do
         eval "$(xdotool getwindowgeometry --shell $win)"
-        [ "$WIDTH" -eq "$w" ] && [ "$HEIGHT" -eq "$h" ] && { wid="$win"; break 2; }
+        [ "$WIDTH" -eq "$w" ] && [ "$HEIGHT" -eq "$h" ] && wid="$win"
     done
+    sleep 0.05
 done
 xdotool windowmove $wid $x $y
 xdotool mousemove $(( x + (w/2) )) $(( y + (h/2) ))
