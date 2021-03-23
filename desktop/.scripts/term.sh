@@ -3,11 +3,11 @@ IFS=' ' read w h x y < <(slop -t 0 -b 0 -c "0.25882352941176473,0.25882352941176
 (( w -= 8 ))
 (( h -= 8 ))
 kitty -o initial_window_width=$w -o initial_window_height=$h -o remember_window_size=false --name float& 
-while [ -z "$wid" ]; do # wait for the kitty window to be created
-    for win in $(xdotool search --desktop=$(xdotool get_desktop) --classname ".*float.*"); do
+while [ -z "$wid" ]; do
+    while IFS= read win; do
         eval "$(xdotool getwindowgeometry --shell $win)"
         [ "$WIDTH" -eq "$w" ] && [ "$HEIGHT" -eq "$h" ] && wid="$win"
-    done
+    done < <(xdotool search --desktop=$(xdotool get_desktop) --classname ".*float.*")
     sleep 0.05
 done
 xdotool windowmove $wid $x $y
