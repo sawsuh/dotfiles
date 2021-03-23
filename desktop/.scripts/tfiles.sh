@@ -1,6 +1,6 @@
 #!/bin/bash
 eval $(xdotool getmouselocation --shell)
-y=752
+y=750
 x=1442
 b='bar1'
 (( $X > 2560 )) && { x=4002; b='bar2'; }
