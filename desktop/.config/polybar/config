@@ -14,7 +14,7 @@ my_iconcolor    = #83a598
 
 [section/bars]
 bottom = true
-height = 66
+height = 70
 offset-y = 0
 background = ${colors.my_background}
 foreground =  ${colors.my_foreground}
