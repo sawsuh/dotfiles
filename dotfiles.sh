@@ -2,12 +2,7 @@
 cd $1
 case $2 in
     "s")
-        find . -path "./*" | while IFS= read -r path; do
-            [[ -d $path ]] && mkdir -pv $HOME${path#.}
-            [[ -f $path ]] && ln -srv $path $HOME${path#.}
-        done;;
+        find . -path "./*" \( -type d -exec bash -c 'mkdir -pv "$HOME${0#.}"' {} \; \) -o \( -type f -exec bash -c 'ln -srv "$0" "$HOME${0#.}"' {} \; \);;
     "r")
-        find -P $HOME -type l | while IFS= read -r path; do
-            [[ $(readlink -f $path) == "$(pwd)"* ]] && rm -v $path
-        done;;
+        find -P $HOME -type l -exec bash -c '[[ $(readlink -f $0) == "$(pwd)"* ]] && rm -v $0' {} \;;;
 esac
