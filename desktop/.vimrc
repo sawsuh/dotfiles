@@ -21,6 +21,7 @@ set shiftwidth=4
 set expandtab
 let maplocalleader=","
 let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
 let g:tex_conceal=""
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
