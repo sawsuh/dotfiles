@@ -51,3 +51,19 @@ endsnippet
 snippet binom
 \\binom{${1}}{${2}}${0:${VISUAL}}
 endsnippet
+
+snippet newfile
+\\documentclass{article}
+\\title{${1}}
+\\author{${2}}
+\\date{}
+\\usepackage[]{amssymb} 
+\\usepackage[]{mathtools} 
+\\usepackage[]{enumerate} 
+\\DeclarePairedDelimiter{\\norm}{\\lVert}{\\rVert}
+\\DeclarePairedDelimiter{\\ceil}{\\lceil}{\\rceil}
+\\begin{document}
+\\maketitle
+${0:${VISUAL}}
+\\end{document}
+endsnippet
