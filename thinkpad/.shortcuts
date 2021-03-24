@@ -5,7 +5,6 @@ btooth: sudo systemctl start bluetooth.service
 fact: wget -qO- randomfunfacts.com | sed -n "/<strong>/{s;^.*<i>\(.*\)</i>.*$;\1;p}"
 music: bash ~/.pyscripts/musicscrape/run.sh
 dfu: bash ~/.scripts/dfu.sh
-restow: bash ~/.scripts/dotrefresh.sh ~/.dots thinkpad
 alarm: bash ~/.scripts/alarm.sh 
 assignments: cd ~/school/assignments
 --FilestoVim
