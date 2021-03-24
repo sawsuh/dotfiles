@@ -1,0 +1,53 @@
+snippet integral
+\\int_{${1}}^{${2}} \! ${0:${VISUAL}} \, \\mathrm{d}{${3}}
+endsnippet
+
+snippet qheader
+
+\vspace{.3cm}
+\\textbf{${1}} \\\
+\vspace{.3cm}
+
+${0:${VISUAL}}
+endsnippet
+
+snippet qinline
+
+\\vspace{.3 cm}
+\\textbf{${1}} ${0:${VISUAL}}
+endsnippet
+
+snippet lran
+\\left\\langle ${0:${VISUAL}} \\right\\rangle
+endsnippet
+
+snippet prod
+\\prod^{${1:n}}_{${2:i=1}} ${0:${VISUAL}} 
+endsnippet
+
+snippet br(
+\\left( ${1:${VISUAL}} \\right) ${0}
+endsnippet
+
+snippet 2fig
+\\begin{figure}[H]
+	\\centering
+	\\begin{subfigure}{0.45\textwidth}
+		\\centering
+		\\includegraphics[width=0.95\linewidth]{${1}}
+		\\label{${2}}
+	\\end{subfigure}
+	\\begin{subfigure}{0.45\textwidth}
+		\\centering
+		\\includegraphics[width=0.95\linewidth]{${3}}
+		\\label{${4}}
+	\\end{subfigure}
+	\\caption{${5}}
+	\\label{${6}}
+\\end{figure} 
+${0:${VISUAL}}
+endsnippet
+
+snippet binom
+\\binom{${1}}{${2}}${0:${VISUAL}}
+endsnippet
