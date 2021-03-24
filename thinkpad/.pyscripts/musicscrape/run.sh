@@ -1,3 +1,1 @@
-(	cd `dirname "$0"`
-	python run.py
-)
+../../../shared/.pyscripts/musicscrape/run.sh

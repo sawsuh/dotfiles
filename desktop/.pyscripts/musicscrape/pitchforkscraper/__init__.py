@@ -1,0 +1,1 @@
+../../../../shared/.pyscripts/musicscrape/pitchforkscraper/__init__.py
