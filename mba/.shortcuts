@@ -1,5 +1,5 @@
 --Commands
-restow: stow -R --no-folding -t ~ -d ~/dots mba
+restow: bash ~/.scripts/dotrefresh.sh ~/.dots mba
 --FilestoVim
 vrc: ~/.vimrc
 zrc: ~/.zshrc
