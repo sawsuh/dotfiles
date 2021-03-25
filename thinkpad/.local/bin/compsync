@@ -1,2 +1,1 @@
-#!/bin/zsh
-kitty --class=float -e zsh -c syncthing
+../../../shared/.local/bin/compsync
