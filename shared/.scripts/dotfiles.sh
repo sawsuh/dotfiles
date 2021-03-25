@@ -9,3 +9,4 @@ case $2 in
         find -P $HOME \( -path "$(pwd)" -prune \) -o \
             \( -type l -exec bash -c '[[ $(readlink -f $0) == "$(pwd)"* ]] && rm -v $0' {} \; \);;
 esac
+            #\( -type l -exec bash -c 'ln -srv "$(readlink -ef $0)" "$HOME${0#.}"' {} \; -o \
