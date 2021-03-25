@@ -1,1 +1,1 @@
-../../shared/.scripts/dotfiles.sh
+../../dotfiles.sh
