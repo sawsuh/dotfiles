@@ -8,5 +8,5 @@ case $2 in
             \( -type f -exec bash -c 'ln -srv "$0" "$HOME${0#.}"' {} \; \);;
     "r")
         find -P $HOME \( -path "$(pwd)" -prune \) -o \
-            \( -type l -exec bash -c '[[ $(readlink -f $0) == "$(pwd)"* ]] && rm -v $0' {} \; \);;
+            \( -type l -exec bash -c '[[ $(readlink -ef $0) == "$(pwd)"* ]] && rm -v $0' {} \; \);;
 esac
