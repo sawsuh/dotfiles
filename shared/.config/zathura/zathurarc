@@ -1,0 +1,31 @@
+set statusbar-home-tilde true
+map = zoom in
+map k scroll up
+map j scroll down
+map h scroll left
+map l scroll right
+map K scroll half-up
+map J scroll half-down
+map f toggle_fullscreen
+map [fullscreen] = zoom in
+map [fullscreen] k scroll up
+map [fullscreen] j scroll down
+map [fullscreen] h scroll left
+map [fullscreen] l scroll right
+map [fullscreen] K scroll half-up
+map [fullscreen] J scroll half-down
+map [fullscreen] f toggle_fullscreen
+
+set statusbar-h-padding 60
+set statusbar-v-padding 50
+
+set inputbar-bg "#282828"
+set inputbar-fg "#ebdbb2"
+set statusbar-bg "#282828"
+set statusbar-fg "#ebdbb2"
+set default-bg "#282828"
+set default-fg "#ebdbb2"
+set notification-bg "#282828"
+set notification-fg "#ebdbb2"
+
+set font "Iosevka 12"
