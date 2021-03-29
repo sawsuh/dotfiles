@@ -90,4 +90,3 @@ class Default(ColorScheme):
 				attr |= normal
 
 		return fg, bg, attr
-
