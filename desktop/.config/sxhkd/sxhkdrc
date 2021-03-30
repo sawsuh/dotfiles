@@ -36,7 +36,7 @@ super + r; s
 
 # start file browser
 super + r; f
-	bash ~/.scripts/tfiles.sh
+	bash ~/.scripts/files.sh
 
 # start web browser
 super + r; b
