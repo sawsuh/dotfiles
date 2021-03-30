@@ -24,12 +24,12 @@ bspc config click_to_focus 	button1
 bspc config swallow_first_click	true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus	true
-bspc config borderless_monocle	true
+bspc config borderless_monocle	false
 bspc config gapless_monocle	true
-bspc config top_monocle_padding -20
-bspc config bottom_monocle_padding -20
-bspc config right_monocle_padding -20
-bspc config left_monocle_padding -20
+bspc config top_monocle_padding -10
+bspc config bottom_monocle_padding -10
+bspc config right_monocle_padding -10
+bspc config left_monocle_padding -10
 
 bspc rule -a mpv state=floating
 bspc rule -a "*:sxiv" state=floating
