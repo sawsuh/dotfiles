@@ -165,15 +165,15 @@ super + shift + a: shift + {h,l,k,j}:
     xdo move {-x -10,-x +10,-y -10,-y +10}
 
 # expand a window by moving one of its side outward
-super + a: {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 super + a: ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + a: {h,j,k,l}
 	bspc node -z {left -50 0,bottom 0 50,top 0 -50,right 50 0}
 
 # contract a window by moving one of its side inward
-super + a: shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 super + a: shift + ctrl + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + a: shift + {h,j,k,l}
 	bspc node -z {right -50 0,top 0 50,bottom 0 -50,left 50 0}
 
 # resize a window based on a rectangle
