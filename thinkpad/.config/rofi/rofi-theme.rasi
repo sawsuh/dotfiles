@@ -20,7 +20,7 @@
     normal-background:           @background;
     selected-normal-background:  @background;
     separatorcolor:              @orange;
-    spacing:                     2;
+    spacing:                     1;
     urgent-background:           @red;
     selected-urgent-background:  @red;
     selected-active-background:  @blue;
@@ -30,7 +30,7 @@
     border:     3px;
     text-color: @foreground;
     background-color: @background;
-    padding:    60px;
+    padding:    20px;
     border-color:                @border-color;
     font: "Iosevka 12";
 }
@@ -39,7 +39,7 @@
     lines: 5;
 }
 #element {
-    padding:	30px 30px 30px;
+    padding:	10px 10px 10px;
     highlight:  bold;
     font: "Iosevka 12";
     text-color: @inactive-color;
