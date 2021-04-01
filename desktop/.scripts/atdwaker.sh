@@ -1,1 +1,1 @@
-kill -SIGHUP $(pgrep atd)
+../../shared/.scripts/atdwaker.sh

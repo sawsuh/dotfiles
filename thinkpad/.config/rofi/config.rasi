@@ -1,3 +1,1 @@
-configuration {
-	terminal: "Termite --name=float";	
-}
+../../../shared/.config/rofi/config.rasi
