@@ -36,7 +36,7 @@
 }
 #listview {
     font: "Iosevka 12";
-    lines: 5;
+    lines: 8;
 }
 #element {
     padding:	10px 10px 10px;
