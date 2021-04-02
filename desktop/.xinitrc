@@ -1,2 +1,1 @@
-sxhkd -a space& 
-exec bspwm
+../shared/.xinitrc
