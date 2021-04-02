@@ -21,7 +21,6 @@
     normal-background:           @background;
     selected-normal-background:  @background;
     separatorcolor:              @orange;
-    spacing:                     2;
     urgent-background:           @red;
     selected-urgent-background:  @red;
     selected-active-background:  @blue;
@@ -31,16 +30,16 @@
     border:     4px;
     text-color: @foreground;
     background-color: @background;
-    padding:    70px;
+    padding:    25px;
     border-color:                @border-color;
     font: "Iosevka 16";
 }
 #listview {
     font: "Iosevka 16";
-    lines: 5;
+    lines: 8;
 }
 #element {
-    padding:	40px 40px 40px;
+    padding:	15px 15px 15px;
     highlight:  bold;
     font: "Iosevka 16";
     text-color: @inactive-color;
