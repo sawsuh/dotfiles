@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+#! /bin/sh
+>>>>>>> 21ba5860e478930b4c7d1646657546ba7d642336
 nitrogen --restore&
 picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
@@ -32,3 +36,7 @@ bspc rule -a "Nm-connection-editor" state=floating
 
 redshift -l -35.3:149&
 xsetroot -cursor_name left_ptr&
+<<<<<<< HEAD
+=======
+bash ~/.config/bspwm/specific.sh
+>>>>>>> 21ba5860e478930b4c7d1646657546ba7d642336
