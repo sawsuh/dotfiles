@@ -1,5 +1,5 @@
 #! /bin/sh
-bash /home/prashant/.config/bspwm/specific.sh&
+bash ~/.config/bspwm/specific.sh
 nitrogen --restore&
 picom --config /home/prashant/.compton.conf&
 xrdb ~/.Xresources&
