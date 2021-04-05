@@ -1,0 +1,19 @@
+# suspend
+super + alt + Escape
+	loginctl suspend
+
+# volume control
+{XF86AudioRaiseVolume,XF86AudioLowerVolume} 
+	bash ~/.scripts/audio.sh {+3%,-3%}
+
+# mute
+XF86AudioMute
+	bash ~/.scripts/mute.sh 
+
+# brightness controls
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+	brillo {-U 10, -A 10}
+
+# keyboard backlight
+{_, shift +} XF86Display
+	bash ~/.scripts/backlight.sh {up,down}

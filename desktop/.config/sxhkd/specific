@@ -1,0 +1,13 @@
+# suspend
+super + alt + q
+	systemctl suspend
+
+# volume control
+super + shift + {m,n} 
+	pactl -- set-sink-volume 1 {+3%,-3%}
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl -- set-sink-volume 1 {+3%,-3%}
+
+# mute
+super + alt + m
+	pactl set-sink-mute 1 toggle
