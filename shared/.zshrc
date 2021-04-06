@@ -10,9 +10,9 @@ export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
 export FZF_DEFAULT_OPTS='--color=16,bg+:0,bg:0,fg+:15,pointer:6,prompt:6'
 ZSH_DISABLE_COMPFIX=true
-source <(awk -F'=' '/--Commands/{f=1; next} /--FilestoVim/{f=0} f{print "alias "$1"=\""$2"\""}' .shortcuts)
-source <(awk -F'=' '/--FilestoVim/{f=1;next} /EOF/{f=0} f{print "alias "$1"=\"nvim "$2"\""}' .shortcuts)
-[[ -f ~/.shortcuts_specific ]] && {source <(awk -F'=' '/--Commands/{f=1; next} /--FilestoVim/{f=0} f{print "alias "$1"=\""$2"\""}' .shortcuts_specific); source <(awk -F'=' '/--FilestoVim/{f=1;next} /EOF/{f=0} f{print "alias "$1"=\"nvim "$2"\""}' .shortcuts_specific);}
+impalias () {source <(awk -F'=' '/--1/{f=1; next} /--2/{f=0} f{print "alias "$1"=\""$2"\""}' $1); source <(awk -F'=' '/--2/{f=1;next} /EOF/{f=0} f{print "alias "$1"=\"nvim "$2"\""}' $1);}
+impalias .shortcuts
+[[ -f ~/.shortcuts_specific ]] && impalias .shortcuts_specific
 export PATH=/home/prashant/.local/bin:$PATH
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }

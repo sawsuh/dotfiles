@@ -1,4 +1,4 @@
---Commands
+--1
 dots=cd ~/.dots
 home=cd ~
 tpad=cd ~/.dots/thinkpad
@@ -6,7 +6,8 @@ dtop=cd ~/.dots/desktop
 srd=cd ~/.dots/shared
 music=bash ~/.pyscripts/musicscrape/run.sh
 assignments=cd ~/school/assignments
---FilestoVim
+gpus=git -C ~/.dots add --all; git -C ~/.dots commit; git -C ~/.dots push
+--2
 xr=~/.Xresources
 sxrc=~/.config/sxhkd/sxhkdrc
 bsprc=~/.config/bspwm/bspwmrc
