@@ -1,0 +1,1 @@
+../../../../shared/.config/ranger/colorschemes/scheme1.py

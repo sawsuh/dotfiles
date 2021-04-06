@@ -1,4 +1,1 @@
---Commands
---FilestoVim
-vrc: ~/.vimrc
-zrc: ~/.zshrc
+../shared/.shortcuts

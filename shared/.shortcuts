@@ -1,8 +1,8 @@
 --1
 dots=cd ~/.dots
-home=cd ~
 tpad=cd ~/.dots/thinkpad
 dtop=cd ~/.dots/desktop
+mba=cd ~/.dots/mba
 srd=cd ~/.dots/shared
 music=bash ~/.pyscripts/musicscrape/run.sh
 assignments=cd ~/school/assignments
