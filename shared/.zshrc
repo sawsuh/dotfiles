@@ -10,10 +10,8 @@ export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
 export FZF_DEFAULT_OPTS='--color=16,bg+:0,bg:0,fg+:15,pointer:6,prompt:6'
 ZSH_DISABLE_COMPFIX=true
-awk '/--Commands/, /--Files/' ~/.shortcuts | sed '1d;$d' | awk -F": " '{print "alias "$1"=\x27"$2"\x27"}' > ~/.shorttemp
-awk '/--Files/,EOF' ~/.shortcuts | sed '1d' | awk -F ": " '{print "alias "$1"=\"nvim "$2"\""}' >> ~/.shorttemp
-source ~/.shorttemp
-rm ~/.shorttemp
+source <(awk -F'=' '/--Commands/{f=1; next} /--FilestoVim/{f=0} f{print "alias "$1"=\""$2"\""}' .shortcuts)
+source <(awk -F'=' '/--FilestoVim/{f=1;next} EOF f{print "alias "$1"=\"nvim "$2"\""}' .shortcuts)
 export PATH=/home/prashant/.local/bin:$PATH
 #task
 TRAPWINCH() {
@@ -35,5 +33,3 @@ bindkey -M viins '^[OA' history-beginning-search-backward-end \
                  '^[[B' history-beginning-search-forward-end
 bindkey -M viins 'jj' vi-cmd-mode
 eval "$(ssh-agent -s > /dev/null)"
-#source /usr/share/fzf/key-bindings.zsh
-#source /usr/share/fzf/completion.zsh
