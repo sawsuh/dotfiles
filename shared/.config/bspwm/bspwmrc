@@ -1,7 +1,7 @@
 #! /bin/sh
 bash ~/.config/bspwm/specific.sh
 nitrogen --restore&
-picom --config /home/prashant/.compton.conf&
+picom --config ~/.compton.conf&
 xrdb ~/.Xresources&
 dunst&
 greenclip daemon&
