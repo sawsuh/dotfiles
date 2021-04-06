@@ -13,7 +13,6 @@ ZSH_DISABLE_COMPFIX=true
 source <(awk -F'=' '/--Commands/{f=1; next} /--FilestoVim/{f=0} f{print "alias "$1"=\""$2"\""}' .shortcuts)
 source <(awk -F'=' '/--FilestoVim/{f=1;next} EOF f{print "alias "$1"=\"nvim "$2"\""}' .shortcuts)
 export PATH=/home/prashant/.local/bin:$PATH
-#task
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
