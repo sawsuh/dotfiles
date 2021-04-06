@@ -14,3 +14,5 @@ pbar=~/.config/polybar/config
 rng=~/.config/ranger/rc.conf
 vrc=~/.vimrc
 zrc=~/.zshrc
+src=.shortcuts
+srcs=.shortcuts_specific

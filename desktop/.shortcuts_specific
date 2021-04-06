@@ -4,4 +4,5 @@ yi=yay -Slq | fzf -m --preview 'yay -Si {1}' | xargs -ro yay -S
 gaming=bash ~/.scripts/gaming.sh
 onemon=bash ~/.scripts/onemon.sh
 twomon=bash ~/.scripts/twomon.sh
+restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/desktop s
 --FilestoVim
