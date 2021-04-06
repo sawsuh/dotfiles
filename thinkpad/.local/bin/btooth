@@ -1,4 +1,0 @@
-#!/bin/zsh
-kitty --class=float -e zsh -c "sudo systemctl start bluetooth.service; \
-sudo rfkill unblock bluetooth; \
-bluetoothctl"

@@ -1,3 +1,4 @@
 --1
 restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/thinkpad s
+bth=bluetoothctl
 --2
