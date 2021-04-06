@@ -1,15 +1,1 @@
---Commands
-dots=cd ~/.dots
-home=cd ~
-btooth=sudo systemctl start bluetooth.service
-music=bash ~/.pyscripts/musicscrape/run.sh
-dfu=bash ~/.scripts/dfu.sh
-alarm=bash ~/.scripts/alarm.sh 
-assignments=cd ~/school/assignments
---FilestoVim
-xr=~/.Xresources
-sxrc=~/.config/sxhkd/sxhkdrc
-bsprc=~/.config/bspwm/bspwmrc
-pbar=~/.config/polybar/config
-rng=~/.config/ranger/rc.conf
-vrc=~/.vimrc
+../shared/.shortcuts

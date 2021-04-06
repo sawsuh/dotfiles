@@ -1,0 +1,16 @@
+--Commands
+dots=cd ~/.dots
+home=cd ~
+tpad=cd ~/.dots/thinkpad
+dtop=cd ~/.dots/desktop
+srd=cd ~/.dots/shared
+music=bash ~/.pyscripts/musicscrape/run.sh
+assignments=cd ~/school/assignments
+--FilestoVim
+xr=~/.Xresources
+sxrc=~/.config/sxhkd/sxhkdrc
+bsprc=~/.config/bspwm/bspwmrc
+pbar=~/.config/polybar/config
+rng=~/.config/ranger/rc.conf
+vrc=~/.vimrc
+zrc=~/.zshrc
