@@ -1,5 +1,5 @@
 # suspend
-super + alt + Escape
+super + alt + q
 	loginctl suspend
 
 # volume control
