@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 [[ -f ~/.config/bspwm/specific.sh ]] && bash ~/.config/bspwm/specific.sh
 nitrogen --restore&
 picom --config ~/.compton.conf&
