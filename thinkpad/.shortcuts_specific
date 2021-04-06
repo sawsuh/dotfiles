@@ -1,0 +1,3 @@
+--Commands
+restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/thinkpad s
+--FilestoVim
