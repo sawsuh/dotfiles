@@ -189,8 +189,8 @@ super + shift + c
 #	maim -sul -b 0 -c 0.25882352941176473,0.25882352941176473,0.23921568627450981,0.5 $(date +'%-d-%-m-%-y_%T').png
 
 # clipboard list
-super + ctrl + v
-    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
+#super + ctrl + v
+#    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme rofi-theme
 
 # bar notification toggle
 super + b
