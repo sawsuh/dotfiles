@@ -2,8 +2,10 @@
 cmd="polybar barski"
 pid=$(pgrep -f "$cmd")
 wid=$(xdotool search --pid $pid --onlyvisible)
-polybar-msg cmd hide
-bspc config top_padding 20
-[[ -z $wid ]] && runcmd='bspc config top_padding 70; polybar-msg cmd show'
-[[ -z $pid ]] && runcmd=`eval "$cmd"&>/dev/null &`
-eval $runcmd
+show=0
+spawn=0
+[[ -z $wid ]] && { bspc config top_padding 70; show=1; }
+[[ -z $pid ]] && { show=0; spawn=1; }
+((show)) && polybar-msg cmd show
+((spawn)) && eval "$cmd"&>/dev/null&
+((show + spawn)) || { polybar-msg cmd hide; bspc config top_padding 20; }
