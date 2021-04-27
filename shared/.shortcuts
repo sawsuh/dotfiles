@@ -8,6 +8,7 @@ music=bash ~/.pyscripts/musicscrape/run.sh
 assignments=cd ~/school/assignments
 gpus=git -C ~/.dots add --all; git -C ~/.dots commit; git -C ~/.dots push
 gupd=git -C ~/.dots pull
+dgit=git -C ~/.dots
 --2
 xr=~/.Xresources
 sxrc=~/.config/sxhkd/sxhkdrc
