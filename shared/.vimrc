@@ -32,7 +32,7 @@ let g:indentLine_color_term = 7
 let g:indentLine_char = '>'
 let g:limelight_conceal_ctermfg = 7
 
-nnoremap <C-s> :Goyo <bar> hi NonText ctermfg=7 <bar> hi search ctermbg=8 ctermfg=15 <bar> hi EndOfBuffer ctermfg=0 <CR>
+nnoremap <C-s> :Goyo <CR>
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -59,3 +59,4 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map ,n <Plug>(miniyank-cycle)
 map ,N <Plug>(miniyank-cycleback)
+nnoremap ,h :nohl <CR>
