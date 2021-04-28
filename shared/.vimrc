@@ -8,6 +8,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'bfredl/nvim-miniyank'
 Plug 'mcchrish/nnn.vim'
+Plug 'mbbill/undotree'
 call plug#end()
 filetype plugin on
 filetype indent on
@@ -60,3 +61,4 @@ map P <Plug>(miniyank-autoPut)
 map ,n <Plug>(miniyank-cycle)
 map ,N <Plug>(miniyank-cycleback)
 nnoremap ,h :nohl <CR>
+nnoremap ,u :UndotreeToggle <CR>
