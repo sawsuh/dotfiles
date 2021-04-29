@@ -34,7 +34,7 @@ let g:indentLine_color_term = 7
 let g:indentLine_char = '>'
 let g:limelight_conceal_ctermfg = 7
 
-nnoremap <C-s> :Goyo <CR>
+nnoremap <silent> <C-s> :Goyo <CR>
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -43,13 +43,14 @@ autocmd VimEnter * ALEDisable
 
 inoremap jj <Esc>
 
-autocmd FileType python nnoremap ,t :!python % 
-autocmd FileType haskell nnoremap ,t :!runhaskell % 
-autocmd FileType sh nnoremap ,t :!bash % 
+augroup tex
+    autocmd FileType python nnoremap ,t :!python % 
+    autocmd FileType haskell nnoremap ,t :!runhaskell % 
+    autocmd FileType sh nnoremap ,t :!bash % 
+augroup END
 
 au BufWinLeave *.tex mks!
-let path = expand('%:p:h')
-au BufWinEnter *.tex silent! exec 'source' path . '/Session.vim'
+au BufWinEnter *.tex silent! exec 'source' . expand('%:p:h') . '/Session.vim'
 
 au VimEnter * hi NonText ctermfg=8
 au VimEnter * hi search ctermbg=8 ctermfg=15
@@ -66,4 +67,4 @@ map P <Plug>(miniyank-autoPut)
 map ,n <Plug>(miniyank-cycle)
 map ,N <Plug>(miniyank-cycleback)
 nnoremap ,h :nohl <CR>
-nnoremap ,u :UndotreeToggle <CR>
+nnoremap <silent> ,u :UndotreeToggle <CR>
