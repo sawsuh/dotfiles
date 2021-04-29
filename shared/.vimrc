@@ -24,19 +24,17 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 let g:ale_fixers = { 'python' : ['black', 'autopep8']}
 
-autocmd VimEnter * ALEDisable
-
-inoremap jj <Esc>
-
 autocmd FileType python nnoremap ,t :!python % 
 autocmd FileType haskell nnoremap ,t :!runhaskell % 
 autocmd FileType sh nnoremap ,t :!bash % 
 
 augroup tex
+    au BufReadPre *.tex silent! exec "set undofile undodir=" . expand('%:p:h')
     au BufWinEnter *.tex silent! exec 'source' . expand('%:p:h') . '/Session.vim'
     au BufWinLeave *.tex mks!
 augroup END
 
+au VimEnter * ALEDisable
 au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 au VimEnter * hi CursorLineNr ctermfg=8
@@ -50,3 +48,4 @@ map ,n <Plug>(miniyank-cycle)
 map ,N <Plug>(miniyank-cycleback)
 nnoremap ,h :nohl <CR>
 nnoremap <silent> ,u :UndotreeToggle <CR>
+inoremap jj <Esc>
