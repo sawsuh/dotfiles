@@ -33,8 +33,8 @@ autocmd FileType haskell nnoremap ,t :!runhaskell %
 autocmd FileType sh nnoremap ,t :!bash % 
 
 augroup tex
-    au BufWinLeave *.tex mks!
     au BufWinEnter *.tex silent! exec 'source' . expand('%:p:h') . '/Session.vim'
+    au BufWinLeave *.tex mks!
 augroup END
 
 au VimEnter * hi search ctermbg=8 ctermfg=15
