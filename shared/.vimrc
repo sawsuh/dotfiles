@@ -20,6 +20,7 @@ set incsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set sessionoptions=blank,buffers,sesdir,folds,help,tabpages,winsize
 let maplocalleader=","
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor = 'latex'
@@ -45,6 +46,10 @@ inoremap jj <Esc>
 autocmd FileType python nnoremap ,t :!python % 
 autocmd FileType haskell nnoremap ,t :!runhaskell % 
 autocmd FileType sh nnoremap ,t :!bash % 
+
+au BufWinLeave *.tex mks!
+let path = expand('%:p:h')
+au BufWinEnter *.tex silent! exec 'source' path . '/Session.vim'
 
 au VimEnter * hi NonText ctermfg=8
 au VimEnter * hi search ctermbg=8 ctermfg=15
