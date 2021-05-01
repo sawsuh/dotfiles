@@ -6,6 +6,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'bfredl/nvim-miniyank'
 Plug 'mbbill/undotree'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 filetype plugin on
 filetype indent on
