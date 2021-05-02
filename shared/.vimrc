@@ -24,6 +24,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 let g:ale_fixers = { 'python' : ['black', 'autopep8']}
+let g:firenvim_config = { 'localSettings': { '.*': { 'takeover': 'never' } } }
 
 autocmd FileType python nnoremap ,t :!python % 
 autocmd FileType haskell nnoremap ,t :!runhaskell % 
