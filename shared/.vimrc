@@ -4,7 +4,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
-Plug 'bfredl/nvim-miniyank'
+"Plug 'bfredl/nvim-miniyank'
 Plug 'mbbill/undotree'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
@@ -44,10 +44,10 @@ au VimEnter * hi LineNr ctermfg=8
 set laststatus=0 ruler
 set number relativenumber
 
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-map ,n <Plug>(miniyank-cycle)
-map ,N <Plug>(miniyank-cycleback)
+"map p <Plug>(miniyank-autoput)
+"map P <Plug>(miniyank-autoPut)
+"map ,n <Plug>(miniyank-cycle)
+"map ,N <Plug>(miniyank-cycleback)
 nnoremap ,h :nohl <CR>
 nnoremap <silent> ,u :UndotreeToggle <CR>
 inoremap jj <Esc>
