@@ -13,8 +13,8 @@ maintext = do
         \\\usepackage[]{amssymb} \n\
         \\\usepackage[]{mathtools} \n\
         \\\usepackage[]{enumerate} \n\
-        \\\DeclarePairedDelimiter{\\norm}{\\lVert}{\\rVert}\n\
-        \\\DeclarePairedDelimiter{\\ceil}{\\lceil}{\\rceil}\n\
+        \\\newcommand{\\norm}[1]{\\left\\lVert#1\\right\\rVert}\n\
+        \\\newcommand{\\ceil}[1]{\\left\\lceil#1\\right\\rceil}\n\
         \\\begin{document}\n\
         \\\maketitle\n" ++ qList ++ "\n\\end{document}\n"
     where qgen m = "\n\
