@@ -37,6 +37,6 @@ main = do
             home <- (++"/") <$> getHomeDirectory
             let inp = Conf c a q
                 f = getFolder home inp
-            createDirectoryIfMissing True f
+            createDirectory f
             writeFile (f++"/ass.tex") $ maintext inp
         _ -> putStrLn "Error reading question and/or assignment number"
