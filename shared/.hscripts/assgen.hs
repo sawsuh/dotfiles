@@ -1,5 +1,6 @@
 import System.Environment
 import Text.Read
+import System.Directory
 
 data Conf = Conf { code :: String, na :: Int, nq :: Int }
 
@@ -24,8 +25,18 @@ maintext = do
           \\n\
           \% question " ++ m ++ "\n"
 
+getFolder home = do
+    c <- drop 4 <$> code
+    a <- show <$> na
+    return $ home ++ "/school/assignments/"++c++"ass"++a
+
 main = do
     c:xs <- getArgs
     case map readMaybe xs of
-        [Just a, Just q] -> putStr . maintext $ Conf c a q
+        [Just a, Just q] -> do
+            home <- (++"/") <$> getHomeDirectory
+            let inp = Conf c a q
+                f = getFolder home inp
+            createDirectoryIfMissing True f
+            writeFile (f++"/ass.tex") $ maintext inp
         _ -> putStrLn "Error reading question and/or assignment number"
