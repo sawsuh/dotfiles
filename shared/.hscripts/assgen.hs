@@ -32,7 +32,7 @@ main = do
     case map readMaybe xs of
         [Just a, Just q] -> do
             let inp = Conf c a q
-            f <- flip getFolder inp . (++"/") <$> getHomeDirectory 
+            f <- flip getFolder inp <$> getHomeDirectory 
             createDirectory f
             writeFile (f++"/ass.tex") $ maintext inp
         _ -> putStrLn "Error reading question and/or assignment number"
