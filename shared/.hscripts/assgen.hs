@@ -25,18 +25,14 @@ maintext = do
           \\n\
           \% question " ++ m ++ "\n"
 
-getFolder home = do
-    c <- drop 4 <$> code
-    a <- show <$> na
-    return $ home ++ "/school/assignments/"++c++"ass"++a
+getFolder home = (++) . (++) (home ++ "/school/assignments/") . (++"ass") . drop 4 <$> code <*> fmap show na
 
 main = do
     c:xs <- getArgs
     case map readMaybe xs of
         [Just a, Just q] -> do
-            home <- (++"/") <$> getHomeDirectory
             let inp = Conf c a q
-                f = getFolder home inp
+            f <- flip getFolder inp . (++"/") <$> getHomeDirectory 
             createDirectory f
             writeFile (f++"/ass.tex") $ maintext inp
         _ -> putStrLn "Error reading question and/or assignment number"
