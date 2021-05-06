@@ -4,8 +4,8 @@ import Text.Read
 data Conf = Conf { code :: String, na :: Int, nq :: Int }
 
 maintext = do
-    title <- titler
-    qList <- qLister
+    title <- (++) . (++" Assignment ") <$> code <*> fmap show na
+    qList <- foldr1 (++) . map (qgen . show) . flip take [1..] <$> nq
     return $ "\\documentclass{article}\n\
         \\\title{" ++ title ++"}\n\
         \\\author{U6104703}\n\
@@ -17,15 +17,12 @@ maintext = do
         \\\DeclarePairedDelimiter{\\ceil}{\\lceil}{\\rceil}\n\
         \\\begin{document}\n\
         \\\maketitle\n" ++ qList ++ "\n\\end{document}\n"
-    where qgen n = "\n\
+    where qgen m = "\n\
           \\\vspace{.3cm}\n\
           \\\textbf{Question " ++ m ++ "} \\\\ \n\
           \\\vspace{.3cm}\n\
           \\n\
           \% question " ++ m ++ "\n"
-              where m = show n
-          qLister = foldr1 (++) . map qgen . flip take [1..] <$> nq
-          titler = (++) . (++" Assignment ") <$> code <*> fmap show na
 
 main = do
     c:xs <- getArgs
