@@ -1,0 +1,1 @@
+../../shared/.hscripts/assgen.hs
