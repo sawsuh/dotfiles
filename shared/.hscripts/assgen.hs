@@ -42,11 +42,14 @@ main = do
     c:xs <- getArgs
     f <- getHomeDirectory
     datas <- readFile $ f++"/.hscripts/templates/ass.tex"
+    putStrLn $ "read template from "++f++"/.hscripts/templates/ass.tex"
     case splitter (=='@') datas of 
         [pretitle, posttitle, preq, midq, postq, end] -> case map readMaybe xs of 
             [Just a, Just q] -> do
                 let inp = Conf c a q pretitle posttitle preq midq postq end
                     fo = getFolder f inp
                 createDirectory fo
+                putStrLn $ "made dir "++fo
                 writeFile (fo++"/ass.tex") $ maintext inp
+                putStrLn $ "wrote "++fo++"/ass.tex"
         _ -> putStrLn "No parse"
