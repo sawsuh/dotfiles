@@ -4,10 +4,7 @@ import Text.Read
 import System.Directory
 import Control.Monad
 
-data Conf = Conf { code :: String, 
-    na :: Int, 
-    nq :: Int, 
-    templ :: T.Text }
+data Conf = Conf { code :: String, na :: Int, nq :: Int, templ :: T.Text }
 container = fst . T.break (=='!') . templ
 qskele = T.drop 1 . snd . T.break (=='!') . templ
 title = (.) T.pack $ (++) <$> (++" Assignment ") . code <*> show . na
