@@ -19,18 +19,11 @@ getFolder h = (++) <$> (++"ass") . (++) (h++"/school/assignments/") . drop 4 . c
 main = do
     course_code:args <- getArgs
     home_dir <- getHomeDirectory
-    let template_loc = home_dir ++ "/.hscripts/templates/ass.tex"
-    template <- T.pack <$> readFile template_loc
-    putStrLn $ "read template from "++template_loc
+    template <- T.pack <$> readFile home_dir ++ "/.hscripts/templates/ass.tex"
     case map readMaybe args of 
         [Just assign_num, Just q_count] -> do
             let config = Conf course_code assign_num q_count template
                 output_folder = getFolder home_dir config
-                output_file = output_folder++"/ass.tex"
-                output_text = T.unpack $ maintext config
             createDirectory output_folder
-            putStrLn $ "made dir "++output_folder
-            writeFile output_file output_text
-            putStrLn $ "wrote "++output_file
-            putStr output_text
+            writeFile (output_folder++"/ass.tex") . T.unpack $ maintext config
         _ -> putStrLn "No parse"
