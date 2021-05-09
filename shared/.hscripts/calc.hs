@@ -34,7 +34,7 @@ parseNumer = (flip Complex 0 . read) <$> many1 digit
 parseI = Complex 0 1 <$ char 'i'
 parseFloat = fmap (flip Complex 0 . read) $ try floatNoLeft <|> try floatLeft
 floatNoLeft = liftM2 (++) ("0." <$ char '.') $ many1 digit
-floatLeft = liftM2 (++) (lift M2 (++) (many1 digit) $ string ".") $ many1 digit
+floatLeft = liftM2 (++) (liftM2 (++) (many1 digit) $ string ".") $ many1 digit
 brackExpr = string "(" *> exprParser <* string ")"
 
 main = do
