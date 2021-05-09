@@ -2,7 +2,7 @@ import Text.Parsec
 import Control.Monad
 import System.Environment
 
-data Expr = Sub Expr Expr | Div Expr Expr | Times Expr Expr | Add Expr Expr | Valc Complex
+data Expr = Neg Expr | Sub Expr Expr | Div Expr Expr | Times Expr Expr | Add Expr Expr | Valc Complex
 data Complex = Complex Double Double
 instance Num Complex where
     (+) (Complex a1 b1) (Complex a2 b2) = Complex (a1+a2) (b1+b2)
@@ -22,32 +22,28 @@ instance Show Expr where
     show (Times ex1 ex2) = "("++show ex1 ++ " * " ++ show ex2++")"
     show (Div ex1 ex2) = "("++show ex1 ++ " / " ++ show ex2++")"
     show (Valc x) = "(" ++ show x ++ ")"
+    show (Neg x) = "( -(" ++ show x ++ "))"
 eval (Add ex1 ex2) = eval ex1 + eval ex2
 eval (Valc x) = x
 eval (Times ex1 ex2) = (eval ex1) * (eval ex2)
 eval (Div ex1 ex2) = (eval ex1) / (eval ex2)
 eval (Sub ex1 ex2) = (eval ex1) - (eval ex2)
+eval (Neg ex1) = (-1) * (eval ex1)
 
+exprParser :: Parsec String () Expr
 exprParser = chainl1 sumitem $ sumParse <|> subParse
 
 sumParse = Add <$ char '+'
 subParse = Sub <$ char '-'
-sumitem = chainl1 item $ multParse <|> divParse
+sumitem = try negParse <|> (chainl1 item $ multParse <|> divParse <|> return Times)
 
+negParse = char '-' *> fmap Neg sumitem
 multParse = Times <$ char '*'
 divParse = Div <$ char '/'
-item = brackExpr <|> try (Valc <$> parseNum)
+item = brackExpr <|> (Valc <$> (try parseNumer <|> try parseI))
 
-parseNum = try parseIm <|> try parseReal
-
-parseIm = try im <|> try pmI
-parseReal = liftM2 (*) parseNeg $ flip Complex 0 <$> num
-
-im = liftM2 (*) parseNeg $ Complex 0 <$> num <* char 'i'
-pmI = liftM2 (*) parseNeg $ Complex 0 1 <$ char 'i'
-num = read <$> many1 digit
-
-parseNeg = (-1) <$ char '-' <|> pure 1
+parseNumer = (flip Complex 0 . read) <$> many1 digit
+parseI = Complex 0 1 <$ char 'i'
 
 brackExpr = string "(" *> exprParser <* string ")"
 
@@ -55,5 +51,7 @@ main = do
     input <- parse exprParser "" . filter (/=' ') <$> getLine
     case input of
         Left err -> print err
-        Right out -> print $ eval out
+        Right out -> do
+            print $ eval out
+            print $ show out
     main
