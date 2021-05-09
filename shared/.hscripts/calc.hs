@@ -33,8 +33,8 @@ item = brackExpr <|> (fmap Valc $ try parseFloat <|> try parseNumer <|> try pars
 parseNumer = (flip Complex 0 . read) <$> many1 digit
 parseI = Complex 0 1 <$ char 'i'
 parseFloat = fmap (flip Complex 0 . read) $ try floatNoLeft <|> try floatLeft
-floatNoLeft = (++) <$> ("0." <$ char '.') <*> many1 digit
-floatLeft = (++) <$> ((++) <$> many1 digit <*> string ".") <*> (many1 digit)
+floatNoLeft = liftM2 (++) ("0." <$ char '.') $ many1 digit
+floatLeft = liftM2 (++) (lift M2 (++) (many1 digit) $ string ".") $ many1 digit
 brackExpr = string "(" *> exprParser <* string ")"
 
 main = do
