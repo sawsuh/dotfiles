@@ -13,7 +13,15 @@ instance Fractional Complex where
     (/) (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2 + b1*b2)/(a2*a2 + b2*b2)) ((a2*b1 - a1*b2)/(a2*a2 + b2*b2))
     fromRational x = Complex (fromRational x) 0
 instance Show Complex where
+    show (Complex a 0) = show a
+    show (Complex 0 b) = show b ++ "i"
     show (Complex a b) = show a ++ " + " ++ show b ++ "i"
+instance Show Expr where
+    show (Sub ex1 ex2) = "("++show ex1 ++ " - " ++ show ex2++")"
+    show (Add ex1 ex2) = "("++show ex1 ++ " + " ++ show ex2++")"
+    show (Times ex1 ex2) = "("++show ex1 ++ " * " ++ show ex2++")"
+    show (Div ex1 ex2) = "("++show ex1 ++ " / " ++ show ex2++")"
+    show (Valc x) = "(" ++ show x ++ ")"
 eval (Add ex1 ex2) = eval ex1 + eval ex2
 eval (Valc x) = x
 eval (Times ex1 ex2) = (eval ex1) * (eval ex2)
