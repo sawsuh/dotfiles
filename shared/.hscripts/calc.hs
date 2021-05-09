@@ -1,3 +1,4 @@
+import System.IO
 import Text.Parsec
 import Control.Monad
 import System.Environment
@@ -34,7 +35,7 @@ parseI = Complex 0 1 <$ char 'i'
 brackExpr = string "(" *> exprParser <* string ")"
 
 main = do
-    input <- parse exprParser "" . filter (/=' ') <$> getLine
+    input <- parse exprParser "" . filter (/=' ') <$> (putStr "> " >> hFlush stdout >> getLine)
     case input of
         Left err -> print err
         Right out -> do
