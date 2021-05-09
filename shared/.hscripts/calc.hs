@@ -2,21 +2,45 @@ import Text.Parsec
 import Control.Monad
 import System.Environment
 
-data Expr = Sub Expr Expr | Div Expr Expr | Times Expr Expr | Add Expr Expr | Val Double
+data Expr = Sub Expr Expr | Div Expr Expr | Times Expr Expr | Add Expr Expr | Valc Complex
+data Complex = Complex Double Double
+instance Num Complex where
+    (+) (Complex a1 b1) (Complex a2 b2) = Complex (a1+a2) (b1+b2)
+    (*) (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2)-(b1*b2)) ((a1*b2)+(a2*b1))
+    fromInteger x = Complex (fromInteger x) 0
+    negate (Complex a b) = Complex (negate a) (negate b)
+instance Fractional Complex where
+    (/) (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2 + b1*b2)/(a2*a2 + b2*b2)) ((a2*b1 - a1*b2)/(a2*a2 + b2*b2))
+    fromRational x = Complex (fromRational x) 0
+instance Show Complex where
+    show (Complex a b) = show a ++ " + " ++ show b ++ "i"
 eval (Add ex1 ex2) = eval ex1 + eval ex2
-eval (Val x) = x
+eval (Valc x) = x
 eval (Times ex1 ex2) = (eval ex1) * (eval ex2)
 eval (Div ex1 ex2) = (eval ex1) / (eval ex2)
 eval (Sub ex1 ex2) = (eval ex1) - (eval ex2)
 
-exprParser :: Parsec String () Expr
-exprParser = chainl1 sumitem (sumParse <|> subParse)
+exprParser = chainl1 sumitem $ sumParse <|> subParse
+
 sumParse = Add <$ char '+'
 subParse = Sub <$ char '-'
-sumitem = chainl1 item (multParse <|> divParse <|> return Times)
+sumitem = chainl1 item $ multParse <|> divParse
+
 multParse = Times <$ char '*'
 divParse = Div <$ char '/'
-item = brackExpr <|> (Val . read <$> many1 digit)
+item = brackExpr <|> Valc <$> try parseNum
+
+parseNum = try parseIm <|> try parseReal
+
+parseIm = try im <|> try pmI
+parseReal = liftM2 (*) parseNeg $ flip Complex 0 <$> num
+
+im = liftM2 (*) parseNeg $ Complex 0 <$> num <* char 'i'
+pmI = liftM2 (*) parseNeg $ Complex 0 1 <$ char 'i'
+num = read <$> many1 digit
+
+parseNeg = (-1) <$ char '-' <|> pure 1
+
 brackExpr = string "(" *> exprParser <* string ")"
 
 main = do
