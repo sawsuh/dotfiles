@@ -28,7 +28,7 @@ sumitem = chainl1 item $ multParse <|> divParse
 
 multParse = Times <$ char '*'
 divParse = Div <$ char '/'
-item = brackExpr <|> Valc <$> try parseNum
+item = brackExpr <|> try (Valc <$> parseNum)
 
 parseNum = try parseIm <|> try parseReal
 
