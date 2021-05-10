@@ -56,7 +56,6 @@ parseFloat = fmap ((:+0) . read) $ try floatNoLeft <|> try floatLeft
 floatNoLeft = liftM2 (++) ("0." <$ char '.') $ many1 digit
 floatLeft = liftM2 (++) (liftM2 (++) (many1 digit) $ string ".") $ many1 digit
 
-
 main = do
     input <- parse exprParser "" . filter (/=' ') <$> do 
         putStr "> "
