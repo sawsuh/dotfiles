@@ -12,15 +12,15 @@ data Expr = Neg Expr |
             Add Expr Expr | 
             Valc (Complex Double) | 
             Exp Expr Expr
-indent = unlines . map ("    "++) . lines
+indent = unlines . map ("    " ++) . lines
 instance Show Expr where
-    show (Neg x) = "-\n" ++ (show x)
-    show (Sub x y) = indent $ (show x) ++ "-\n" ++ (show y)
-    show (Div x y) = indent $ (show x) ++ "/\n" ++ (show y)
-    show (Times x y) = indent $ (show x) ++ "*\n" ++ (show y)
-    show (Add x y) = indent $ (show x) ++ "+\n" ++ (show y)
-    show (Valc x) = show' x ++ "\n"
-    show (Exp x y) = indent $ (show x) ++ "^\n" ++ (show y)
+    show (Neg x) = "-" ++ (indent $ show x)
+    show (Sub x y) = (indent $ show x) ++ "-\n" ++ (indent $ show y)
+    show (Div x y) = (indent $ show x) ++ "/\n" ++ (indent $ show y)
+    show (Times x y) = (indent $ show x) ++ "*\n" ++ (indent $ show y)
+    show (Add x y) = (indent $ show x) ++ "+\n" ++ (indent $ show y)
+    show (Valc x) = show' x
+    show (Exp x y) = (indent $ show x) ++ "^\n" ++ (indent $ show y)
 showf = flip (showFFloat Nothing) ""
 show' (0:+b) = (showf b) ++ "i"
 show' (a:+0) = (showf a)
@@ -48,7 +48,7 @@ divParse = Div <$ char '/'
 factor = chainl1 item $ Exp <$ char '^'
 item = brackExpr <|> (fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI)
 
-brackExpr = string "(" *> exprParser <* string ")"
+brackExpr = char '(' *> exprParser <* char ')'
 parseNumer = (:+0) . read <$> many1 digit
 parseI = (0:+1) <$ char 'i'
 parseFloat = fmap ((:+0) . read) $ try floatNoLeft <|> try floatLeft
