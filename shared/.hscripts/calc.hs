@@ -19,6 +19,15 @@ instance Show Complex where
         | b < 0 = showfloat a ++ " - " ++ showfloat (negate b) ++ "i"
         | otherwise = showfloat a ++ " + " ++ showfloat b ++ "i"
         where showfloat = flip (showFFloat Nothing) ""
+indent = unlines . map ("    "++) . lines
+instance Show Expr where
+    show (Neg x) = "-\n" ++ (indent $ show x)
+    show (Sub x y) = (indent $ show x) ++ "-\n" ++ (indent $ show y)
+    show (Div x y) = (indent $ show x) ++ "/\n" ++ (indent $ show y)
+    show (Times x y) = (indent $ show x) ++ "*\n" ++ (indent $ show y)
+    show (Add x y) = (indent $ show x) ++ "+\n" ++ (indent $ show y)
+    show (Valc x) = show x ++ "\n"
+    show (Exp x y) = (indent $ show x) ++ "^\n" ++ (indent $ show y)
 
 add (Complex a1 b1) (Complex a2 b2) = Complex (a1+a2) (b1+b2)
 times (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2)-(b1*b2)) ((a1*b2)+(a2*b1))
@@ -68,4 +77,5 @@ main = do
         Left err -> print err
         Right out -> do
             print $ eval out
+            putStrLn $ (show out) ++ "\n"
     main
