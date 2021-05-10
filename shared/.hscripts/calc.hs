@@ -1,4 +1,5 @@
 import System.IO
+import Numeric
 import Text.Parsec
 import Control.Monad
 import System.Environment
@@ -12,9 +13,12 @@ data Expr = Neg Expr |
             Exp Expr Expr
 data Complex = Complex Double Double
 instance Show Complex where
-    show (Complex a 0) = show a
-    show (Complex 0 b) = show b ++ "i"
-    show (Complex a b) = show a ++ " + " ++ show b ++ "i"
+    show (Complex a 0) = showFFloat Nothing a ""
+    show (Complex 0 b) = (showFFloat Nothing b "") ++ "i"
+    show (Complex a b) 
+        | b < 0 = showfloat a ++ " - " ++ showfloat (negate b) ++ "i"
+        | otherwise = showfloat a ++ " + " ++ showfloat b ++ "i"
+        where showfloat = flip (showFFloat Nothing) ""
 
 add (Complex a1 b1) (Complex a2 b2) = Complex (a1+a2) (b1+b2)
 times (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2)-(b1*b2)) ((a1*b2)+(a2*b1))
