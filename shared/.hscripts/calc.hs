@@ -21,13 +21,13 @@ instance Show Complex where
         where showfloat = flip (showFFloat Nothing) ""
 indent = unlines . map ("    "++) . lines
 instance Show Expr where
-    show (Neg x) = "-\n" ++ (indent $ show x)
-    show (Sub x y) = (indent $ show x) ++ "-\n" ++ (indent $ show y)
-    show (Div x y) = (indent $ show x) ++ "/\n" ++ (indent $ show y)
-    show (Times x y) = (indent $ show x) ++ "*\n" ++ (indent $ show y)
-    show (Add x y) = (indent $ show x) ++ "+\n" ++ (indent $ show y)
+    show (Neg x) = indent $ "-\n" ++ (show x)
+    show (Sub x y) = indent $ (show x) ++ "-\n" ++ (show y)
+    show (Div x y) = indent $ (show x) ++ "/\n" ++ (show y)
+    show (Times x y) = indent $ (show x) ++ "*\n" ++ (show y)
+    show (Add x y) = indent $ (show x) ++ "+\n" ++ (show y)
     show (Valc x) = show x ++ "\n"
-    show (Exp x y) = (indent $ show x) ++ "^\n" ++ (indent $ show y)
+    show (Exp x y) = indent $ (show x) ++ "^\n" ++ (show y)
 
 add (Complex a1 b1) (Complex a2 b2) = Complex (a1+a2) (b1+b2)
 times (Complex a1 b1) (Complex a2 b2) = Complex ((a1*a2)-(b1*b2)) ((a1*b2)+(a2*b1))
