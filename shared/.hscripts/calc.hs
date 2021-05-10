@@ -60,9 +60,10 @@ floatLeft = liftM2 (++) (liftM2 (++) (many1 digit) $ string ".") $ many1 digit
 
 
 main = do
-    input <- parse exprParser "" . filter (/=' ') <$> (putStr "> " >> 
-        hFlush stdout >> 
-        getLine)
+    input <- parse exprParser "" . filter (/=' ') <$> do 
+        putStr "> "
+        hFlush stdout
+        getLine
     case input of
         Left err -> print err
         Right out -> do
