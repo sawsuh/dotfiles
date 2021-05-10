@@ -51,16 +51,16 @@ exprParser = chainl1 term $ sumParse <|> subParse
 sumParse = Add <$ char '+'
 subParse = Sub <$ char '-'
 
-term = try negParse <|> (chainl1 factor . option (Times) $ multParse <|> divParse)
+term = try negParse <|> (chainl1 factor . option Times $ multParse <|> divParse)
 negParse = char '-' *> fmap Neg term
 multParse = Times <$ char '*'
 divParse = Div <$ char '/'
 
-factor = chainl1 item $ (Exp <$ char '^')
+factor = chainl1 item $ Exp <$ char '^'
 item = brackExpr <|> (fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI)
 
 brackExpr = string "(" *> exprParser <* string ")"
-parseNumer = (flip Complex 0 . read) <$> many1 digit
+parseNumer = flip Complex 0 . read <$> many1 digit
 parseI = Complex 0 1 <$ char 'i'
 parseFloat = fmap (flip Complex 0 . read) $ try floatNoLeft <|> try floatLeft
 
@@ -77,5 +77,5 @@ main = do
         Left err -> print err
         Right out -> do
             print $ eval out
-            putStrLn $ (show out) ++ "\n"
+            putStrLn $ show out ++ "\n"
     main
