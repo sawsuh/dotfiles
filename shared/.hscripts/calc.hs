@@ -21,7 +21,7 @@ instance Show Complex where
         where showfloat = flip (showFFloat Nothing) ""
 indent = unlines . map ("    "++) . lines
 instance Show Expr where
-    show (Neg x) = indent $ "-\n" ++ (show x)
+    show (Neg x) = "-\n" ++ (show x)
     show (Sub x y) = indent $ (show x) ++ "-\n" ++ (show y)
     show (Div x y) = indent $ (show x) ++ "/\n" ++ (show y)
     show (Times x y) = indent $ (show x) ++ "*\n" ++ (show y)
