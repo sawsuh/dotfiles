@@ -13,14 +13,15 @@ data Expr = Neg Expr |
             Valc (Complex Double) | 
             Exp Expr Expr
 indent = unlines . map ("    " ++) . lines
+showh = indent . show
 instance Show Expr where
-    show (Neg x) = "-" ++ (indent $ show x)
-    show (Sub x y) = (indent $ show x) ++ "-\n" ++ (indent $ show y)
-    show (Div x y) = (indent $ show x) ++ "/\n" ++ (indent $ show y)
-    show (Times x y) = (indent $ show x) ++ "*\n" ++ (indent $ show y)
-    show (Add x y) = (indent $ show x) ++ "+\n" ++ (indent $ show y)
+    show (Neg x) = "-" ++ (showh x)
+    show (Sub x y) = (showh x) ++ "-\n" ++ (showh y)
+    show (Div x y) = (showh x) ++ "/\n" ++ (showh y)
+    show (Times x y) = (showh x) ++ "*\n" ++ (showh y)
+    show (Add x y) = (showh x) ++ "+\n" ++ (showh y)
     show (Valc x) = show' x
-    show (Exp x y) = (indent $ show x) ++ "^\n" ++ (indent $ show y)
+    show (Exp x y) = (showh x) ++ "^\n" ++ (showh y)
 showf = flip (showFFloat Nothing) ""
 show' (0:+b) = (showf b) ++ "i"
 show' (a:+0) = (showf a)
