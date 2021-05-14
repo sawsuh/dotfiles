@@ -12,12 +12,26 @@ data Expr = Neg Expr |
             Add Expr Expr | 
             Valc (Complex Double) | 
             Exp Expr Expr
-
 firstNspace q = (++) (concat $ replicate q "     ") . drop (q*5)
 indent p = unlines . map ((++) (concat $ replicate p "|--- ")) . lines
 showHelper x p = firstNspace p $ showh x (p+2)
 opHelper p op = firstNspace (p-1) . indent p $ "("++op++")"
 showOp x y p op = (showHelper x p) ++ (opHelper p op) ++ (showHelper y p)
+
+showh (Neg x) p = (opHelper p "-") ++ (showHelper x p)
+<<<<<<< HEAD
+showh (Sub x y) p = (showHelper x p) ++ (opHelper p "-" )++ (showHelper y p)
+showh (Div x y) p = (showHelper x p) ++ (opHelper p "/" )++ (showHelper y p)
+showh (Times x y) p = (showHelper x p) ++ (opHelper p "*" )++ (showHelper y p)
+showh (Add x y) p = (showHelper x p) ++ (opHelper p "+" )++ (showHelper y p)
+=======
+showh (Sub x y) p = showOp x y p "-"
+showh (Div x y) p = showOp x y p "/"
+showh (Times x y) p = showOp x y p "*"
+showh (Exp x y) p = showOp x y p "^"
+showh (Add x y) p = showOp x y p "+"
+>>>>>>> b8d216e71e89b36a2f7e20aca7dc2ec61edb7da1
+showh (Valc x) p = firstNspace (p-1) . indent p $ show' x
 
 showf = flip (showFFloat Nothing) ""
 show' (0:+b) = (showf b) ++ "i"
@@ -25,14 +39,6 @@ show' (a:+0) = (showf a)
 show' (a:+b)
     | b < 0 = (showf a) ++ " - " ++ (showf $ negate b) ++ "i"
     | otherwise = (showf a) ++ " + " ++ (showf b)++"i"
-
-showh (Neg x) p = (opHelper p "-") ++ (showHelper x p)
-showh (Sub x y) p = showOp x y p "-"
-showh (Div x y) p = showOp x y p "/"
-showh (Times x y) p = showOp x y p "*"
-showh (Exp x y) p = showOp x y p "^"
-showh (Add x y) p = showOp x y p "+"
-showh (Valc x) p = firstNspace (p-1) . indent p $ show' x
 
 instance Show Expr where
     show x = showh x 0
