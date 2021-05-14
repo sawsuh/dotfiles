@@ -17,7 +17,7 @@ indent p = unlines . map ((++) (concat $ replicate p "|--- ")) . lines
 showHelper x p = firstNspace p $ showh x (p+2)
 opHelper p op = firstNspace (p-1) . indent p $ "("++op++")"
 
-showh (Neg x) p = (firstNspace (p-1) $ indent p "(-)") ++ (showHelper x p)
+showh (Neg x) p = (opHelper p "-") ++ (showHelper x p)
 showh (Sub x y) p = (showHelper x p) ++ (opHelper p "-" )++ (showHelper y p)
 showh (Div x y) p = (showHelper x p) ++ (opHelper p "/" )++ (showHelper y p)
 showh (Times x y) p = (showHelper x p) ++ (opHelper p "*" )++ (showHelper y p)
@@ -43,19 +43,19 @@ eval (Sub ex1 ex2) = (eval ex1) - (eval ex2)
 eval (Neg ex1) = negate (eval ex1)
 eval (Exp ex1 ex2) = (eval ex1) ** (eval ex2)
 
-exprParser = chainl1 term $ sumParse <|> subParse
-sumParse = Add <$ char '+'
-subParse = Sub <$ char '-'
+exprParser = spaces *> (chainl1 term $ sumParse <|> subParse)
+sumParse = Add <$ (char '+' <* spaces)
+subParse = Sub <$ (char '-' <* spaces)
 
 term = try negParse <|> (chainl1 factor . option Times $ multParse <|> divParse)
-negParse = char '-' *> fmap Neg term
-multParse = Times <$ char '*'
-divParse = Div <$ char '/'
+negParse = char '-' *> spaces *> fmap Neg term
+multParse = Times <$ char '*' <* spaces 
+divParse = Div <$ char '/' <* spaces
 
-factor = chainl1 item $ Exp <$ char '^'
-item = brackExpr <|> (fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI)
+factor = chainl1 item $ Exp <$ char '^' <* spaces
+item = brackExpr <|> ((fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI) <* spaces)
 
-brackExpr = char '(' *> exprParser <* char ')'
+brackExpr = char '(' *> spaces *> exprParser <* spaces <* char ')' <* spaces
 parseNumer = (:+0) . read <$> many1 digit
 parseI = (0:+1) <$ char 'i'
 parseFloat = fmap ((:+0) . read) $ try floatNoLeft <|> try floatLeft
@@ -64,7 +64,7 @@ floatNoLeft = liftM2 (++) ("0." <$ char '.') $ many1 digit
 floatLeft = liftM2 (++) (liftM2 (++) (many1 digit) $ string ".") $ many1 digit
 
 main = do
-    input <- parse exprParser "" . filter (/=' ') <$> do 
+    input <- parse exprParser "" <$> do 
         putStr "> "
         hFlush stdout
         getLine
