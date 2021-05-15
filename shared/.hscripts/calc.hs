@@ -49,13 +49,13 @@ exprParser = spaces *> (chainl1 term $ sumParse <|> subParse)
 sumParse = Add <$ (char '+' <* spaces)
 subParse = Sub <$ (char '-' <* spaces)
 
-term = try negParse <|> (chainl1 factor . option Times $ multParse <|> divParse)
+term = try negParse <|> try (chainl1 factor . option Times $ try multParse <|> try divParse)
 negParse = char '-' *> spaces *> fmap Neg term
 multParse = Times <$ char '*' <* spaces 
 divParse = Div <$ char '/' <* spaces
 
 factor = chainl1 item $ Exp <$ char '^' <* spaces
-item = brackExpr <|> ((fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI) <* spaces)
+item = try brackExpr <|> try ((fmap Valc $ try parseFloat <|> try parseNumer <|> try parseI) <* spaces)
 
 brackExpr = char '(' *> spaces *> exprParser <* spaces <* char ')' <* spaces
 parseNumer = (:+0) . read <$> many1 digit
