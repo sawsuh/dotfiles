@@ -20,6 +20,7 @@ opHelper p op = firstNspace (p-1) . indent p $ "("++op++")"
 showOp x y p op = (showHelper x p) ++ (opHelper p op) ++ (showHelper y p)
 
 showf = flip (showFFloat Nothing) ""
+show' (0:+1) = "i"
 show' (0:+b) = (showf b) ++ "i"
 show' (a:+0) = (showf a)
 show' (a:+b)
