@@ -3,7 +3,7 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 "Plug 'bfredl/nvim-miniyank'
 Plug 'mbbill/undotree'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
@@ -23,7 +23,7 @@ let g:tex_conceal=""
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-y>"
-let g:ale_fixers = { 'python' : ['black', 'autopep8']}
+"let g:ale_fixers = { 'python' : ['black', 'autopep8']}
 let g:firenvim_config = { 'localSettings': { '.*': { 'takeover': 'never' } } }
 
 autocmd FileType python nnoremap ,t :!python % 
@@ -36,7 +36,7 @@ augroup tex
     au BufWinLeave *.tex mks!
 augroup END
 
-au VimEnter * ALEDisable
+"au VimEnter * ALEDisable
 au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 au VimEnter * hi CursorLineNr ctermfg=8

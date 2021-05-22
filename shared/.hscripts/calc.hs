@@ -19,7 +19,9 @@ showHelper x p = firstNspace p $ showh x (p+2)
 opHelper p op = firstNspace (p-1) . indent p $ "("++op++")"
 showOp x y p op = (showHelper x p) ++ (opHelper p op) ++ (showHelper y p)
 
-showf = flip (showFFloat Nothing) ""
+showf x
+    | x == fromInteger (round x) = show . fromInteger $ round x
+    | otherwise = showFFloat Nothing x ""
 show' (0:+1) = "i"
 show' (0:+b) = (showf b) ++ "i"
 show' (a:+0) = (showf a)
