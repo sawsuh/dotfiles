@@ -2,6 +2,12 @@
 super + alt + q
 	systemctl suspend
 
+# shift the node in the given direction 
+super + s: shift + {h,j,k,l}      
+    dir={west,south,north,east}; \
+    bspc node -s "$dir.local" --follow \
+        || bspc node -m "$dir" --follow
+
 # volume control
 super + shift + {m,n} 
 	pactl -- set-sink-volume 1 {+3%,-3%}
