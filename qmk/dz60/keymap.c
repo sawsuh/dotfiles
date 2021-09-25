@@ -9,6 +9,7 @@ typedef struct {
     enum {
         tap,
         double_tap,
+        double_tap_hold,
         triple_tap,
         hold,
         none
@@ -34,8 +35,14 @@ void dance_layers(qk_tap_dance_state_t *state, void *user_data) {
         }
     }
     else if (state->count == 2) {
-        layer_on(2);
-        caps_act_hist.state = double_tap;
+        if (state->finished && state->pressed) {
+            layer_on(2);
+            caps_act_hist.state = double_tap_hold;
+        }
+        else {
+            layer_on(2);
+            caps_act_hist.state = double_tap;
+        }
     } 
 }
 
@@ -43,6 +50,7 @@ void dance_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (caps_act_hist.state) {
         case tap: unregister_code(KC_CAPS); break;
         case hold: layer_off(1); break;
+        case double_tap_hold: layer_off(2); break;
         default: break;
     }
     caps_act_hist.state = none;
