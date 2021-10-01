@@ -54,7 +54,7 @@
       "KC_RALT",
       "KC_RGUI",
       "KC_RCTL",
-      "TT(1)"
+      "KC_CAPS"
     ],
     [
       "KC_TRNS",
@@ -93,7 +93,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS",
+      "TO(0)",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
