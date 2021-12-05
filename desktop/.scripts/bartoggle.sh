@@ -1,6 +1,8 @@
 #!/bin/bash
-mon="DP-2"
-cmd="bar1"
+mon="DP-0"
+#mon="DP-2"
+#cmd="bar1"
+cmd="bar2"
 eval $(xdotool getmouselocation --shell)
 [[ $X -gt 2560 ]] && { mon="DP-0"; cmd="bar2"; }
 pid=$(pgrep -f "polybar $cmd")
