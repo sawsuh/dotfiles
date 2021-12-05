@@ -1,4 +1,5 @@
-bspwmrc
+bspwmrc/specific
 xinitrc
 scripts/files.sh
 scripts/bartoggle.sh
+sxhkdrc/specific
