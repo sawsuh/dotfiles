@@ -32,16 +32,16 @@
     background-color: @background;
     padding:    20px;
     border-color:                @border-color;
-    font: "Iosevka 12";
+    font: "Iosevka 16";
 }
 #listview {
-    font: "Iosevka 12";
+    font: "Iosevka 16";
     lines: 8;
 }
 #element {
     padding:	10px 10px 10px;
     highlight:  bold;
-    font: "Iosevka 12";
+    font: "Iosevka 16";
     text-color: @inactive-color;
 }
 
@@ -62,5 +62,5 @@
     str:        ">";
     margin:     0px 0.8em 0em 0em ;
     text-color: #689d6a;
-    font: "Iosevka Bold 12";
+    font: "Iosevka Bold 16";
 }
