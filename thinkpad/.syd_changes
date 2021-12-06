@@ -1,5 +1,8 @@
 - polybar/config
 - kitty.conf
-- firefox about:config
+- firefox about:config devpixelsperpx
+- firefox min font size
 - lxappearance
 - rofi 12 -> 16
+- gtk3 config 16->20
+- gtk2 config 16->19

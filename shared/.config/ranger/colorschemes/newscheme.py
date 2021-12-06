@@ -106,8 +106,8 @@ class Default(ColorScheme):
 			if context.selected:
 				attr |= normal
 
-		if context.line_number:
-			fg = white
-			attr = normal
+	#	if context.line_number:
+	#		fg = white
+	#		attr = normal
 
 		return fg, bg, attr
