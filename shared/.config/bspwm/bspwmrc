@@ -1,5 +1,6 @@
 #! /bin/bash
 #[[ -f ~/.config/bspwm/specific.sh ]] && bash ~/.config/bspwm/specific.sh
+
 test -f ~/.config/bspwm/specific.sh && bash $_
 nitrogen --restore&
 picom --config ~/.compton.conf&
