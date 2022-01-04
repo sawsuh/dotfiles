@@ -13,6 +13,7 @@ my_underline     = #8ec07c
 my_iconcolor    = #83a598
 
 [bar/barski]
+monitor = eDP1
 bottom = false
 height = 50
 background = ${colors.my_background}
