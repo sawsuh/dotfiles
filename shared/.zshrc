@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
 export FZF_DEFAULT_OPTS='--color=16,bg+:0,bg:0,fg+:15,pointer:6,prompt:6'
+export RSTUDIO_CHROMIUM_ARGUMENTS="--no-sandbox"
 ZSH_DISABLE_COMPFIX=true
 impalias () {source <(awk -F'=' '/--1/{f=1; next} /--2/{f=0} f{print "alias "$1"=\""$2"\""}' $1); source <(awk -F'=' '/--2/{f=1;next} /EOF/{f=0} f{print "alias "$1"=\"nvim "$2"\""}' $1);}
 impalias ~/.shortcuts
