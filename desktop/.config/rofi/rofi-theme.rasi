@@ -11,15 +11,15 @@
     inactive-color:              #928374;
 
 
-    selected-normal-foreground:  @foreground;
-    normal-foreground:           @foreground;
-    selected-urgent-foreground:  @foreground;
-    urgent-foreground:           @foreground;
-    active-foreground:           @foreground;
-    selected-active-foreground:  @foreground;
+    selected-normal-foreground:  @text-color;
+    normal-foreground:           @text-color;
+    selected-urgent-foreground:  @text-color;
+    urgent-foreground:           @text-color;
+    active-foreground:           @text-color;
+    selected-active-foreground:  @text-color;
     border-color:                #a89984;
-    normal-background:           @background;
-    selected-normal-background:  @background;
+    normal-background:           @background-color;
+    selected-normal-background:  @background-color;
     separatorcolor:              @orange;
     urgent-background:           @red;
     selected-urgent-background:  @red;
@@ -28,8 +28,8 @@
 }
 #window {
     border:     4px;
-    text-color: @foreground;
-    background-color: @background;
+    text-color: @text-color;
+    background-color: @background-color;
     padding:    25px;
     border-color:                @border-color;
     font: "Iosevka 16";
