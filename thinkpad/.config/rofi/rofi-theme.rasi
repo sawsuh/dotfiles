@@ -17,8 +17,8 @@
     active-foreground:           @foreground;
     selected-active-foreground:  @foreground;
     border-color:                #a89984;
-    normal-background:           @background;
-    selected-normal-background:  @background;
+    normal-background:           @background-color;
+    selected-normal-background:  @background-color;
     separatorcolor:              @orange;
     spacing:                     1;
     urgent-background:           @red;
@@ -28,8 +28,8 @@
 }
 #window {
     border:     3px;
-    text-color: @foreground;
-    background-color: @background;
+    text-color: @text-color;
+    background-color: @background-color;
     padding:    20px;
     border-color:                @border-color;
     font: "Iosevka 12";
