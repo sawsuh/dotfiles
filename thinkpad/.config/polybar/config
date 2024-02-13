@@ -12,6 +12,26 @@ my_foreground   = #ebdbb2
 my_underline     = #8ec07c
 my_iconcolor    = #83a598
 
+[bar/barski2]
+monitor = HDMI1
+bottom = false
+height = 50
+background = ${colors.my_background}
+foreground =  ${colors.my_foreground}
+font-0 = Iosevka:size=12
+font-1 = Icons:size=12
+font-2 = Fira Code:size=8
+font-3 = Icons:size=11
+underline-size = 3
+underline-color = ${colors.my_background}
+modules-left = bspwm 
+separator = %{T3}%{F#928374}|%{F#ebdbb2}%{T-}
+modules-center = date2
+modules-right = audio xbacklight battery
+module-margin = 1
+padding = 2
+enable-ipc = true
+
 [bar/barski]
 monitor = eDP1
 bottom = false

@@ -34,3 +34,5 @@ bindkey -M viins '^[OA' history-beginning-search-backward-end \
                  '^[[B' history-beginning-search-forward-end
 bindkey -M viins 'jj' vi-cmd-mode
 eval "$(ssh-agent -s > /dev/null)"
+
+[ -f "/home/prashant/.ghcup/env" ] && source "/home/prashant/.ghcup/env" # ghcup-env
