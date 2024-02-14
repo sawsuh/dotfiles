@@ -1,16 +1,22 @@
 [ 
 {
-    "output": "DVI-D-1",
+    "output": "DP-1",
     "height": 70,
     "position": "bottom",
     "modules-right": ["custom/updates"],
     "modules-center": ["custom/clock"],
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["wlr/workspaces"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
          "format": "<span color=\"#83a598\"></span> {name}",
          "current-only": true
+     },
+     "wlr/workspaces": {
+    "all-outputs": false,
+    "format": " <span color=\"#83a598\">{name}</span> ",
+    "active-only": true,
+    "on-click": "activate",
      },
     "custom/clock": {
         "format": " <span color=\"#83a598\"></span> {} ",
@@ -28,11 +34,11 @@
 }
 , 
 {
-    "output": "HDMI-A-1",
+    "output": "DP-2",
     "height": 70,
     "position": "bottom",
-    "modules-right": [ "sway/mode","sway/workspaces"],
-    "modules-center": ["sway/window"],
+    "modules-right": [ "wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
     "modules-left": ["pulseaudio"],
      "sway/window": {
          "format": "<span color=\"#83a598\"></span> {}"
@@ -43,6 +49,12 @@
          "format": "<span color=\"#83a598\"></span> {name}",
          "current-only": true
      },
+     "wlr/workspaces": {
+    "format": " <span color=\"#83a598\">{name}</span> ",
+    "all-outputs": false,
+    "active-only": true,
+    "on-click": "activate",
+    },
     "sway/mode": {
         "format": "{} " 
     },
