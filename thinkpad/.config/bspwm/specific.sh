@@ -1,9 +1,13 @@
-#bspc monitor -d one two three four five six seven eight nine ten
-#xrandr --output eDP1 --right-of HDMI1 --mode 1920x1080 --pos 2560x0 --rotate normal --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal
 #
-xrandr --output HDMI1 --above eDP1 --mode 1680x1050
-bspc monitor eDP1 -d one two three four five 
-bspc monitor HDMI1 -d six seven eight nine ten
+if [ $(xrandr --listmonitors | grep -c HDMI1) -gt 0 ]
+then
+    xrandr --output HDMI1 --above eDP1 --mode 1680x1050
+    #xrandr --output eDP1 --right-of HDMI1 --mode 1920x1080 --pos 2560x0 --rotate normal --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal
+    bspc monitor eDP1 -d one two three four five 
+    bspc monitor HDMI1 -d six seven eight nine ten
+else
+    bspc monitor -d one two three four five six seven eight nine ten
+fi
 bspc config border_width         3
 bspc config bottom_monocle_padding -10
 bspc config bottom_padding     20

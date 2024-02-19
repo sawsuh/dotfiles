@@ -16,5 +16,5 @@ toggle_bar () {
 mon="eDP1"
 cmd="barski"
 eval $(xdotool getmouselocation --shell)
-[[ $Y -lt 1050 ]] && { mon="HDMI1"; cmd="barski2"; }
+[[ $(xrandr --listmonitors | grep -c HDMI1) -gt 0 ]] && [[ $Y -lt 1050 ]] && { mon="HDMI1"; cmd="barski2"; }
 toggle_bar "$cmd" "$mon"
