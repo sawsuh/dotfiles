@@ -5,14 +5,14 @@
     "position": "bottom",
     "modules-right": ["custom/updates"],
     "modules-center": ["custom/clock"],
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
          "format": "<span color=\"#83a598\"></span> {name}",
          "current-only": true
      },
-     "wlr/workspaces": {
+     "hyprland/workspaces": {
     "all-outputs": false,
     "format": " <span color=\"#83a598\">{name}</span> ",
     "active-only": true,
@@ -37,7 +37,7 @@
     "output": "DP-2",
     "height": 70,
     "position": "bottom",
-    "modules-right": [ "wlr/workspaces"],
+    "modules-right": [ "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-left": ["pulseaudio"],
      "sway/window": {
@@ -49,7 +49,7 @@
          "format": "<span color=\"#83a598\"></span> {name}",
          "current-only": true
      },
-     "wlr/workspaces": {
+     "hyprland/workspaces": {
     "format": " <span color=\"#83a598\">{name}</span> ",
     "all-outputs": false,
     "active-only": true,
