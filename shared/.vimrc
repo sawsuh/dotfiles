@@ -6,7 +6,7 @@ Plug 'Valloric/YouCompleteMe'
 "Plug 'dense-analysis/ale'
 "Plug 'bfredl/nvim-miniyank'
 Plug 'mbbill/undotree'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 filetype plugin on
 filetype indent on
@@ -18,6 +18,7 @@ set tabstop=4 shiftwidth=4 expandtab
 set sessionoptions=blank,buffers,sesdir,folds,help,tabpages,winsize
 let maplocalleader=","
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_open_on_warning = 0
 let g:tex_flavor = 'latex'
 let g:tex_conceal=""
 let g:UltiSnipsExpandTrigger="<c-j>"
