@@ -5,4 +5,5 @@ gaming=bash ~/.scripts/gaming.sh
 onemon=bash ~/.scripts/onemon.sh
 twomon=bash ~/.scripts/twomon.sh
 restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/desktop s
+thesis=cd ~/obsidian/Uni/thesis/MSI-thesis-template
 --2
