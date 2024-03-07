@@ -1,0 +1,3 @@
+#!/bin/bash
+
+FLATPAK_ENABLE_SDK_EXT=* flatpak run com.visualstudio.code
