@@ -1,4 +1,5 @@
 --1
+drsx=dbus-run-session startx
 restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/thinkpad s
 bth=bluetoothctl
 kbth=sudo rfkill block bluetooth
