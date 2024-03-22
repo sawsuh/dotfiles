@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'lervag/vimtex'
+Plug 'mcchrish/nnn.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
@@ -50,5 +52,12 @@ set number relativenumber
 "map ,n <Plug>(miniyank-cycle)
 "map ,N <Plug>(miniyank-cycleback)
 nnoremap ,h :nohl <CR>
+nnoremap ,f :FZF <CR>
+"nnoremap ,N :NnnExplorer <CR>
 nnoremap <silent> ,u :UndotreeToggle <CR>
 inoremap jj <Esc>
+
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
