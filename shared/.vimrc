@@ -4,7 +4,10 @@ Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'dense-analysis/ale'
 "Plug 'bfredl/nvim-miniyank'
 Plug 'mbbill/undotree'
@@ -44,6 +47,7 @@ au VimEnter * hi search ctermbg=8 ctermfg=15
 au VimEnter * hi EndOfBuffer ctermfg=0
 au VimEnter * hi CursorLineNr ctermfg=8
 au VimEnter * hi LineNr ctermfg=8
+au VimEnter * :COQnow
 set laststatus=0 ruler
 set number relativenumber
 
@@ -57,7 +61,12 @@ nnoremap ,f :FZF <CR>
 nnoremap <silent> ,u :UndotreeToggle <CR>
 inoremap jj <Esc>
 
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+"if !exists('g:ycm_semantic_triggers')
+"    let g:ycm_semantic_triggers = {}
+"endif
+"au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+"
+"require("coq_3p") {
+"    { src = "vimtex", short_name = "vTEX" }
+"}
+
