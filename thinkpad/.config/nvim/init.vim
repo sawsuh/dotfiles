@@ -1,1 +1,0 @@
-../../../shared/.config/nvim/init.vim
