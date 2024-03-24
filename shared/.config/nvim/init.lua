@@ -831,9 +831,7 @@ require('lazy').setup({
   {
     'lervag/vimtex',
     init = function()
-      vim.g.vimtex_view_general_viewer = 'SumatraPDF'
-      vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-      vim.g.vimtex_compiler_progname = 'nvr'
+      vim.g.vimtex_view_method = 'zathura'
       vim.g.vimtex_quickfix_open_on_warning = 0
       vim.g.tex_flavor = 'latex'
       vim.g.tex_conceal = ''
