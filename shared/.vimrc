@@ -11,10 +11,10 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'micangl/cmp-vimtex'
+"Plug 'micangl/cmp-vimtex'
 
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"Plug 'SirVer/ultisnips'
+"Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 Plug 'mbbill/undotree'
 call plug#end()
@@ -23,11 +23,11 @@ lua <<EOF
   
   local cmp = require'cmp'
   cmp.setup({
-    snippet = {
-      expand = function(args)
-        vim.fn["UltiSnips#Anon"](args.body) 
-      end,
-    },
+    -- snippet = {
+    --   expand = function(args)
+    --     vim.fn["UltiSnips#Anon"](args.body) 
+    --   end,
+    -- },
     window = {
       completion = cmp.config.window.bordered(),
     },
@@ -71,6 +71,7 @@ lua <<EOF
   require('lspconfig').texlab.setup {
     capabilities = capabilities
   }
+  require('lspconfig').pyright.setup{}
 
 EOF
 
