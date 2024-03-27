@@ -697,6 +697,7 @@ require('lazy').setup({
           end, { 1 }),
           t ' ',
         }),
+        s({ trig = '^^', name = 'superscript', desc = 'Super script' }, { t '^{ ', i(1), t ' } ' }),
       })
 
       cmp.setup {
