@@ -544,7 +544,6 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -570,6 +569,7 @@ require('lazy').setup({
           },
         },
         texlab = {},
+        pyright = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -669,7 +669,39 @@ require('lazy').setup({
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local s = luasnip.snippet
+      local t = luasnip.text_node
+      local i = luasnip.insert_node
+      local d = luasnip.dynamic_node
+      local f = luasnip.function_node
+      local sn = luasnip.snippet_node
       luasnip.config.setup {}
+      local brackets_matcher = {
+        ['|'] = '|',
+      }
+      luasnip.add_snippets('tex', {
+        s('lr', {
+          t '\\left',
+          i(1),
+          t ' ',
+          i(3),
+          t ' ',
+          t '\\right',
+          d(2, function(args)
+            local closer = brackets_matcher[args[1][1]]
+            if closer ~= nil then
+              return sn(nil, {
+                t(closer),
+              })
+            else
+              return sn(nil, {
+                i(1),
+              })
+            end
+          end, { 1 }),
+          t ' ',
+        }),
+      })
 
       cmp.setup {
         snippet = {
