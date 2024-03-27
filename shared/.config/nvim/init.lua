@@ -680,7 +680,7 @@ require('lazy').setup({
         ['|'] = '|',
       }
       luasnip.add_snippets('tex', {
-        s('lr', {
+        s({ trig = 'lr', name = 'left-right', desc = 'Left/right symbols' }, {
           t '\\left',
           i(1),
           t ' ',
@@ -690,13 +690,9 @@ require('lazy').setup({
           d(2, function(args)
             local closer = brackets_matcher[args[1][1]]
             if closer ~= nil then
-              return sn(nil, {
-                t(closer),
-              })
+              return sn(nil, { t(closer) })
             else
-              return sn(nil, {
-                i(1),
-              })
+              return sn(nil, { i(1) })
             end
           end, { 1 }),
           t ' ',
