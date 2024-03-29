@@ -167,9 +167,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Get keymap help
-vim.keymap.set('n', '<leader>h', '<cmd>WhichKey<CR>', { desc = 'Show keymap [h]elp' })
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -767,15 +764,20 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
-    'nyoom-engineering/oxocarbon.nvim',
+    'folke/tokyonight.nvim',
+    -- 'catppuccin/nvim',
+    -- name = 'catppuccin',
+    -- 'EdenEast/nightfox.nvim',
+    -- 'nyoom-engineering/oxocarbon.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-moon'
-      vim.cmd.colorscheme 'oxocarbon'
+      vim.cmd.colorscheme 'tokyonight-moon'
+      -- vim.cmd.colorscheme 'carbonfox'
+      -- vim.cmd.colorscheme 'catppuccin-mocha'
+      -- vim.cmd.colorscheme 'oxocarbon'
       vim.opt.background = 'dark'
 
       -- You can configure highlights by doing something like:
@@ -877,6 +879,7 @@ require('lazy').setup({
     build = ':TSUpdate',
     opts = {
       ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+      ignore_install = { 'latex', 'tex' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -884,6 +887,7 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+        disable = { 'latex', 'tex' },
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
