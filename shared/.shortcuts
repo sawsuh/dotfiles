@@ -6,10 +6,11 @@ mba=cd ~/.dots/mba
 srd=cd ~/.dots/shared
 music=bash ~/.pyscripts/musicscrape/run.sh
 assignments=cd ~/school/assignments
-gpus=git -C ~/.dots add --all; git -C ~/.dots commit; git -C ~/.dots push
+gpus=git -C ~/.dots add --all && git -C ~/.dots commit && git -C ~/.dots push
 gupd=git -C ~/.dots pull
 dgit=git -C ~/.dots
 assgen=runhaskell ~/.hscripts/assgen.hs
+startx=dbus-run-session startx
 --2
 xr=~/.Xresources
 sxrc=~/.config/sxhkd/sxhkdrc

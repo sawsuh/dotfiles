@@ -167,6 +167,29 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+local function save_session()
+  vim.cmd [[cd %:p:h]]
+  vim.cmd [[mks!]]
+end
+local function load_session()
+  vim.cmd [[cd %:p:h]]
+  local session_file = io.open('Session.vim', 'r')
+  if session_file == nil then
+    return 0
+  end
+  for line in session_file:lines() do
+    for command in line:gmatch '[^|]+' do
+      if not pcall(function()
+        vim.cmd(command)
+      end) then
+        vim.print(command .. 'failed')
+      end
+    end
+  end
+end
+vim.keymap.set('n', '<leader>Ss', save_session, { desc = '[S]ave session' })
+vim.keymap.set('n', '<leader>Sl', load_session, { desc = '[L]oad session' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -287,6 +310,7 @@ require('lazy').setup({
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>S'] = { name = '[S]ession', _ = 'which_key_ignore' },
       }
     end,
   },
