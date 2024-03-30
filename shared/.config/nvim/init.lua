@@ -175,6 +175,7 @@ local function load_session()
   vim.cmd [[cd %:p:h]]
   local session_file = io.open('Session.vim', 'r')
   if session_file == nil then
+    vim.print 'no session file'
     return 0
   end
   for line in session_file:lines() do
