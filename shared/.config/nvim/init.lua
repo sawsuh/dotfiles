@@ -173,19 +173,10 @@ local function save_session()
 end
 local function load_session()
   vim.cmd [[cd %:p:h]]
-  local session_file = io.open('Session.vim', 'r')
-  if session_file == nil then
-    vim.print 'no session file'
-    return 0
-  end
-  for line in session_file:lines() do
-    for command in line:gmatch '[^|]+' do
-      if not pcall(function()
-        vim.cmd(command)
-      end) then
-        vim.print(command .. 'failed')
-      end
-    end
+  if not pcall(function()
+    vim.cmd.source [[Session.vim]]
+  end) then
+    vim.print 'sourcing session failed'
   end
 end
 vim.keymap.set('n', '<leader>Ss', save_session, { desc = '[S]ave session' })
@@ -903,8 +894,8 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
-      ignore_install = { 'latex', 'tex' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'latex' },
+      -- ignore_install = { 'latex', 'tex' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -912,7 +903,7 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        disable = { 'latex', 'tex' },
+        -- disable = { 'latex', 'tex' },
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
