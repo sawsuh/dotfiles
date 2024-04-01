@@ -760,20 +760,6 @@ require('lazy').setup({
             end,
             desc = 'Close all folds',
           },
-          {
-            'zr',
-            function()
-              require('ufo').openFoldsExceptKinds()
-            end,
-            desc = 'Fold less',
-          },
-          {
-            'zm',
-            function()
-              require('ufo').closeFoldsWith()
-            end,
-            desc = 'Fold more',
-          },
         },
         event = 'VimEnter',
         init = function()
