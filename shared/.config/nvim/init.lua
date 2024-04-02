@@ -184,11 +184,7 @@ vim.keymap.set('n', '<leader>Sl', load_session, { desc = '[L]oad session' })
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  callback = function()
-    vim.api.nvim_feedkeys('zR', 'n', true)
-  end,
-})
+vim.opt.foldenable = false
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
