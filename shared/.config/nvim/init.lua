@@ -977,6 +977,25 @@ require('lazy').setup({
       require('ufo').setup()
     end,
   },
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {
+        surrounds = {
+          ['l'] = {
+            add = function()
+              local result = require('nvim-surround.config').get_input 'Environment: '
+              if result then
+                return { { '\\begin{' .. result .. '}' }, { '\\end{' .. result .. '}' } }
+              end
+            end,
+          },
+        },
+      }
+    end,
+  },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
