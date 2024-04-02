@@ -182,10 +182,6 @@ end
 vim.keymap.set('n', '<leader>Ss', save_session, { desc = '[S]ave session' })
 vim.keymap.set('n', '<leader>Sl', load_session, { desc = '[L]oad session' })
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldenable = false
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -930,6 +926,39 @@ require('lazy').setup({
     'ggandor/leap.nvim',
     config = function()
       require('leap').add_default_mappings(true)
+    end,
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {
+      'kevinhwang91/promise-async',
+      'neovim/nvim-lspconfig',
+    },
+    keys = {
+      {
+        'zR',
+        function()
+          require('ufo').openAllFolds()
+        end,
+        desc = 'Open all folds',
+      },
+      {
+        'zM',
+        function()
+          require('ufo').closeAllFolds()
+        end,
+        desc = 'Close all folds',
+      },
+    },
+    event = 'VimEnter',
+    init = function()
+      vim.o.foldcolumn = '1' -- '0' is not bad
+      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = false
+    end,
+    config = function()
+      require('ufo').setup()
     end,
   },
 
