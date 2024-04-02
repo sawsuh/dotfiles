@@ -740,38 +740,6 @@ require('lazy').setup({
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
-      {
-        'kevinhwang91/nvim-ufo',
-        dependencies = {
-          'kevinhwang91/promise-async',
-        },
-        keys = {
-          {
-            'zR',
-            function()
-              require('ufo').openAllFolds()
-            end,
-            desc = 'Open all folds',
-          },
-          {
-            'zM',
-            function()
-              require('ufo').closeAllFolds()
-            end,
-            desc = 'Close all folds',
-          },
-        },
-        event = 'VimEnter',
-        init = function()
-          vim.o.foldcolumn = '1' -- '0' is not bad
-          vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-          vim.o.foldlevelstart = 99
-          vim.o.foldenable = true
-        end,
-        config = function()
-          require('ufo').setup()
-        end,
-      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -956,6 +924,46 @@ require('lazy').setup({
           end,
         },
       }
+    end,
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {
+      'kevinhwang91/promise-async',
+      'neovim/nvim-lspconfig',
+    },
+    keys = {
+      {
+        'zR',
+        function()
+          require('ufo').openAllFolds()
+        end,
+        desc = 'Open all folds',
+      },
+      {
+        'zM',
+        function()
+          require('ufo').closeAllFolds()
+        end,
+        desc = 'Close all folds',
+      },
+    },
+    event = 'VimEnter',
+    init = function()
+      vim.o.foldcolumn = '1' -- '0' is not bad
+      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+    end,
+    config = function()
+      require('ufo').setup()
+    end,
+  },
+  {
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      require('leap').add_default_mappings(true)
     end,
   },
 
