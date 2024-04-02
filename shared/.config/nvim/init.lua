@@ -992,6 +992,13 @@ require('lazy').setup({
               end
             end,
           },
+          ['L'] = {
+            add = function()
+              local left = require('nvim-surround.config').get_input 'left: '
+              local right = require('nvim-surround.config').get_input 'right: '
+              return { { '\\left' .. left }, { '\\right' .. right } }
+            end,
+          },
         },
       }
     end,
