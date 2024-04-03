@@ -907,8 +907,8 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'black',
         'latexindent',
-        'luacheck',
         'flake8',
+        'mypy',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -1017,8 +1017,7 @@ require('lazy').setup({
 
       lint.linters_by_ft = {
         latex = { 'chktex' },
-        lua = { 'luacheck' },
-        python = { 'flake8' },
+        python = { 'flake8', 'mypy' },
       }
       vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
         callback = function()
