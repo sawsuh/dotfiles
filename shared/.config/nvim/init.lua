@@ -584,9 +584,9 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    -- 'catppuccin/nvim',
-    -- name = 'catppuccin',
+    -- 'folke/tokyonight.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     -- 'EdenEast/nightfox.nvim',
     -- 'nyoom-engineering/oxocarbon.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
@@ -594,9 +594,9 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-moon'
+      -- vim.cmd.colorscheme 'tokyonight-moon'
       -- vim.cmd.colorscheme 'carbonfox'
-      -- vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'catppuccin-mocha'
       -- vim.cmd.colorscheme 'oxocarbon'
       vim.opt.background = 'dark'
 
@@ -698,7 +698,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'python', 'vim', 'vimdoc' },
       ignore_install = { 'latex' },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -907,6 +907,8 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'black',
         'latexindent',
+        'luacheck',
+        'flake8',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -1001,6 +1003,28 @@ require('lazy').setup({
           },
         },
       }
+    end,
+  },
+  {
+    'mfussenegger/nvim-lint',
+    event = {
+      'BufReadPre',
+      'BufNewFile',
+      'BufWritePost',
+    },
+    config = function()
+      local lint = require 'lint'
+
+      lint.linters_by_ft = {
+        latex = { 'chktex' },
+        lua = { 'luacheck' },
+        python = { 'flake8' },
+      }
+      vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+        callback = function()
+          require('lint').try_lint()
+        end,
+      })
     end,
   },
 
