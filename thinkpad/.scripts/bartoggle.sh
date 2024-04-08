@@ -6,11 +6,13 @@ toggle_bar () {
     wid=$(xdotool search --pid "$pid" --onlyvisible)
     show=0
     spawn=0
-    [[ -z $wid ]] && { bspc config -m "$2" top_padding 70; show=1; }
+    [[ -z $wid ]] && { bspc config -m "$2" top_padding 50; show=1; }
+    #[[ -z $wid ]] && { bspc config -m "$2" top_padding 70; show=1; }
     [[ -z $pid ]] && { show=0; spawn=1; }
     ((show)) && polybar-msg -p "$pid" cmd show
     ((spawn)) && eval "$cmd"&>/dev/null&
-    ((show + spawn)) || { polybar-msg -p "$pid" cmd hide; bspc config -m "$2" top_padding 20; }
+    ((show + spawn)) || { polybar-msg -p "$pid" cmd hide; bspc config -m "$2" top_padding 0; }
+    #((show + spawn)) || { polybar-msg -p "$pid" cmd hide; bspc config -m "$2" top_padding 20; }
 }
 
 mon="eDP1"
