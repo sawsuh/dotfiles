@@ -22,6 +22,7 @@ bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor	true
 
 bspc rule -a mpv state=floating
+bspc rule -a nautilus state=floating
 bspc rule -a "*:sxiv" state=floating
 bspc rule -a "*:stick" state=floating sticky=on center
 bspc rule -a "*:stick1" state=floating sticky=on
