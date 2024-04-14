@@ -938,12 +938,12 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
+	--[[ {
 		"ggandor/leap.nvim",
 		config = function()
 			require("leap").add_default_mappings(true)
 		end,
-	},
+	}, ]]
 	--[[ {
 		"kevinhwang91/nvim-ufo",
 		dependencies = {
