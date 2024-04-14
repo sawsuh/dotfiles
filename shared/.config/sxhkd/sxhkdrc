@@ -19,10 +19,10 @@ super + r; x
 
 # program launcher
 super + r; Return
-	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.cargo/bin:~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 super + Return
-	export PATH=~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
+	export PATH=~/.cargo/bin:~/.local/bin:$PATH; rofi -theme rofi-theme -show run -display-run ""
 
 # password manager
 super + p

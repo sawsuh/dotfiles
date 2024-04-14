@@ -442,6 +442,7 @@ require("lazy").setup({
 				-- Conform can also run multiple formatters sequentially
 				python = { "black" },
 				latex = { "latexindent" },
+				cpp = { "clang-format" },
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
@@ -485,6 +486,7 @@ require("lazy").setup({
 			--  into multiple repos for maintenance purposes.
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
 		},
 		config = function()
 			-- See `:help cmp`
@@ -579,6 +581,7 @@ require("lazy").setup({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
+					{ name = "nvim_lsp_signature_help" },
 				},
 			})
 		end,
@@ -707,7 +710,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "bash", "c", "html", "lua", "markdown", "python", "vim", "vimdoc" },
+			ensure_installed = { "bash", "c", "cpp", "html", "lua", "markdown", "python", "vim", "vimdoc" },
 			ignore_install = { "latex" },
 			-- Autoinstall languages that are not installed
 			auto_install = true,
@@ -875,7 +878,7 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				-- clangd = {},
+				clangd = {},
 				-- gopls = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -921,6 +924,7 @@ require("lazy").setup({
 				"black",
 				"flake8",
 				"mypy",
+				"clang-format",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -1030,6 +1034,7 @@ require("lazy").setup({
 			lint.linters_by_ft = {
 				latex = { "chktex" },
 				python = { "flake8", "mypy" },
+				cpp = { "clangtidy" },
 			}
 			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 				callback = function()
