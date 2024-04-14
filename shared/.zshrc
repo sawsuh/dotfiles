@@ -15,6 +15,7 @@ impalias () {source <(awk -F'=' '/--1/{f=1; next} /--2/{f=0} f{print "alias "$1"
 impalias ~/.shortcuts
 test -f ~/.shortcuts_specific && impalias $_
 export PATH=/home/prashant/.local/bin:$PATH
+export PATH=/home/prashant/.cargo/bin:$PATH
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
