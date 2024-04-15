@@ -22,4 +22,4 @@ bspc config window_gap          5
 libinput-gestures-setup start&
 pulseaudio --start&
 xss-lock -- bash ~/.lock.sh &
-devmon -gs&
+udiskie&
