@@ -167,6 +167,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+-- Session management
 local function save_session()
 	vim.cmd([[cd %:p:h]])
 	vim.cmd([[mks!]])
@@ -942,59 +943,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	--[[ {
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").add_default_mappings(true)
-		end,
-	}, ]]
-	--[[ {
-		"kevinhwang91/nvim-ufo",
-		dependencies = {
-			"kevinhwang91/promise-async",
-			"neovim/nvim-lspconfig",
-		},
-		keys = {
-			{
-				"zR",
-				function()
-					require("ufo").openAllFolds()
-				end,
-				desc = "Open all folds",
-			},
-			{
-				"zM",
-				function()
-					require("ufo").closeAllFolds()
-				end,
-				desc = "Close all folds",
-			},
-			{
-				"zm",
-				function()
-					require("ufo").closeFoldsWith()
-				end,
-				desc = "Close all folds",
-			},
-			{
-				"zr",
-				function()
-					require("ufo").openFoldsExceptKinds()
-				end,
-				desc = "Close all folds",
-			},
-		},
-		event = "VimEnter",
-		init = function()
-			vim.o.foldcolumn = "1" -- '0' is not bad
-			vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-			vim.o.foldlevelstart = 99
-			vim.o.foldenable = true
-		end,
-		config = function()
-			require("ufo").setup()
-		end,
-	}, ]]
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -1041,6 +989,33 @@ require("lazy").setup({
 					require("lint").try_lint()
 				end,
 			})
+		end,
+	},
+	{
+		"debugloop/telescope-undo.nvim",
+		dependencies = {
+			{
+				"nvim-telescope/telescope.nvim",
+				dependencies = { "nvim-lua/plenary.nvim" },
+			},
+		},
+		keys = {
+			{
+				"<leader>u",
+				"<cmd>Telescope undo<cr>",
+				desc = "undo history",
+			},
+		},
+		opts = {
+			extensions = {
+				undo = {
+					side_by_side = false,
+				},
+			},
+		},
+		config = function(_, opts)
+			require("telescope").setup(opts)
+			require("telescope").load_extension("undo")
 		end,
 	},
 
