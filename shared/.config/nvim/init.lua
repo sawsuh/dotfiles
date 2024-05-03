@@ -1009,7 +1009,7 @@ require("lazy").setup({
 		opts = {
 			extensions = {
 				undo = {
-					side_by_side = false,
+					side_by_side = true,
 				},
 			},
 		},
