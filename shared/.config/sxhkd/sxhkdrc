@@ -120,6 +120,14 @@ super + s: super + {c,v}
 	bspc desktop -f {prev,next}.local; 
 
 # focus the next/previous desktop in the current monitor
+super + ctrl + {c,v}
+	bspc desktop focused -m {prev,next} --follow; 
+
+# move the desktop to next/previous monitor
+super + s: ctrl + {c,v}
+	bspc desktop focused -m {prev,next} --follow; 
+
+# focus the next/previous desktop in the current monitor
 super + {c,v}
 	bspc desktop -f {prev,next}.local; 
 
