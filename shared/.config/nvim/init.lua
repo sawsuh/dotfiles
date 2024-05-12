@@ -434,15 +434,19 @@ require("lazy").setup({
 				-- languages here or re-enable it for the disabled ones.
 				local disable_filetypes = { c = true, cpp = true }
 				return {
-					timeout_ms = 3000,
+					timeout_ms = 200,
 					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
 				}
 			end,
+			format_after_save = {
+				lsp_fallback = true,
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
 				python = { "black" },
 				latex = { "latexindent" },
+				tex = { "latexindent" },
 				cpp = { "clang-format" },
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
