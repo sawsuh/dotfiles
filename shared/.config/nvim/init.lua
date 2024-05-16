@@ -1038,6 +1038,8 @@ require("lazy").setup({
 		"ggandor/leap.nvim",
 		config = function()
 			require("leap").add_default_mappings(true)
+			require("leap").opts.highlight_unlabeled_phase_one_targets = true
+			require("leap").opts.safe_labels = {}
 		end,
 	},
 
