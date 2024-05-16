@@ -641,7 +641,7 @@ require("lazy").setup({
 			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
+			-- require("mini.surround").setup()
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
@@ -953,6 +953,18 @@ require("lazy").setup({
 		event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup({
+				keymaps = {
+					insert = "<C-g>z",
+					insert_line = "gC-ggZ",
+					normal = "gz",
+					normal_cur = "gZ",
+					normal_line = "gzgz",
+					normal_cur_line = "gZgZ",
+					visual = "gz",
+					visual_line = "gZ",
+					delete = "gzd",
+					change = "gzc",
+				},
 				surrounds = {
 					["l"] = {
 						add = function()
@@ -1020,6 +1032,12 @@ require("lazy").setup({
 		config = function(_, opts)
 			require("telescope").setup(opts)
 			require("telescope").load_extension("undo")
+		end,
+	},
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings(true)
 		end,
 	},
 

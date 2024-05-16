@@ -135,9 +135,13 @@ super + {c,v}
 super + s: {c,v}
 	bspc node -d {prev,next}
 
-# send to the given desktop
+# send to the given desktop and follow
 super + s: {1,2,3,4,5,6,7,8,9,0}
-	bspc node -d 'zone,two,three,four,five,six,seven,eight,nine,zero}'
+	bspc node -d '{one,two,three,four,five,six,seven,eight,nine,zero}' --follow;
+#
+# send to the given desktop in background
+super + s: shift + {1,2,3,4,5,6,7,8,9,0}
+	bspc node -d '{one,two,three,four,five,six,seven,eight,nine,zero}'
 
 # focus the given desktop
 super + s: super + {1,2,3,4,5,6,7,8,9,0}
