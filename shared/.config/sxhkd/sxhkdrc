@@ -46,6 +46,10 @@ super + r; shift + b
 super + r; ctrl + b
 	chromium --incognito
 
+# start editor 
+super + r; n
+	neovide
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
