@@ -1,4 +1,4 @@
-vim.opt.linespace = 5
+vim.opt.linespace = 10
 vim.g.neovide_scale_factor = 1.05
 -- vim.g.neovide_cursor_animation_length = 0
 -- for _, side in ipairs({ "top", "bottom", "right", "left" }) do
