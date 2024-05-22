@@ -526,6 +526,10 @@ require("lazy").setup({
 					t(" "),
 				}),
 				s({ trig = "^^", name = "superscript", desc = "Super script" }, { t("^{ "), i(1), t(" } ") }),
+				s(
+					{ trig = "ssc", name = "superscript citation", desc = "Super script citations" },
+					{ i(2), t("\\textsuperscript{\\cite{"), i(1), t("}}") }
+				),
 			})
 
 			cmp.setup({
@@ -955,7 +959,7 @@ require("lazy").setup({
 			require("nvim-surround").setup({
 				keymaps = {
 					insert = "<C-g>z",
-					insert_line = "gC-ggZ",
+					insert_line = "<C-g>gC-ggZ",
 					normal = "gz",
 					normal_cur = "gZ",
 					normal_line = "gzgz",
