@@ -1,1 +1,1 @@
-/home/prashant/.dots/shared/.config/nvim/lua/custom/plugins/init.lua
+../../../../../../shared/.config/nvim/lua/custom/plugins/init.lua
