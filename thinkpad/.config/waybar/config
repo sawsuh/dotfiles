@@ -1,8 +1,8 @@
 {
-    "height": 50, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["custom/clock"],
-    "modules-right": ["backlight", "custom/separator", "pulseaudio", "custom/separator", "battery"],
+    "height": 40, // Waybar height (to be removed for auto height)
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/clock", "pulseaudio"],
     "backlight": {
         "format": "{percent}% <span color=\"#83a598\"></span>"
     },
@@ -12,7 +12,7 @@
         "tooltip": false
     },
     "custom/clock": {
-        "format": " <span color=\"#83a598\"></span> {} ",
+        "format": " {} <span color=\"#83a598\"></span> ",
         "exec": "date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'",
         "interval": "30"
     },
@@ -60,23 +60,23 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-                "format": " {volume}% <span color=\"#83a598\">{icon}</span> {format_source} ",
-       "format-bluetooth": " {volume}% {icon} {format_source} ",
-       "format-bluetooth-muted": " {icon} {format_source} ",
-       "format-muted": " {format_source} ",
-       "format-source": " {volume}% <span color=\"#83a598\"></span>",
-       "format-source-muted": "",
-       "format-icons": {
-          "headphone": "",
-          "hands-free": "",
-          "headset": "",
-          "phone": "",
-          "portable": "",
-          "car": "",
-          "default": ["", "", ""]
-       },
-       "on-click": "pavucontrol"
-    },
+         "format": " {volume}% <span color=\"#83a598\">{icon}</span> {format_source} ",
+        "format-bluetooth": " {volume}% {icon} {format_source} ",
+        "format-bluetooth-muted": " {icon} {format_source} ",
+        "format-muted": " {format_source} ",
+        // "format-source": " {volume}% <span color=\"#83a598\"></span> ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }, 
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -88,5 +88,24 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "format": "<span color=\"#83a598\"></span> {name}",
+         "current-only": true
+     },
+     "hyprland/workspaces": {
+    "format": " <span color=\"#83a598\">{name}</span> ",
+    "active-only": true,
+    "on-click": "activate",
+     },
+    "sway/mode": {
+        "format": " {} " 
+    },
+     "custom/updates": {
+        "format": " <span color=\"#83a598\"></span> {} ",
+        "interval": 900,
+        "exec": "yay -Qu | wc -l"
     }
 }

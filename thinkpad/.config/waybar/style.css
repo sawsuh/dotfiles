@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: Iosevka, Icons, font-logos Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     min-height: 0;
     padding-left: 5px;
     padding-right: 5px;
@@ -18,11 +18,11 @@ window#waybar {
 
 #workspaces button.focused {
     color: #ebdbb2;
-    border-bottom: 3px solid rgba(149,192,124,1);
+    border-bottom: 2px solid rgba(149,192,124,1);
 }
 
 #backlight, #pulseaudio, #custom-updates, #window, #custom-clock, #battery {
-    border-bottom: 3px solid rgba(149,192,124,1);
+    border-bottom: 2px solid rgba(149,192,124,1);
 }
 
 #mode {
