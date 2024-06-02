@@ -1,1 +1,1 @@
-/home/prashant/.dots/shared/.config/nvim/lua/kickstart/plugins/lint.lua
+../../../../../../shared/.config/nvim/lua/kickstart/plugins/lint.lua
