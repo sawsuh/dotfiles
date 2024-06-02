@@ -2,7 +2,7 @@
     "height": 40, // Waybar height (to be removed for auto height)
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/clock", "pulseaudio"],
+    "modules-right": ["custom/clock", "pulseaudio", "battery"],
     "backlight": {
         "format": "{percent}% <span color=\"#83a598\"></span>"
     },
@@ -42,12 +42,12 @@
             "mid": 40,
             "critical": 20
         },
-        "format": "<span color='#83a598'></span> {capacity}% ",
-        "format-mid": "<span color='#83a598'></span> {capacity}% ",
-        "format-critical": "<span color='#83a598'></span> {capacity}% ",
-        "format-decent": "<span color='#83a598'></span> {capacity}% ",
-        "format-charging": "<span color='#83a598'></span> {capacity}% ",
-        "format-plugged": "<span color='#83a598'></span> {capacity}% ",
+        "format": "{capacity}% <span color='#83a598'></span>",
+        "format-mid": "{capacity}% <span color='#83a598'></span>",
+        "format-critical": "{capacity}% <span color='#83a598'></span>",
+        "format-decent": "{capacity}% <span color='#83a598'></span>",
+        "format-charging": "{capacity}% <span color='#83a598'></span>",
+        "format-plugged": "{capacity}% <span color='#83a598'></span>",
         "format-alt": " {time} ",
         "format-full": "<span color='#83a598'></span> "
     },
