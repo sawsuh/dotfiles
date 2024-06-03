@@ -18,11 +18,11 @@ window#waybar {
 
 #workspaces button.focused {
     color: #ebdbb2;
-    border-bottom: 2px solid rgba(149,192,124,1);
+    border-bottom: 3px solid rgba(149,192,124,1);
 }
 
 #backlight, #pulseaudio, #custom-updates, #window, #custom-clock, #battery {
-    border-bottom: 2px solid rgba(149,192,124,1);
+    border-bottom: 3px solid rgba(149,192,124,1);
 }
 
 #mode {
