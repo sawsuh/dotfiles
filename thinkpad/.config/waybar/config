@@ -1,5 +1,5 @@
 {
-    "height": 40, // Waybar height (to be removed for auto height)
+    "height": 50, // Waybar height (to be removed for auto height)
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["custom/clock", "pulseaudio", "battery"],
@@ -14,7 +14,7 @@
     "custom/clock": {
         "format": " {} <span color=\"#83a598\"></span> ",
         "exec": "date +'%a %-d/%-m %-I %M %p' | tr '[:upper:]' '[:lower:]'",
-        "interval": "30"
+        "interval": 30
     },
      "sway/workspaces": {
          "disable-scroll": true,
