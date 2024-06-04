@@ -7,5 +7,4 @@ twomon=bash ~/.scripts/twomon.sh
 restow=bash ~/.dots/dotfiles.sh ~/.dots r; bash ~/.dots/dotfiles.sh ~/.dots/desktop s
 thesis=cd ~/obsidian/Uni/thesis/MSI-thesis-template
 susp=systemctl suspend && exit
-sysupd=paru -Syu --noconfirm --sudoloop --skipreview --devel
 --2
