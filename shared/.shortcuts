@@ -11,6 +11,7 @@ gupd=git -C ~/.dots pull
 dgit=git -C ~/.dots
 assgen=runhaskell ~/.hscripts/assgen.hs
 startx=dbus-run-session startx
+sysupd=paru -Syu --noconfirm --sudoloop --skipreview --devel
 --2
 xr=~/.Xresources
 sxrc=~/.config/sxhkd/sxhkdrc

@@ -16,6 +16,9 @@ impalias ~/.shortcuts
 test -f ~/.shortcuts_specific && impalias $_
 export PATH=/home/prashant/.local/bin:$PATH
 export PATH=/home/prashant/.cargo/bin:$PATH
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
+export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH
+export MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
